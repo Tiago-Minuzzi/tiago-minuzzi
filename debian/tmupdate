@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Created by:
+# _____ _                     __  __ _                     _ 
+#|_   _(_) __ _  __ _  ___   |  \/  (_)_ __  _   _ _______(_)
+#  | | | |/ _` |/ _` |/ _ \  | |\/| | | '_ \| | | |_  /_  / |
+#  | | | | (_| | (_| | (_) | | |  | | | | | | |_| |/ / / /| |
+#  |_| |_|\__,_|\__, |\___/  |_|  |_|_|_| |_|\__,_/___/___|_|
+#               |___/
+#
+
+if [[ $(sudo apt update 2> /dev/null | grep "can be upgraded" ) ]]; then
+	echo "Updating..."
+	sleep 2
+	sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean
+	sleep 2
+	echo " "
+	echo "System is now up to date!"
+else
+	echo "Nothing to be done."
+fi
