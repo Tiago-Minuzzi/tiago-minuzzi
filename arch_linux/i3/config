@@ -206,8 +206,9 @@ exec --no-startup-id xinput --disable "AlpsPS/2 ALPS GlidePoint"
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id volumeicon
 
-# Window borders and gaps
+# Window borders, gaps & other stuff
 for_window [class=".*"] border pixel 2
+mouse_warping none
 #gaps inner 2
 #gaps outer 2
 
