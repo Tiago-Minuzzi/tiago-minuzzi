@@ -225,6 +225,7 @@ workspace $ws8 output HDMI1
 # Open application as floating window
 for_window [class="Slack"] floating enable
 for_window [class="Terminator"] floating enable
+for_window [class="Pavucontrol"] floating enable
 
 # Keybindings
 bindsym $mod+n exec thunar
