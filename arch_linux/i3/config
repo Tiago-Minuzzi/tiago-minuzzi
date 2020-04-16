@@ -226,6 +226,7 @@ workspace $ws8 output HDMI1
 for_window [class="Slack"] floating enable
 for_window [class="Terminator"] floating enable
 for_window [class="Pavucontrol"] floating enable
+for_window [class="Gnome-calculator"] floating enable
 
 # Keybindings
 bindsym $mod+n exec thunar
@@ -233,6 +234,7 @@ bindsym $mod+Shift+z exec i3lock --color 000000
 bindsym $mod+b exec /usr/bin/vivaldi-stable
 bindsym $mod+Shift+t exec terminator --class Terminator
 bindsym $mod+m bar mode toggle # hide/unhide status bar
+bindsym $mod+p exec pavucontrol
 
 # Colours
 # * class                 border  backgrd text    indicator
