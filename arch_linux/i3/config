@@ -53,7 +53,7 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -show-icons -display-drun "" -disable-history -m -4
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -show-icons -display-drun "" -disable-history -m -1
 
 # change focus
 bindsym $mod+j focus left
