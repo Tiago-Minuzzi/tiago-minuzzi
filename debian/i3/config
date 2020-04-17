@@ -53,7 +53,7 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -show-icons -display-drun "" -disable-history
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -show-icons -display-drun "" -disable-history -m -1
 
 # change focus
 bindsym $mod+j focus left
@@ -207,7 +207,9 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id pasystray
 
 # Window stuffs
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 2
+mouse_warping none
+focus_follows_mouse no
 
 # Assign workspaces to displays
 workspace $ws1 output LVDS-1
@@ -222,13 +224,17 @@ workspace $ws8 output HDMI-1
 # Open application as floating window
 for_window [class="Slack"] floating enable
 for_window [class="Terminator"] floating enable
+for_window [class="Gnome-calculator"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Nautilus"] floating enable
 
 # Keybindings
 bindsym $mod+n exec nautilus
 bindsym $mod+Shift+z exec i3lock --color 000000
 bindsym $mod+b exec /usr/bin/vivaldi-stable
 bindsym $mod+Shift+t exec terminator --class Terminator
-bindsym $mod+m bar mode toggle # hide/unhide status bar
+bindsym $mod+m bar mode toggle
+bindsym $mod+p exec pavucontrol
 
 # Colours
 # * class                 border  backgrd text    indicator

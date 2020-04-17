@@ -235,7 +235,7 @@ bindsym $mod+n exec thunar
 bindsym $mod+Shift+z exec i3lock --color 000000
 bindsym $mod+b exec /usr/bin/vivaldi-stable
 bindsym $mod+Shift+t exec terminator --class Terminator
-bindsym $mod+m bar mode toggle # hide/unhide status bar
+bindsym $mod+m bar mode toggle
 bindsym $mod+p exec pavucontrol
 
 # Colours
