@@ -187,8 +187,8 @@ bar {
         	statusline #FFFFFF
 
         	# State             Border  BG      Text
-        	focused_workspace   #F9FAF9 #00BFFF #F9FAF9
-                active_workspace    #595B5B #353836 #FDF6E3
+        	focused_workspace   #F9FAF9 #3DAEE9 #F9FAF9
+                active_workspace    #F9FAF9 #19C287 #FDF6E3
         	inactive_workspace  #595B5B #283339 #EEE8D5
         	urgent_workspace    #00BFFF #FDF6E3 #E5201D
 	}
@@ -241,7 +241,7 @@ bindsym $mod+p exec pavucontrol
 # Colours
 # * class                 border  backgrd text    indicator
 client.focused            #3daee9 #3daee9 #ffffff #2e9ef4
-client.focused_inactive   #1cdc9a #1cdc9a #ffffff #484e50
+client.focused_inactive   #1cdc9a #1cdc9a #ffffff #17b57e
 client.unfocused          #4d4d4d #4d4d4d #ffffff #292d2e
 client.urgent             #2f343a #900000 #ffffff #900000
 
