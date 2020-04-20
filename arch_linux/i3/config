@@ -54,6 +54,7 @@ bindsym $mod+Shift+q kill
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -show-icons -display-drun "" -disable-history -m -1
+bindsym $mod+Tab exec rofi -show window
 
 # change focus
 bindsym $mod+j focus left
@@ -234,6 +235,7 @@ for_window [class="Thunar"] floating enable
 bindsym $mod+n exec thunar
 bindsym $mod+Shift+z exec i3lock --color 000000
 bindsym $mod+b exec /usr/bin/vivaldi-stable
+bindsym $mod+Shift+b exec /usr/bin/vivaldi-stable --incognito
 bindsym $mod+Shift+t exec terminator --class Terminator
 bindsym $mod+m bar mode toggle
 bindsym $mod+p exec pavucontrol
