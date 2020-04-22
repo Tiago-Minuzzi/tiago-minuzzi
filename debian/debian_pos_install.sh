@@ -28,4 +28,4 @@ sudo apt install i3 i3lock dmenu rofi lxappearance nitrogen py3status pavucontro
 # sudo mv BCM20702A1-0a5c-21e6.hcd /lib/firmware/brcm/
 
 # Gnome extesions to install
-# kstatusnotifiers, openweather, sound input & output device choser.
+# kstatusnotifiers, openweather, sound input & output device choser, multi monitors add-on, applications overview tooltip, windowoverlay icons.
