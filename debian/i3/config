@@ -187,8 +187,8 @@ bar {
         	statusline #FFFFFF
 
         	# State             Border  BG      Text
-        	focused_workspace   #F9FAF9 #00BFFF #F9FAF9
-                active_workspace    #595B5B #353836 #FDF6E3
+        	focused_workspace   #F9FAF9 #3DAEE9 #F9FAF9
+                active_workspace    #F9FAF9 #19C287 #FDF6E3
         	inactive_workspace  #595B5B #283339 #EEE8D5
         	urgent_workspace    #00BFFF #FDF6E3 #E5201D
 	}
