@@ -180,7 +180,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-	position top
+	position bottom
 	colors {
         	background #424242
         	separator  #FFFFFF
@@ -194,7 +194,7 @@ bar {
 	}
 }
 
-
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 ##############################
 ### Added by Tiago Minuzzi ###
 ##############################
@@ -223,7 +223,7 @@ workspace $ws8 output HDMI-1
 
 # Open application as floating window
 for_window [class="Slack"] floating enable
-for_window [class="Terminator"] floating enable
+for_window [class="X-terminal-emulator"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Nautilus"] floating enable
