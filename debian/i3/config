@@ -205,6 +205,7 @@ exec --no-startup-id setxkbmap -layout br
 exec --no-startup-id xinput --disable "AlpsPS/2 ALPS GlidePoint"
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id pasystray
+exec --no-startup-id caffeine-indicator
 
 # Window stuffs
 for_window [class=".*"] border pixel 2
@@ -223,7 +224,7 @@ workspace $ws8 output HDMI-1
 
 # Open application as floating window
 for_window [class="Slack"] floating enable
-for_window [class="X-terminal-emulator"] floating enable
+for_window [class="Terminator"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Nautilus"] floating enable
