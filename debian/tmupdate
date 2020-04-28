@@ -9,7 +9,6 @@
 #               |___/
 #
 
-echo "Checking for updates..."
 if [[ $(sudo apt update 2> /dev/null | grep "can be upgraded" ) ]]; then
 	echo "Updating..."
 	sleep 2
