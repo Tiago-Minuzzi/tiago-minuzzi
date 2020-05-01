@@ -213,7 +213,6 @@ mouse_warping none
 focus_follows_mouse no
 gaps inner 4
 gaps outer 2
-
 smart_gaps on
 
 # Assign workspaces to displays
@@ -232,6 +231,7 @@ for_window [class="Terminator"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Thunar"] floating enable
+for_window [class="Nitrogen"] floating enable
 
 # Keybindings
 bindsym $mod+n exec thunar
