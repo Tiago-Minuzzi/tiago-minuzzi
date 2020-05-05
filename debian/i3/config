@@ -212,6 +212,9 @@ exec --no-startup-id caffeine-indicator
 for_window [class=".*"] border pixel 1
 mouse_warping none
 focus_follows_mouse no
+gaps inner 2
+gaps outer 2
+smart_gaps on
 
 # Assign workspaces to displays
 workspace $ws1 output LVDS-1
