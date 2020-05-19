@@ -205,14 +205,15 @@ exec --no-startup-id xrandr --output LVDS-1 --left-of HDMI1
 exec --no-startup-id setxkbmap -layout br
 exec --no-startup-id xinput --disable "AlpsPS/2 ALPS GlidePoint"
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id pasystray
 exec --no-startup-id caffeine-indicator
+exec --no-startup-id redshift-gtk
 
 # Window stuffs
 for_window [class=".*"] border pixel 1
 mouse_warping none
 focus_follows_mouse no
-gaps inner 2
+hide_edge_borders smart
+gaps inner 4
 gaps outer 2
 smart_gaps on
 
