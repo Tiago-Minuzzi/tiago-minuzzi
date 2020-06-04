@@ -158,16 +158,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym semicolon resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -188,8 +188,8 @@ bar {
         	statusline #FFFFFF
 
         	# State             Border  BG      Text
-        	focused_workspace   #F9FAF9 #3DAEE9 #F9FAF9
-                active_workspace    #F9FAF9 #19C287 #FDF6E3
+        	focused_workspace   #F9FAF9 #107abc #F9FAF9
+                active_workspace    #F9FAF9 #1d6006 #FDF6E3
         	inactive_workspace  #595B5B #283339 #EEE8D5
         	urgent_workspace    #00BFFF #FDF6E3 #E5201D
 	}
@@ -218,27 +218,40 @@ gaps outer 2
 smart_gaps on
 
 # Assign workspaces to displays
+#workspace $ws1 output LVDS-1
+#workspace $ws2 output HDMI-1
+#workspace $ws3 output LVDS-1
+#workspace $ws4 output HDMI-1
+#workspace $ws5 output LVDS-1
+#workspace $ws6 output HDMI-1
+#workspace $ws7 output LVDS-1
+#workspace $ws8 output HDMI-1
+
 workspace $ws1 output LVDS-1
-workspace $ws2 output HDMI-1
+workspace $ws2 output LVDS-1
 workspace $ws3 output LVDS-1
-workspace $ws4 output HDMI-1
+workspace $ws4 output LVDS-1
 workspace $ws5 output LVDS-1
-workspace $ws6 output HDMI-1
-workspace $ws7 output LVDS-1
-workspace $ws8 output HDMI-1
+workspace $ws6 output VGA-1
+workspace $ws7 output VGA-1 
+workspace $ws8 output VGA-1
+workspace $ws9 output VGA-1
+workspace $ws10 output VGA-1
 
 # Open application as floating window
 for_window [class="Slack"] floating enable
 for_window [class="Terminator"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="Nautilus"] floating enable
+#for_window [class="Nautilus"] floating enable
 for_window [class="Nitrogen"] floating enable
+for_window [class="Arandr"] floating enable
 
 # Keybindings
 bindsym $mod+n exec nautilus
 bindsym $mod+Shift+z exec i3lock --color 000000
-bindsym $mod+b exec /usr/bin/vivaldi-stable
+bindsym $mod+b exec /usr/bin/brave-browser-stable
+bindsym $mod+Shift+b exec /usr/bin/brave-browser-stable --incognito
 bindsym $mod+Shift+t exec terminator --class Terminator
 bindsym $mod+m bar mode toggle
 bindsym $mod+p exec pavucontrol
@@ -246,7 +259,7 @@ bindsym $mod+p exec pavucontrol
 # Colours
 # * class                 border  backgrd text    indicator
 client.focused            #ffffff #ffffff #ffffff #2e9ef4
-client.focused_inactive   #1cdc9a #1cdc9a #ffffff #484e50
+client.focused_inactive   #cee3f6 #9ff781 #ffffff #484e50
 client.unfocused          #4d4d4d #4d4d4d #ffffff #292d2e
 client.urgent             #2f343a #900000 #ffffff #900000
 
