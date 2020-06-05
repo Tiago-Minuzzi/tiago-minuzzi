@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Update system
+sudo pacman -Syu --noconfirm
+yay -Syu --noconfirm
+
+# Remove cache
+sudo pacman -Scc --noconfirm
+yay -Scc --noconfirm
