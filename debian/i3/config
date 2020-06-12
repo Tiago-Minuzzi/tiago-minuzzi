@@ -183,7 +183,7 @@ bar {
         status_command i3status
 	position bottom
 	colors {
-        	background #424242
+        	background #000000
         	separator  #FFFFFF
         	statusline #FFFFFF
 
@@ -200,7 +200,7 @@ bar {
 ### Added by Tiago Minuzzi ###
 ##############################
 
-exec --no-startup-id xrandr --output LVDS-1 --left-of HDMI1
+exec --no-startup-id xrandr --output LVDS1 --left-of VGA1
 #exec --no-startup-id xrandr --output LVDS-1 --off
 exec --no-startup-id setxkbmap -layout br
 exec --no-startup-id xinput --disable "AlpsPS/2 ALPS GlidePoint"
@@ -227,32 +227,33 @@ smart_gaps on
 #workspace $ws7 output LVDS-1
 #workspace $ws8 output HDMI-1
 
-workspace $ws1 output LVDS-1
-workspace $ws2 output LVDS-1
-workspace $ws3 output LVDS-1
-workspace $ws4 output LVDS-1
-workspace $ws5 output LVDS-1
-workspace $ws6 output VGA-1
-workspace $ws7 output VGA-1 
-workspace $ws8 output VGA-1
-workspace $ws9 output VGA-1
-workspace $ws10 output VGA-1
+workspace $ws1 output LVDS1
+workspace $ws2 output LVDS1
+workspace $ws3 output LVDS1
+workspace $ws4 output LVDS1
+workspace $ws5 output LVDS1
+workspace $ws6 output VGA1
+workspace $ws7 output VGA1 
+workspace $ws8 output VGA1
+workspace $ws9 output VGA1
+workspace $ws10 output VGA1
 
 # Open application as floating window
 for_window [class="Slack"] floating enable
-for_window [class="Terminator"] floating enable
+for_window [class="Xfce4-terminal"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Pavucontrol"] floating enable
 #for_window [class="Nautilus"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [class="Arandr"] floating enable
-
+for_window [class="Gdebi-gtk"] floating enable
+for_window [class="SimpleScreenRecorder"] floating enable
 # Keybindings
 bindsym $mod+n exec nautilus
-bindsym $mod+Shift+z exec i3lock --color 000000
-bindsym $mod+b exec /usr/bin/brave-browser-stable
-bindsym $mod+Shift+b exec /usr/bin/brave-browser-stable --incognito
-bindsym $mod+Shift+t exec terminator --class Terminator
+bindsym $mod+Shift+z exec i3lock --color 000000 && xset dpms force off
+bindsym $mod+b exec /usr/bin/firefox-esr
+bindsym $mod+Shift+b exec /usr/bin/firefox-esr --private-window
+bindsym $mod+Shift+t exec xfce4-terminal #--class Xfce4-terminal
 bindsym $mod+m bar mode toggle
 bindsym $mod+p exec pavucontrol
 
@@ -264,7 +265,7 @@ client.unfocused          #4d4d4d #4d4d4d #ffffff #292d2e
 client.urgent             #2f343a #900000 #ffffff #900000
 
 # Lock/logout/suspend/reboot/shutdown
-set $Locker i3lock --color 000000 && sleep 1
+set $Locker i3lock --color 000000 && xset dpms force off
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, \
 (Shift+s) shutdown
 mode "$mode_system" {

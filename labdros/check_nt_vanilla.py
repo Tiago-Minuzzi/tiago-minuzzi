@@ -5,14 +5,14 @@
 # Uso: python3 check_nt_vanilla.py input.fasta > output.fasta
 import sys
 
+# Input file
+seqri = sys.argv[1]
 # Creates dictionary
 seqs_by_ids = {}
 # Nucleotides list
 nts = ['A','C','G','T']
 # Desire length
 seqLen = 6
-# Input file
-seqri = sys.argv[1]
 
 # Read file and add to dictionary
 with open(seqri, 'r+') as read_file:
