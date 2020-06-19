@@ -183,13 +183,13 @@ bar {
         status_command py3status
 	position bottom
 	colors {
-        	background #424242
+        	background #000000
         	separator  #FFFFFF
         	statusline #FFFFFF
 
         	# State             Border  BG      Text
-        	focused_workspace   #F9FAF9 #3DAEE9 #F9FAF9
-                active_workspace    #F9FAF9 #19C287 #FDF6E3
+        	focused_workspace   #F9FAF9 #107abc #F9FAF9
+                active_workspace    #F9FAF9 #1d6006 #FDF6E3
         	inactive_workspace  #595B5B #283339 #EEE8D5
         	urgent_workspace    #00BFFF #FDF6E3 #E5201D
 	}
@@ -200,30 +200,43 @@ bar {
 ### Added by Tiago Minuzzi ###
 ##############################
 
-exec --no-startup-id xrandr --output LVDS1 --left-of HDMI1
+exec --no-startup-id xrandr --output LVDS1 --left-of VGA1
 #exec --no-startup-id xrandr --output LVDS1 --off
 exec --no-startup-id setxkbmap -layout br
 exec --no-startup-id xinput --disable "AlpsPS/2 ALPS GlidePoint"
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id volumeicon
-
+exec --no-startup-id redshift-gtk
+exec --no-startup-id caffeine-ng
 # Window borders, gaps & other stuff
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 2
 mouse_warping none
 focus_follows_mouse no
 gaps inner 4
 gaps outer 2
 smart_gaps on
+hide_edge_borders smart
 
 # Assign workspaces to displays
+#workspace $ws1 output LVDS1
+#workspace $ws2 output HDMI1
+#workspace $ws3 output LVDS1
+#workspace $ws4 output HDMI1
+#workspace $ws5 output LVDS1
+#workspace $ws6 output HDMI1
+#workspace $ws7 output LVDS1
+#workspace $ws8 output HDMI1
+
 workspace $ws1 output LVDS1
-workspace $ws2 output HDMI1
+workspace $ws2 output LVDS1
 workspace $ws3 output LVDS1
-workspace $ws4 output HDMI1
+workspace $ws4 output LVDS1
 workspace $ws5 output LVDS1
-workspace $ws6 output HDMI1
-workspace $ws7 output LVDS1
-workspace $ws8 output HDMI1
+workspace $ws6 output VGA1
+workspace $ws7 output VGA1 
+workspace $ws8 output VGA1
+workspace $ws9 output VGA1
+workspace $ws10 output VGA1
 
 # Open application as floating window
 for_window [class="Slack"] floating enable
@@ -235,9 +248,9 @@ for_window [class="Nitrogen"] floating enable
 
 # Keybindings
 bindsym $mod+n exec thunar
-bindsym $mod+Shift+z exec i3lock --color 000000
-bindsym $mod+b exec /usr/bin/vivaldi-stable
-bindsym $mod+Shift+b exec /usr/bin/vivaldi-stable --incognito
+bindsym $mod+Shift+z exec i3lock --color 000000 && xset dpms force off
+bindsym $mod+b exec /usr/bin/firefox
+bindsym $mod+Shift+b exec /usr/bin/firefox --private-window
 bindsym $mod+Shift+t exec terminator --class Terminator
 bindsym $mod+m bar mode toggle
 bindsym $mod+p exec pavucontrol
@@ -250,7 +263,7 @@ client.unfocused          #4d4d4d #4d4d4d #ffffff #292d2e
 client.urgent             #2f343a #900000 #ffffff #900000
 
 # Lock/logout/suspend/reboot/shutdown
-set $Locker i3lock --color 000000 && sleep 1
+set $Locker i3lock --color 000000 && xset dpms force off
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, \
 (Shift+s) shutdown
 mode "$mode_system" {
