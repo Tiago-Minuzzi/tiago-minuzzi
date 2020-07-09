@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+CHOI=$1
+TARG="/etc/hosts"
+BAK="/opt/bak.hosts"
+LOCALD1="0.0.0.0"
+LOCALD2="::0"
+WEBSITES=("www.reddit.com" "reddit.com" "www.youtube.com" "youtube.com")
+
+case "$CHOI" in
+
+"work")
+	if [[ ! -f "$BAK" ]];then
+		cp "$TARG" "$BAK"
+	fi
+	killall firefox-esr 2> /dev/null || killall firefox 2> /dev/null || killall chromium 2> /dev/null || killall google-chrome 2> /dev/null
+	for WEBSITE in "${WEBSITES[@]}"
+		do
+			if (( $(grep -c -P "(^|\s)\K$WEBSITE(?=\s|$)" "$TARG") == 0 )); then
+				echo "$LOCALD1	$WEBSITE" >> "$TARG"
+				echo "$LOCALD2	$WEBSITE" >> "$TARG"		
+			fi
+		done
+	echo "Let's start working."
+		;;
+
+"rest")
+	for WEBSITE in "${WEBSITES[@]}"
+		do
+			sed -i "/${WEBSITE}/d" "$TARG"
+		done
+	echo "Time to rest."
+	;;
+*)
+	echo "This option does not exists. Try again."
+	;;
+
+esac
