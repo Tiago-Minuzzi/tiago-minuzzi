@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# Not my script. Got elsewhere on internet.
 """Convert a BLAST XML file to tabular output.
 Designed to convert BLAST XML files into tabular BLAST output (either
 std for standard 12 columns, or ext for the extended 25 columns offered
