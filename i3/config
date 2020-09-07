@@ -219,3 +219,20 @@ for_window [class="Spotify"] move to workspace $ws9
 for_window [class="Gpick"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
+
+# Lock/logout/suspend/reboot/shutdown
+set $Locker i3lock --color 000000 && xset dpms force off
+set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, \
+(Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && sync && systemctl suspend, \
+    mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+delete mode "$mode_system"
