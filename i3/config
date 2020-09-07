@@ -167,7 +167,7 @@ bindsym $mod+r mode "resize"
 # Custom
 
 # class                 border  backgr. text    indicator
-client.focused          #4c7899 #285577 #ffffff #2e9ef4
+client.focused          #4c7899 #169bfa #ffffff #2e9ef4
 client.focused_inactive #333333 #5f676a #ffffff #484e50
 client.unfocused        #333333 #222222 #888888 #292d2e
 client.urgent           #2f343a #900000 #ffffff #900000
@@ -182,7 +182,7 @@ bar {
 		statusline #ffffff
 		separator #666666
 
-		focused_workspace  #4c7899 #285577 #ffffff
+		focused_workspace  #4c7899 #169bfa #000000
 		active_workspace   #333333 #5f676a #ffffff
 		inactive_workspace #333333 #222222 #888888
 		urgent_workspace   #2f343a #900000 #ffffff
