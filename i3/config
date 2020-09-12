@@ -17,7 +17,7 @@ font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono Bold 10,FontAwesome Bold 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -175,12 +175,12 @@ client.urgent           #2f343a #900000 #ffffff #900000
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-	#separator_symbol "|"
+        status_command i3status -c ~/.config/i3status/config
+	separator_symbol "|"
 	colors {
-		background #000000
-		statusline #ffffff
-		separator #666666
+		background #e0e0e0
+		statusline #000000
+		separator #000000
 
 		focused_workspace  #4c7899 #169bfa #000000
 		active_workspace   #333333 #5f676a #ffffff
@@ -219,20 +219,3 @@ for_window [class="Spotify"] move to workspace $ws9
 for_window [class="Gpick"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
-
-# Lock/logout/suspend/reboot/shutdown
-set $Locker i3lock --color 000000 && xset dpms force off
-set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, \
-(Shift+s) shutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && sync && systemctl suspend, \
-    mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+Shift+delete mode "$mode_system"
