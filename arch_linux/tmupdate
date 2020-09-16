@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# Update system
-sudo pacman -Syyu
-#yay -Syyu
-
-# Remove cache
-sudo pacman -Scc
-#yay -Scc
