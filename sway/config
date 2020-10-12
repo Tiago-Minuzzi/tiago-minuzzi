@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term termite
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -87,10 +87,10 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # Moving around:
 #
     # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
+    #bindsym $mod+$left focus left
+    #bindsym $mod+$down focus down
+    #bindsym $mod+$up focus up
+    #bindsym $mod+$right focus right
     # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -98,10 +98,10 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
     bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
+    #bindsym $mod+Shift+$left move left
+    #bindsym $mod+Shift+$down move down
+    #bindsym $mod+Shift+$up move up
+    #bindsym $mod+Shift+$right move right
     # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
@@ -140,7 +140,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
+    bindsym $mod+h splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
@@ -201,18 +201,19 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position bottom
+    swaybar_command waybar
+    #position top
 
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    ## When the status_command prints a new line to stdout, swaybar updates.
+    ## The default just shows the current date and time.
+    #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
 
-    colors {
-        statusline #ffffff
-        background #323232
-	focused_workspace  #4e7496 #169bfa  #000000
-        inactive_workspace #666666 #333333 #ffffff
-    }
+    #colors {
+    #    statusline #ffffff
+    #    background #323232
+	#    focused_workspace  #4e7496 #169bfa  #000000
+    #    inactive_workspace #666666 #333333 #ffffff
+    #}
 }
 
 include /etc/sway/config.d/*
@@ -229,6 +230,8 @@ gaps outer 1
 smart_gaps off
 smart_borders on
 focus_follows_mouse no
+# Assign apps to workspaces
+assign [app_id="firefox"] 1
 # Keyboard
 input * {
 	xkb_layout "us"
@@ -237,9 +240,11 @@ input * {
 # Display
 output LVDS-1 disable
 # Wallpaper
-output * bg /home/tiago/Imagens/wp18.jpg fill
+output * bg /home/tiago/Pictures/846628.jpg fill
 # Keybindings
-
+bindsym $mod+n exec nautilus
+bindsym $mod+b exec firefox
+bindsym $mod+Shift+b exec firefox --private-window
 # Multimedia
 bindsym --locked XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym --locked XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
