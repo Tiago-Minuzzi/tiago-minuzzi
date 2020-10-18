@@ -132,3 +132,7 @@ super + e
     firefox
 super + shift + e
     firefox --private-window
+super + n
+    nautilus
+super + shift + z
+    i3lock --color 000000 && xset dpms force off
