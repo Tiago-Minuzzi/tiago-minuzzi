@@ -8,6 +8,6 @@ int main()
     scanf("%ii\n", &radius); // scanf can alter the value of radius. The ampersand is needed to alter it.
 
     double area = 3.14159 * (radius * radius); 
-    printf("The area of the circle is: %f\n", area);
+    printf("The area of the circle with %i radius is: %f\n", radius, area);
     return 0;
 }
