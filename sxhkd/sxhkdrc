@@ -127,6 +127,15 @@ XF86AudioRaiseVolume
     amixer set Master 5%+
 XF86AudioMute
     amixer set Master toggle
+XF86AudioPlay
+    playerctl play-pause
+XF86AudioNext
+    playerctl next
+XF86AudioPrev
+    playerctl previous
+XF86AudioStop
+    playerctl stop
+
 # My keybindings
 super + e
     firefox
