@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import requests
-from bs4 import BeautifulSoup as soup
 from pprint import pprint
 page = requests.get("http://www.ufrgs.br/ppgbm/noticias/")
 sp = soup(page.content, "html.parser")
