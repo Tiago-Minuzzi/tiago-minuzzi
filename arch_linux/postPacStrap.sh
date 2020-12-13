@@ -7,7 +7,7 @@ ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 # Generate /etc/adjtime
 hwclock --systohc
 # Set up locale
-sed 's/#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen &&
+sed -i 's/#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen &&
 locale-gen &&
 echo "LANG=en_US.UTF-8" > /etc/locale.conf &&
 export LANG=en_US.UTF-8
@@ -20,7 +20,7 @@ mkinitcpio -P
 reflector -c 'Brazil' -a 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist &&
 pacman -Sy
 # Install bootloader
-pacman -S grub os-prober &&
+pacman -S grub os-prober --noconfirm &&
 grub-install /dev/$DISK
 ## In case of efi mode, comment the line above and uncomment line below
 #pacman -S grub os-prober efibootmgr && grub-install --target=x86_64-efi --bootloader-id=grub --efi-directory=/boot/efi
