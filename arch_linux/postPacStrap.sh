@@ -24,9 +24,10 @@ pacman -S grub os-prober &&
 grub-install /dev/$DISK
 ## In case of efi mode, comment the line above and uncomment line below
 #pacman -S grub os-prober efibootmgr && grub-install --target=x86_64-efi --bootloader-id=grub --efi-directory=/boot/efi
+grub-mkconfig -o /boot/grub/grub.cfg
 #-------
 # Install system packages
-pacman -S mesa xdg-user-dirs fuse2 fuse3 ntfs-3g exfat-utils pulseaudio gvfs dkms haveged unrar unzip htop lsb-release polkit man-db man-pages firefox dialog wpa_supplicant dhcpcd pacman-contrib usbutils pciutils dosfstools mtools network-manager-applet networkmanager wireless_tools ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera ttf-liberation ttf-font-awesome otf-font-awesome noto-fonts --noconfirm
+pacman -S fuse2 fuse3 ntfs-3g exfat-utils pulseaudio gvfs dkms haveged unrar unzip htop lsb-release polkit man-db man-pages firefox dialog wpa_supplicant dhcpcd pacman-contrib usbutils pciutils dosfstools mtools network-manager-applet networkmanager wireless_tools ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera ttf-liberation ttf-font-awesome otf-font-awesome noto-fonts --noconfirm
 # Activate networking service
 systemctl enable NetworkManager.service
 # Remember to create a user and then reboot
