@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	termite
+	terminator
 
 # program launcher
 super + @space
@@ -145,3 +145,5 @@ super + n
     nautilus
 super + shift + z
     i3lock --color 000000 && xset dpms force off
+ctrl + @space
+    ulauncher

@@ -5,7 +5,9 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+set autoindent
+set cursorline
+set number
 syntax on
 packadd! dracula
 colorscheme dracula
-set autoindent
