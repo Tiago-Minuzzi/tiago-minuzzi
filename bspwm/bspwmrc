@@ -14,6 +14,9 @@ nitrogen --restore &
 sxhkd &
 # Compositor
 picom -f &
+# Disable displays
+bspc config remove_unplugged_monitors true
+bspc config remove_disabled_monitors true
 # BSPWM configs
 bspc monitor HDMI-1 -d I II III IV V VI VII VIII IX X
 
@@ -37,7 +40,9 @@ bspc rule -a Rambox desktop='^7'
 bspc rule -a Spotify desktop='^8'
 #bspc rule -a Firefox desktop='^10'
 # Floating windows
+bspc rule -a Eog state=floating
 bspc rule -a Nitrogen state=floating
 bspc rule -a Pavucontrol state=floating
 bspc rule -a Lxappearance state=floating
 bspc rule -a Pulseeffects state=floating
+bspc rule -a Virt-manager state=floating
