@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 bindkey -e
 bindkey "^[[3~" delete-char
 
@@ -14,6 +14,8 @@ compinit
 # End of lines added by compinstall
 # My PS1
 RPROMPT="%T"
+# Prevent ssh dialog box
+unset SSH_ASKPASS
 #PS1="\u:\w$ "
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -23,10 +25,10 @@ export PATH="$HOME/.local/bin/:$PATH"
 export PATH="$HOME/.local/bin/appimages:$PATH"
 export PATH="$HOME/sftw/ncbi-blast-2.10.1+/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/sftw/sratoolkit.2.10.8-centos_linux64/bin:$PATH"
+export PATH="$HOME/sftw/sratoolkit/bin:$PATH"
 # Aliases
 alias update="sudo dnf check-update"
-alias upgrade="sudo dnf upgrade"
+alias upgrade="sudo dnf upgrade -y"
 alias autoremove="sudo dnf autoremove"
 alias clean="sudo dnf clean all"
 alias open="xdg-open"
@@ -60,6 +62,3 @@ function git_branch_name()
     echo '- ('$branch')'
   fi
 }
-
-# Enable substitution in the prompt.
-setopt prompt_subst
