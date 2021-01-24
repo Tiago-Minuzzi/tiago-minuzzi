@@ -20,7 +20,7 @@ mkinitcpio -P
 reflector -c 'Brazil' -a 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist &&
 pacman -Sy
 # Install bootloader
-pacman -S grub os-prober --noconfirm &&
+pacman -S grub --noconfirm &&
 grub-install /dev/$DISK
 ## In case of efi mode, comment the line above and uncomment line below
 #pacman -S grub os-prober efibootmgr && grub-install --target=x86_64-efi --bootloader-id=grub --efi-directory=/boot/efi
