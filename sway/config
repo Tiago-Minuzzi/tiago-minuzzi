@@ -225,13 +225,17 @@ client.urgent           #2f343a #900000 #ffffff #900000
 # Windows
 for_window [title=".*"] border pixel 3
 for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="org.gnome.DejaDup"] floating enable
+for_window [app_id="org.telegram.desktop"] floating enable
+# Gaps etc
 gaps inner 5
 gaps outer 1
 smart_gaps off
 smart_borders off
 focus_follows_mouse no
 # Assign apps to workspaces
-assign [app_id="firefox"] 1
+assign [class="firefox"] 1
+for_window [class="Spotify"] move window to workspace 8
 # Keyboard
 input * {
 	xkb_layout "us"
@@ -240,12 +244,12 @@ input * {
 # Display
 output LVDS-1 disable
 # Wallpaper
-output * bg /home/tiago/Pictures/F34_default_wallpaper_night.jpg fill
+output * bg /home/tiago/Pictures/F34_default_wallpaper_day.jpg fill
 # Keybindings
 bindsym $mod+n exec nautilus
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec firefox --private-window
-bindsym $mod+Shift+z exec sgtk-bar
+bindsym $mod+t exec flatpak run org.telegram.desktop
 bindsym $mod+l exec swaylock -c 000000 && busctl --user set-property org.gnome.Mutter.DisplayConfig /org/gnome/Mutter/DisplayConfig org.gnome.Mutter.DisplayConfig PowerSaveMode i 1
 # Multimedia
 bindsym --locked XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
@@ -254,3 +258,10 @@ bindsym --locked XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym --locked XF86AudioPlay exec playerctl play-pause
 bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioPrev exec playerctl previous
+# Services
+## exec
+exec flatpak run org.telegram.desktop
+exec mako
+## exec_always
+exec_always wlsunset
+exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
