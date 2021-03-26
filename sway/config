@@ -14,11 +14,11 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term termite
+set $term tilix
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_path | i3-dmenu-desktop | xargs swaymsg exec --
 
 ### Output configuration
 #
@@ -200,22 +200,22 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    swaybar_command waybar
-    #position top
+    #swaybar_command waybar
+    position bottom
 
     ## When the status_command prints a new line to stdout, swaybar updates.
     ## The default just shows the current date and time.
-    #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
 
-    #colors {
-    #    statusline #ffffff
-    #    background #323232
-	#    focused_workspace  #4e7496 #169bfa  #000000
-    #    inactive_workspace #666666 #333333 #ffffff
-    #}
+    colors {
+        statusline #ffffff
+        background #323232
+	    focused_workspace  #4e7496 #169bfa  #000000
+        inactive_workspace #666666 #333333 #ffffff
+    }
 }
-include .config/waybar/config
-#include /etc/sway/config.d/*
+#include .config/waybar/config
+include /etc/sway/config.d/*
 # By Tiago Minuzzi
 # class                 border  backgr. text    indicator
 client.focused          #4c7899 #169bfa #ffffff #a2cffe
@@ -228,7 +228,7 @@ for_window [app_id="pavucontrol"] floating enable
 gaps inner 5
 gaps outer 1
 smart_gaps off
-smart_borders on
+smart_borders off
 focus_follows_mouse no
 # Assign apps to workspaces
 assign [app_id="firefox"] 1
@@ -240,7 +240,7 @@ input * {
 # Display
 output LVDS-1 disable
 # Wallpaper
-output * bg /home/tiago/Pictures/846628.jpg fill
+output * bg /home/tiago/Pictures/F34_default_wallpaper_night.jpg fill
 # Keybindings
 bindsym $mod+n exec nautilus
 bindsym $mod+b exec firefox
