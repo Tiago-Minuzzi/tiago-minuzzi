@@ -252,6 +252,7 @@ for_window [app_id="org.telegram.desktop"] floating enable
 for_window [app_id="gnome-terminal-server"] floating enable
 # Assign apps to workspaces
 assign [class="firefox"] 1
+assign [class="Brave-browser"] 7
 for_window [class="Spotify"] move window to workspace 8
 # Keybindings
 bindsym $mod+n exec nautilus
