@@ -1,1 +1,1 @@
-sudo pacman -S plasma-desktop kde-gtk-config kdeutils kmix kscreen kde-plasma-addons kio-extras kdeutilskdegraphics-thumbnailers
+sudo pacman -S plasma-desktop kde-gtk-config kmix kscreen kdeplasma-addons kio kdegraphics-thumbnailers plasma-nm plasma-pa
