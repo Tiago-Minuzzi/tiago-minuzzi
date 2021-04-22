@@ -189,7 +189,7 @@ gaps inner 2
 gaps outer 2
 smart_gaps on
 # Apps
-exec --no-startup-id caffeine-ng
+exec --no-startup-id caffeine
 exec --no-startup-id clipit
 exec --no-startup-id feh --bg-fill /usr/share/backgrounds/gnome/LightBulb.jpg
 exec --no-startup-id lxsession
@@ -206,3 +206,19 @@ bindsym $mod+Shift+z exec i3lock -c 000000 && xset dpms force off
 bindsym $mod+b exec firefox
 bindsym $mod+n exec nautilus
 bindsym $mod+t exec org.telegram.desktop
+# Lock, logout etc
+set $Locker i3lock --color 000000 && xset dpms force off
+set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, \
+(Shift+s) shutdown
+mode "$mode_system" {                                               
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && sync && systemctl suspend, \
+    mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Ctrl+e mode "$mode_system"
