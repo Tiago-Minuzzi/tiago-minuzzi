@@ -163,10 +163,10 @@ mode "resize" {
         bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -191,12 +191,13 @@ smart_gaps on
 # Apps
 exec --no-startup-id caffeine
 exec --no-startup-id clipit
-exec --no-startup-id feh --bg-fill /usr/share/backgrounds/gnome/LightBulb.jpg
+exec --no-startup-id ~/.fehbg
 exec --no-startup-id lxsession
 exec --no-startup-id redshift-gtk
 exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
 # Floating windows
 for_window [class="Gpick"] floating enable
+for_window [class="Gnome-calculator"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 for_window [class="TelegramDesktop"] floating enable
 #for_window [class="Virt-manager"] floating enable
