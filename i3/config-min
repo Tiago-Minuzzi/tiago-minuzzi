@@ -198,6 +198,7 @@ exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
 # Floating windows
 for_window [class="Gpick"] floating enable
 for_window [class="Gnome-calculator"] floating enable
+for_window [class="Gnome-terminal"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 for_window [class="TelegramDesktop"] floating enable
 #for_window [class="Virt-manager"] floating enable
@@ -207,6 +208,7 @@ bindsym $mod+Shift+z exec i3lock -c 000000 && xset dpms force off
 bindsym $mod+b exec firefox
 bindsym $mod+n exec nautilus
 bindsym $mod+t exec org.telegram.desktop
+bindsym Ctrl+Mod1+t exec gnome-terminal
 # Lock, logout etc
 set $Locker i3lock --color 000000 && xset dpms force off
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, \
