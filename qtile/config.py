@@ -124,6 +124,8 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
+        wallapaper="~/Pictures/arch-wp.png",
+        wallpaper="fill",
         top=bar.Bar(
             [
                 widget.GroupBox(rounded=False,borderwidth=1,this_current_screen_border="#3498db"),
