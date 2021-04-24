@@ -32,7 +32,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = "xfce4-terminal"
+terminal = "tilix"
 
 keys = [
     # Switch between windows
@@ -124,8 +124,8 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        wallapaper="~/Pictures/arch-wp.png",
-        wallpaper="fill",
+        wallpaper="~/Pictures/arch-wp.png",
+        wallpaper_mode="fill",
         top=bar.Bar(
             [
                 widget.GroupBox(rounded=False,borderwidth=1,this_current_screen_border="#3498db"),
