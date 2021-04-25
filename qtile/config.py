@@ -13,8 +13,8 @@ terminal = "tilix"
 
 @hook.subscribe.startup_once
 def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
-    subprocess.call([home])
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/autostart.sh'])
 
 keys = [
     # Switch between windows
@@ -169,6 +169,11 @@ screens = [
                         foreground = "#ffffff",
                         background = "#242424"),
                 widget.Clock(format='%A, %B %d, %H:%M'),
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 5,
+                        foreground = "#ffffff",
+                        background = "#242424"),
                 widget.Systray(),
                 widget.Sep(
                         linewidth = 1,
