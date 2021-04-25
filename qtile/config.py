@@ -101,7 +101,7 @@ for i in groups:
 
 layouts = [
     # layout.Columns(border_focus_stack='#d75f5f'),
-    layout.MonadTall(border_focus='#ffffff',border_normal='#3498db',ratio=0.55,margin=5),
+    layout.MonadTall(border_focus='#ffffff',border_normal='#3498db',ratio=0.55,margin=5,single_margin=0),
     #layout.Stack(num_stacks=2),
     #layout.Max(),
     # Try more layouts by unleashing below layouts.
@@ -109,7 +109,7 @@ layouts = [
     #layout.Matrix(),
     # layout.MonadWide(),
     #layout.RatioTile(),
-    layout.Tile(border_focus='#ffffff',border_normal='#3498db',ratio=0.55,margin=5),
+    layout.Tile(border_focus='#ffffff',border_normal='#3498db',ratio=0.55,margin=5,single_margin=0),
     #layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
@@ -130,6 +130,17 @@ screens = [
             [
                 widget.GroupBox(rounded=False,borderwidth=1,this_current_screen_border="#3498db"),
                 widget.Prompt(),
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 5,
+                        foreground = "#ffffff",
+                        background = "#000000"),
+                widget.CurrentLayout(),
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 5,
+                        foreground = "#ffffff",
+                        background = "#000000"),
                 widget.WindowName(),
                 widget.Chord(
                     chords_colors={
@@ -137,7 +148,6 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.CurrentLayout(),
                 widget.Sep(
                         linewidth = 1,
                         padding = 5,
