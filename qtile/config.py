@@ -64,6 +64,8 @@ keys = [
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
 
+    Key([mod, "control"], "i", lazy.layout.grow(),desc='Grow ratio'),
+    Key([mod, "control"], "m", lazy.layout.shrink(),desc='Shrink ratio'),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -109,7 +111,7 @@ layouts = [
     #layout.Matrix(),
     # layout.MonadWide(),
     #layout.RatioTile(),
-    layout.Tile(border_focus='#ffffff',border_normal='#3498db',ratio=0.55,margin=5,single_margin=0),
+    layout.Tile(border_focus='#ffffff',border_normal='#3498db',ratio=0.55,margin=2,single_margin=0),
     #layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
@@ -128,7 +130,7 @@ screens = [
         wallpaper_mode="fill",
         top=bar.Bar(
             [
-                widget.GroupBox(rounded=False,borderwidth=1,this_current_screen_border="#3498db"),
+                widget.GroupBox(rounded=True,borderwidth=2,this_current_screen_border="#3498db"),
                 widget.Prompt(),
                 widget.Sep(
                         linewidth = 1,
@@ -160,7 +162,7 @@ screens = [
                         padding = 5,
                         foreground = "#ffffff",
                         background = "#000000"),
-                widget.QuickExit(),
+                #widget.QuickExit(),
             ],
             24,
         ),
