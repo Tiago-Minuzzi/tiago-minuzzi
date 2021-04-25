@@ -1,38 +1,20 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
+import os
+import subprocess
 
 from typing import List  # noqa: F401
 
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = "tilix"
+
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.call([home])
 
 keys = [
     # Switch between windows
@@ -74,8 +56,25 @@ keys = [
         desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
-    # Toggle between different layouts as defined below
+    # My configs
     Key([mod], "d", lazy.spawn("rofi -modi drun -show drun -show-icons -display-drun ''")),
+    Key([mod], "b", lazy.spawn("firefox")),
+    Key([mod], "n", lazy.spawn("nautilus")),
+
+    Key(
+        [], "XF86AudioRaiseVolume",
+        lazy.spawn("amixer -c 0 -q set Master 2dB+")
+    ),
+    Key(
+        [], "XF86AudioLowerVolume",
+        lazy.spawn("amixer -c 0 -q set Master 2dB-")
+    ),
+    Key(
+        [], "XF86AudioMute",
+        lazy.spawn("amixer -c 0 -q set Master toggle")
+    ),
+
+    # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.restart(), desc="Restart Qtile"),
@@ -104,17 +103,7 @@ for i in groups:
 layouts = [
     # layout.Columns(border_focus_stack='#d75f5f'),
     layout.MonadTall(border_focus='#ffffff',border_normal='#3498db',ratio=0.55,margin=5,single_margin=0),
-    #layout.Stack(num_stacks=2),
-    #layout.Max(),
-    # Try more layouts by unleashing below layouts.
-    # layout.Bsp(),
-    #layout.Matrix(),
-    # layout.MonadWide(),
-    #layout.RatioTile(),
     layout.Tile(border_focus='#ffffff',border_normal='#3498db',ratio=0.55,margin=2,single_margin=0),
-    #layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
 ]
 
 widget_defaults = dict(
@@ -130,19 +119,19 @@ screens = [
         wallpaper_mode="fill",
         top=bar.Bar(
             [
-                widget.GroupBox(rounded=True,borderwidth=2,this_current_screen_border="#3498db"),
+                widget.GroupBox(rounded=True,borderwidth=2,this_current_screen_border="#3498db",highlight_method='block'),
                 widget.Prompt(),
                 widget.Sep(
                         linewidth = 1,
                         padding = 5,
                         foreground = "#ffffff",
-                        background = "#000000"),
+                        background = "#242424"),
                 widget.CurrentLayout(),
                 widget.Sep(
                         linewidth = 1,
                         padding = 5,
                         foreground = "#ffffff",
-                        background = "#000000"),
+                        background = "#242424"),
                 widget.WindowName(),
                 widget.Chord(
                     chords_colors={
@@ -154,17 +143,41 @@ screens = [
                         linewidth = 1,
                         padding = 5,
                         foreground = "#ffffff",
-                        background = "#000000"),
-                widget.Systray(),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
+                        background = "#242424"),
+                widget.CPU(),
                 widget.Sep(
                         linewidth = 1,
                         padding = 5,
                         foreground = "#ffffff",
-                        background = "#000000"),
-                #widget.QuickExit(),
+                        background = "#242424"),
+                widget.Memory(),
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 5,
+                        foreground = "#ffffff",
+                        background = "#242424"),
+                widget.DF(visible_on_warn=False),
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 5,
+                        foreground = "#ffffff",
+                        background = "#242424"),
+                widget.Volume(),
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 5,
+                        foreground = "#ffffff",
+                        background = "#242424"),
+                widget.Clock(format='%A, %B %d, %H:%M'),
+                widget.Systray(),
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 5,
+                        foreground = "#ffffff",
+                        background = "#242424"),
             ],
             24,
+            background="#242424",
         ),
     ),
 ]
@@ -186,6 +199,7 @@ bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
+    {'wmclass':'Gnome-terminal'},
     *layout.Floating.default_float_rules,
     Match(wm_class='confirmreset'),  # gitk
     Match(wm_class='makebranch'),  # gitk
