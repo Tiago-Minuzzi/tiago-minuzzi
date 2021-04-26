@@ -143,7 +143,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -217,6 +217,7 @@ exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
 # Floating windows
 for_window [class="Gpick"] floating enable
 for_window [class="Gnome-calculator"] floating enable
+for_window [class="Gnome-calendar"] floating enable
 for_window [class="Gnome-terminal"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 for_window [class="TelegramDesktop"] floating enable
@@ -226,6 +227,7 @@ bindsym $mod+Shift+b exec firefox --private-window
 bindsym $mod+Shift+n exec gnome-terminal -- ranger
 bindsym $mod+Shift+z exec i3lock -c 000000 && xset dpms force off
 bindsym $mod+b exec firefox
+bindsym $mod+c exec gnome-calendar
 bindsym $mod+n exec nautilus
 bindsym $mod+t exec org.telegram.desktop
 bindsym Ctrl+Mod1+t exec gnome-terminal
