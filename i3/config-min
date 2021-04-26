@@ -202,7 +202,7 @@ bar {
                }
     }
 # Windows
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border pixel 2
 focus_follows_mouse no
 gaps inner 5
 gaps outer 1
@@ -223,6 +223,7 @@ for_window [class="TelegramDesktop"] floating enable
 #for_window [class="Virt-manager"] floating enable
 # Keybindgs
 bindsym $mod+Shift+b exec firefox --private-window
+bindsym $mod+Shift+n exec gnome-terminal -- ranger
 bindsym $mod+Shift+z exec i3lock -c 000000 && xset dpms force off
 bindsym $mod+b exec firefox
 bindsym $mod+n exec nautilus
