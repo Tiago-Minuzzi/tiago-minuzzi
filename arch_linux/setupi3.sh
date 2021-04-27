@@ -8,6 +8,7 @@ sudo pacman -Sy i3-gaps \
                lxappearance \
                lxsession \
                picom \
+               playerctl \
                dunst --noconfirm
 # Install pkgs from AUR
 yay -S clipit \
