@@ -240,6 +240,8 @@ bindsym Ctrl+Mod1+t exec gnome-terminal
 # Scratchpad
 bindsym $mod+Ctrl+Up move scratchpad
 bindsym $mod+Ctrl+Down scratchpad show
+# Sticky (floating) window
+bindsym $mod+Shift+s sticky toggle
 # Lock, logout etc
 set $Locker i3lock --color 000000 && xset dpms force off
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, \
