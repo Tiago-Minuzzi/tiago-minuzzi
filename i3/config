@@ -192,6 +192,7 @@ client.background       #FFFFFF
 # finds out, if available)
 bar {
         status_command i3status
+        #i3bar_command i3bar --transparency
         position top
         colors {
                 background #212121
@@ -220,6 +221,7 @@ exec --no-startup-id redshift-gtk
 exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
 # Windows to workspaces
 for_window [class="Spotify"] move to workspace $ws5
+for_window [class="libreoffice-calc"] move to workspace $ws10
 # Floating windows
 for_window [class="Gpick"] floating enable
 for_window [class="Gnome-calculator"] floating enable
