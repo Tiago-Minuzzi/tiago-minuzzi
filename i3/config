@@ -214,7 +214,7 @@ gaps inner 5
 gaps outer 1
 smart_gaps on
 # Apps
-exec --no-startup-id caffeine
+#exec --no-startup-id caffeine
 #exec --no-startup-id clipit
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id lxsession
@@ -227,6 +227,7 @@ for_window [class="libreoffice-calc"] move to workspace $ws10
 for_window [class="Gpick"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Gnome-calendar"] floating enable
+for_window [class="Org.gnome.Weather"] floating enable
 for_window [class="Alacritty"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 for_window [class="TelegramDesktop"] floating enable
