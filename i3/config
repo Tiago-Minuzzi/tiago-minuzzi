@@ -236,6 +236,7 @@ for_window [class="TelegramDesktop"] floating enable
 # Keybindgs
 bindsym $mod+Shift+b exec firefox --private-window
 bindsym $mod+Shift+n exec alacritty -e ranger
+bindsym $mod+Shift+h exec alacritty -e htop
 bindsym $mod+Shift+z exec i3lock -c 000000 && xset dpms force off
 bindsym $mod+b exec firefox
 bindsym $mod+c exec gnome-calendar
