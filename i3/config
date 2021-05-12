@@ -224,6 +224,7 @@ exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
 for_window [class="firefox"] move to workspace $ws1
 for_window [class="Org.gnome.Nautilus"] move to workspace $ws2
 for_window [class="Spotify"] move to workspace $ws5
+for_window [class="Brave-browser"] move to workspace $ws6
 for_window [class="libreoffice-writer"] move to workspace $ws9
 for_window [class="libreoffice-calc"] move to workspace $ws10
 # Floating windows
