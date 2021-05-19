@@ -45,7 +45,7 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec tilix
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -222,12 +222,12 @@ exec --no-startup-id redshift-gtk
 exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
 # Windows to workspaces
 for_window [class="firefox"] move to workspace $ws1
-for_window [class="Org.gnome.Nautilus"] move to workspace $ws2
+for_window [class="Pcmanfm"] move to workspace $ws2
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Brave-browser"] move to workspace $ws6
 for_window [class="Evince"] move to workspace $ws7
 for_window [class="Com.github.johnfactotum.Foliate"] move to workspace $ws7
-for_window [class="Gedit"] move to workspace $ws8
+for_window [class="Mousepad"] move to workspace $ws8
 for_window [class="libreoffice-writer"] move to workspace $ws9
 for_window [class="libreoffice-calc"] move to workspace $ws10
 # Floating windows
@@ -236,25 +236,25 @@ for_window [class="Caffeine"] floating enable # caffeine preferences
 for_window [class="Gpick"] floating enable
 for_window [class="Eog"] floating enable
 for_window [class="Gnome-calculator"] floating enable
-for_window [class="Gnome-calendar"] floating enable
-for_window [class="Gnome-terminal"] floating enable
-for_window [class="Org.gnome.Weather"] floating enable
-for_window [class="Alacritty"] floating enable
+#for_window [class="Gnome-calendar"] floating enable
+for_window [class="Xfce4-terminal"] floating enable
+#for_window [class="Org.gnome.Weather"] floating enable
+#for_window [class="Alacritty"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 for_window [class="TelegramDesktop"] floating enable
 #for_window [class="Virt-manager"] floating enable
 # Keybindgs
-bindsym $mod+Shift+b exec firefox --private-window
-bindsym $mod+Shift+n exec alacritty -e ranger
-bindsym $mod+Shift+h exec alacritty -e htop
-bindsym $mod+Shift+z exec i3lock -c 000000 && xset dpms force off
-bindsym $mod+b exec firefox
-bindsym $mod+c exec gnome-calendar
-bindsym $mod+n exec nautilus
-bindsym $mod+t exec org.telegram.desktop
-bindsym Ctrl+Mod1+t exec alacritty
-bindsym Ctrl+$mod+b exec brave
-bindsym Ctrl+$mod+Shift+b exec brave --incognito
+bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
+bindsym $mod+Shift+n exec --no-startup-id xfce4-terminal -e ranger
+bindsym $mod+Shift+h exec --no-startup-id xfce4-terminal -e htop
+bindsym $mod+Shift+z exec --no-startup-id i3lock -c 000000 && xset dpms force off
+bindsym $mod+b exec --no-startup-id firefox
+#bindsym $mod+c exec --no-startup-id gnome-calendar
+bindsym $mod+n exec --no-startup-id pcmanfm
+bindsym $mod+t exec --no-startup-id org.telegram.desktop
+bindsym Ctrl+Mod1+t exec --no-startup-id xfce4-terminal
+bindsym Ctrl+$mod+b exec --no-startup-id brave
+bindsym Ctrl+$mod+Shift+b exec --no-startup-id brave --incognito
 # Scratchpad
 bindsym $mod+Ctrl+Up move scratchpad
 bindsym $mod+Ctrl+Down scratchpad show
