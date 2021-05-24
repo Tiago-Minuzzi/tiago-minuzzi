@@ -194,7 +194,7 @@ client.background       #FFFFFF
 bar {
         status_command i3status
         #i3bar_command i3bar --transparency
-        position top
+        position bottom
         colors {
                 background #212121
                 statusline #FFFFFF
@@ -213,6 +213,7 @@ focus_follows_mouse no
 gaps inner 5
 gaps outer 1
 smart_gaps on
+smart_borders on
 # Apps
 exec --no-startup-id unclutter
 exec --no-startup-id caffeine
