@@ -113,8 +113,8 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: "
-set $ws2 "2: "
-set $ws3 "3: "
+set $ws2 "2: " 
+set $ws3 "3: " 
 set $ws4 "4:  "
 set $ws5 "5: "
 set $ws6 "6: 爵"
@@ -210,9 +210,9 @@ bar {
 # Windows
 for_window [class=".*"] border pixel 2
 focus_follows_mouse no
-gaps inner 5
-gaps outer 1
-smart_gaps on
+#gaps inner 5
+#gaps outer 1
+#smart_gaps on
 smart_borders on
 # Apps
 exec --no-startup-id unclutter
@@ -224,8 +224,8 @@ exec --no-startup-id lxsession
 exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
 # Windows to workspaces
 for_window [class="firefox"] move to workspace $ws1
-for_window [class="Pcmanfm"] move to workspace $ws2
-for_window [class="Alacritty"] move to workspace $ws3
+for_window [class="Pcmanfm"] move to workspace $ws3
+for_window [class="Alacritty"] move to workspace $ws2
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Brave-browser"] move to workspace $ws6
 for_window [class="Evince"] move to workspace $ws7
