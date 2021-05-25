@@ -11,7 +11,10 @@ sudo pacman -Sy i3-gaps \
                 playerctl \
                 unclutter \
                 pcmanfm-gtk3 \
+                qutebrowser \
                 ranger \
+                zathura \
+                zathura-pdf-poppler \
                 dunst --noconfirm
 # Install pkgs from AUR
 yay -S clipit \
