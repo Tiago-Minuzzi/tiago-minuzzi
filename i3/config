@@ -220,7 +220,7 @@ exec --no-startup-id caffeine
 exec --no-startup-id clipit
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id lxsession
-#exec --no-startup-id redshift-gtk
+exec --no-startup-id redshift-gtk
 exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
 # Windows to workspaces
 for_window [class="firefox"] move to workspace $ws1
@@ -228,7 +228,9 @@ for_window [class="Pcmanfm"] move to workspace $ws3
 for_window [class="Alacritty"] move to workspace $ws2
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Brave-browser"] move to workspace $ws6
+for_window [class="qutebrowser"] move to workspace $ws6
 for_window [class="Evince"] move to workspace $ws7
+for_window [class="Zathura"] move to workspace $ws7
 for_window [class="Com.github.johnfactotum.Foliate"] move to workspace $ws7
 for_window [class="Mousepad"] move to workspace $ws8
 for_window [class="libreoffice-writer"] move to workspace $ws9
@@ -238,7 +240,7 @@ for_window [class="Blanket"] floating enable
 for_window [class="Caffeine"] floating enable # caffeine preferences
 for_window [class="Gpick"] floating enable
 for_window [class="Eog"] floating enable
-for_window [class="Gnome-calculator"] floating enable
+for_window [class="Galculator"] floating enable
 #for_window [class="Gnome-calendar"] floating enable
 for_window [class="Xfce4-terminal"] floating enable
 #for_window [class="Org.gnome.Weather"] floating enable
@@ -256,7 +258,7 @@ bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+n exec --no-startup-id pcmanfm
 bindsym $mod+t exec --no-startup-id org.telegram.desktop
 bindsym Ctrl+Mod1+t exec --no-startup-id xfce4-terminal
-bindsym Ctrl+$mod+b exec --no-startup-id brave
+bindsym Ctrl+$mod+b exec --no-startup-id qutebrowser
 bindsym Ctrl+$mod+Shift+b exec --no-startup-id brave --incognito
 # Scratchpad
 bindsym $mod+Ctrl+Up move scratchpad
