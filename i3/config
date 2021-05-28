@@ -229,13 +229,14 @@ for_window [class="Alacritty"] move to workspace $ws2
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Brave-browser"] move to workspace $ws6
 for_window [class="qutebrowser"] move to workspace $ws6
-for_window [class="Evince"] move to workspace $ws7
 for_window [class="Zathura"] move to workspace $ws7
 for_window [class="Com.github.johnfactotum.Foliate"] move to workspace $ws7
 for_window [class="Mousepad"] move to workspace $ws8
+for_window [class="aliview-AliView"] move to workspace $ws8
 for_window [class="libreoffice-writer"] move to workspace $ws9
 for_window [class="libreoffice-calc"] move to workspace $ws10
 # Floating windows
+for_window [class="Lxappearance"] floating enable
 for_window [class="Blanket"] floating enable
 for_window [class="Caffeine"] floating enable # caffeine preferences
 for_window [class="Gpick"] floating enable
