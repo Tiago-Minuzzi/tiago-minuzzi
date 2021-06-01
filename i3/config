@@ -215,13 +215,13 @@ focus_follows_mouse no
 #smart_gaps on
 smart_borders on
 # Apps
-exec --no-startup-id unclutter
-exec --no-startup-id caffeine
+#exec --no-startup-id unclutter
+#exec --no-startup-id caffeine
 exec --no-startup-id clipit
-exec --no-startup-id ~/.fehbg
+#exec --no-startup-id ~/.fehbg
 exec --no-startup-id lxsession
 exec --no-startup-id redshift-gtk
-exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
+#exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
 # Windows to workspaces
 for_window [class="firefox"] move to workspace $ws1
 for_window [class="Pcmanfm"] move to workspace $ws3
@@ -231,7 +231,7 @@ for_window [class="Brave-browser"] move to workspace $ws6
 for_window [class="qutebrowser"] move to workspace $ws6
 for_window [class="Zathura"] move to workspace $ws7
 for_window [class="Com.github.johnfactotum.Foliate"] move to workspace $ws7
-for_window [class="Mousepad"] move to workspace $ws8
+for_window [class="Leafpad"] move to workspace $ws8
 for_window [class="aliview-AliView"] move to workspace $ws8
 for_window [class="libreoffice-writer"] move to workspace $ws9
 for_window [class="libreoffice-calc"] move to workspace $ws10
