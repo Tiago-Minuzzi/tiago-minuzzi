@@ -261,6 +261,9 @@ bindsym $mod+t exec --no-startup-id org.telegram.desktop
 bindsym Ctrl+Mod1+t exec --no-startup-id xfce4-terminal
 bindsym Ctrl+$mod+b exec --no-startup-id qutebrowser
 bindsym Ctrl+$mod+Shift+b exec --no-startup-id brave --incognito
+# Workspace prev/next
+bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Tab workspace next
 # Scratchpad
 bindsym $mod+Ctrl+Up move scratchpad
 bindsym $mod+Ctrl+Down scratchpad show
