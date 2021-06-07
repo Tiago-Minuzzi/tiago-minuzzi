@@ -115,7 +115,7 @@ bindsym $mod+a focus parent
 set $ws1 "1: "
 set $ws2 "2: " 
 set $ws3 "3: " 
-set $ws4 "4:  "
+set $ws4 "4: "
 set $ws5 "5: "
 set $ws6 "6: 爵"
 set $ws7 "7: 龎"
@@ -219,7 +219,7 @@ smart_borders on
 #exec --no-startup-id caffeine
 exec --no-startup-id clipit
 #exec --no-startup-id ~/.fehbg
-exec --no-startup-id lxsession
+#exec --no-startup-id lxsession
 exec --no-startup-id redshift-gtk
 #exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
 # Windows to workspaces
@@ -237,10 +237,11 @@ for_window [class="libreoffice-writer"] move to workspace $ws9
 for_window [class="libreoffice-calc"] move to workspace $ws10
 # Floating windows
 for_window [class="Lxappearance"] floating enable
+for_window [class="Pavucontrol"] floating enable
 for_window [class="Blanket"] floating enable
 for_window [class="Caffeine"] floating enable # caffeine preferences
 for_window [class="Gpick"] floating enable
-for_window [class="Eog"] floating enable
+for_window [class="Ristretto"] floating enable
 for_window [class="Galculator"] floating enable
 #for_window [class="Gnome-calendar"] floating enable
 for_window [class="Xfce4-terminal"] floating enable
