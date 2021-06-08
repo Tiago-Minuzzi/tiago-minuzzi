@@ -76,7 +76,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ ShiftMask|ControlMask,        XK_t,      spawn,          {.v = xfce4term } },
+	{ Mod1Mask|ControlMask,         XK_t,      spawn,          {.v = xfce4term } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = fmgui } },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = fmtui } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = firefox } },
