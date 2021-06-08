@@ -60,6 +60,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char *xfce4term[]  = { "xfce4-terminal", NULL };
+static const char *fmgui[]  = { "pcmanfm", NULL };
+static const char *fmtui[]  = { "xfce4-terminal", "-e", "ranger", NULL };
 static const char *firefox[]  = { "firefox", NULL };
 static const char *bravein[]  = { "brave", "--incognito", NULL };
 static const char *mutecmd[] = { "pactl", "set-sink-mute", "0", "toggle", NULL };
@@ -73,6 +76,9 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ ShiftMask|ControlMask,        XK_t,      spawn,          {.v = xfce4term } },
+	{ MODKEY,                       XK_n,      spawn,          {.v = fmgui } },
+	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = fmtui } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = firefox } },
 	{ MODKEY|ShiftMask|ControlMask, XK_b,      spawn,          {.v = bravein } },
 	{ MODKEY|ControlMask,           XK_space,  togglebar,      {0} },
