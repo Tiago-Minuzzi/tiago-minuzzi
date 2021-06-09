@@ -217,10 +217,10 @@ smart_borders on
 # Apps
 #exec --no-startup-id unclutter
 #exec --no-startup-id caffeine
-exec --no-startup-id clipit
+exec --no-startup-id parcellite
 #exec --no-startup-id ~/.fehbg
 #exec --no-startup-id lxsession
-exec --no-startup-id redshift-gtk
+#exec --no-startup-id redshift-gtk
 #exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
 # Windows to workspaces
 for_window [class="firefox"] move to workspace $ws1
