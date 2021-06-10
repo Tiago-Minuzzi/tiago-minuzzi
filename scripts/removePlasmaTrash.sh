@@ -53,7 +53,8 @@ deletar=(.config/KDE
 .local/share/krunnerstaterc
 .local/share/kscreen
 .local/share/kxmlgui5
-.local/share/plasma)
+.local/share/plasma
+.kde4)
 
 for item in ${deletar[@]}
 do
