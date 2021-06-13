@@ -1,64 +1,45 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-bindkey -e
-bindkey "^[[3~" delete-char
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/tiago/.zshrc'
+# Path to your oh-my-zsh installation.
+export ZSH="/home/tiago/.oh-my-zsh"
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-# My PS1
+# Set name of the theme to load --- if set to "random", it will
+ZSH_THEME="gnzh"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+# Added by Tiago Minuzzi
 RPROMPT="%T"
-# Prevent ssh dialog box
-unset SSH_ASKPASS
-#PS1="\u:\w$ "
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-zstyle ':completion:*' menu select
-# Paths
-export PATH="$HOME/.local/bin/:$PATH"
-export PATH="$HOME/.local/bin/appimages:$PATH"
-export PATH="$HOME/sftw/ncbi-blast-2.10.1+/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/sftw/sratoolkit/bin:$PATH"
-# Aliases
-alias update="sudo dnf check-update"
-alias upgrade="sudo dnf upgrade -y"
-alias autoremove="sudo dnf autoremove"
-alias clean="sudo dnf clean all"
-alias open="xdg-open"
-alias lsz="ls --human-readable --size -1 -S --classify"
-alias cpz="rsync -ah --info=progress2"
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+## Aliases
+alias catfas="perl $HOME/sftw/catfasta2phyml/catfasta2phyml.pl -c -f"
 alias cfas="grep -c '>'"
-alias lsdir="ls -d */"
-alias fpu="flatpak update -y"
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/tiago/sftw/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/tiago/sftw/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/tiago/sftw/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/tiago/sftw/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-# Find and set branch name var if in git repository.
-function git_branch_name()
-{
-  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
-  if [[ $branch == "" ]];
-  then
-    :
-  else
-    echo '- ('$branch')'
-  fi
-}
+alias macse2="java -jar $HOME/sftw/macse/macse_v2.05.jar"
+alias nfet="clear && neofetch"
+alias open="xdg-open"
+alias restos="pacman -Qdtq"
+alias ord="sort | uniq -c | sed 's/[ \t]*//;s/ /\t/'"
+alias clo="$HOME/sftw/clustalo-1.2.4"
+alias limpar_restos="sudo pacman -Rns $(pacman -Qdtq)"
+alias fproc="ps axf | grep -i"
+alias rg="ranger"
+alias fpup="flatpak update -y"
+alias pmf="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias mon="udisksctl mount -b"
+alias desmon="udisksctl unmount -b"
+alias tempo="curl 'wttr.in?format=3'"
+alias previsao="curl http://wttr.in"
+## Paths
+export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$PATH:$HOME/sftw/ncbi-blast-2.11.0+/bin/"
