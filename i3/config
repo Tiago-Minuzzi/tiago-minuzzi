@@ -193,6 +193,7 @@ client.background       #FFFFFF
 # finds out, if available)
 bar {
         status_command i3status
+        modifier none # dont show bar when pressing mod key and in hidden state
         #strip_workspace_numbers yes
         #i3bar_command i3bar --transparency
         position bottom
@@ -271,6 +272,8 @@ bindsym $mod+Tab workspace next
 # Scratchpad
 bindsym $mod+Ctrl+Up move scratchpad
 bindsym $mod+Ctrl+Down scratchpad show
+# Hide/unhide bar
+bindsym $mod+Control+space bar mode toggle
 # Alternate windows in full screen
 bindsym $mod+Shift+f fullscreen disable, focus right, fullscreen enable
 # Sticky (floating) window
