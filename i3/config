@@ -269,6 +269,7 @@ bindsym Ctrl+$mod+Shift+b exec --no-startup-id brave --incognito
 bindsym $mod+Shift+p exec --no-startup-id flameshot full -p $HOME
 bindsym $mod+p exec --no-startup-id flameshot gui
 bindsym $mod+Mod1+e exec --no-startup-id bash emoji-select
+bindsym $mod+Shift+a exec --no-startup-id pavucontrol
 # Workspace prev/next
 bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Tab workspace next
