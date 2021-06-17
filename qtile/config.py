@@ -9,7 +9,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = "tilix"
+terminal = "alacritty"
 
 @hook.subscribe.startup_once
 def autostart():
@@ -101,7 +101,7 @@ for i in groups:
     ])
 
 layouts = [
-    # layout.Columns(border_focus_stack='#d75f5f'),
+    layout.floating(border_focus='#5a85ff'),
     layout.MonadTall(border_focus='#ffffff',border_normal='#3498db',ratio=0.55,margin=5,single_margin=0),
     layout.Tile(border_focus='#ffffff',border_normal='#3498db',ratio=0.55,margin=2,single_margin=0),
 ]
