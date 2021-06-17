@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Dependencies:
+# dmenu
+# xclip (sudo pacman -S xclip)
+# emoji list (https://gist.githubusercontent.com/itzjustalan/2a719482af601cb69aedd09ce1f5ba88/raw/387eeb3a2ca8110b66fd410e5d7e47067442690a/emoji-list)
+# Emoji list -> pipe to dmenu
+selection=$(cat ~/.config/emoji-list | dmenu -l 30)
+# Copy to clipboard
+echo $selection | awk '{print $1}' | tr -d '\n' | xclip -selection clipboard
+notify-send "$selection"
