@@ -101,9 +101,10 @@ for i in groups:
     ])
 
 layouts = [
-    layout.floating(border_focus='#5a85ff'),
-    layout.MonadTall(border_focus='#ffffff',border_normal='#3498db',ratio=0.55,margin=5,single_margin=0),
+    #layout.MonadTall(border_focus='#ffffff',border_normal='#3498db',ratio=0.55,margin=5,single_margin=0),
     layout.Tile(border_focus='#ffffff',border_normal='#3498db',ratio=0.55,margin=2,single_margin=0),
+    layout.Max(),
+    layout.Floating(),
 ]
 
 widget_defaults = dict(
@@ -115,7 +116,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        wallpaper="~/Pictures/arch-wp.png",
+        wallpaper="~/Pictures/wallpaperbetter.com_1920x1080.jpg",
         wallpaper_mode="fill",
         top=bar.Bar(
             [
