@@ -205,6 +205,7 @@ bar {
         #strip_workspace_numbers yes
         #i3bar_command i3bar --transparency
         position bottom
+        tray_output primary
         colors {
                 background #212121
                 statusline #FFFFFF
