@@ -5,6 +5,8 @@ SELECT=$(echo -e "$OPTIONS" | dmenu -i -p "Select display mode:")
 
 case "$SELECT" in
     Laptop) xrandr --output HDMI-A-0 --off --output eDP --mode 1366x768 ;;
-    Dual) xrandr --output HDMI-A-0 --mode 1920x1080 --left-of eDP --output eDP --mode 1366x768 ;;
+    Dual) xrandr --output HDMI-A-0 --mode 1920x1080 --left-of eDP --output eDP --mode 1366x768 &&\
+          i3-msg workspace 11 && i3-msg move workspace to output eDP &&\
+          i3-msg focus output HDMI-A-0 ;;
     HDMI) xrandr --output HDMI-A-0 --mode 1920x1080 --left-of eDP --output eDP --off ;;
 esac
