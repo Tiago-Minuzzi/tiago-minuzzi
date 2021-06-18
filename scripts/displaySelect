@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 OPTIONS="Laptop\nDual\nHDMI"
-SELECT=$(echo -e "$OPTIONS" | dmenu -i)
+SELECT=$(echo -e "$OPTIONS" | dmenu -i -p "Select display mode:")
 
 case "$SELECT" in
     Laptop) xrandr --output HDMI-A-0 --off --output eDP --mode 1366x768 ;;
