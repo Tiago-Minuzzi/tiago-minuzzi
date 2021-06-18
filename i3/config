@@ -147,6 +147,14 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# Multi-monitor bindings
+## focus monitor
+bindsym $mod+Shift+greater focus output left
+bindsym $mod+Shift+less focus output right
+## move to monitor
+bindsym $mod+Ctrl+Shift+greater move container to output left
+bindsym $mod+Ctrl+Shift+less move container to output right
+
 # reload the configuration file
 #bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
