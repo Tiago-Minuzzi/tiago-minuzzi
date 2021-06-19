@@ -12,8 +12,8 @@ do
       awk '{printf("%02d%\n",100 - $1)}')
     DISCO=$(df -h /dev/nvme0n1p2 | awk 'NR==2{print $3}')
     MEM=$(free -h | awk '(NR==2){ print $3 }')
-    DATA=$(date '+%A%e %B')
+    DATA=$(date '+%A %e, %B')
     HORA=$(date +%H:%M)
-    xsetroot -name " ${TEMPO} | ${CPU} | ${DISCO} | ${MEM} | ${DATA} | ${HORA} "
+    xsetroot -name " ${TEMPO} |  ${CPU} |  ${DISCO} |  ${MEM} |  ${DATA} |  ${HORA} "
     sleep 2s
 done &
