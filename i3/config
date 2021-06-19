@@ -229,7 +229,7 @@ smart_borders on
 #exec --no-startup-id unclutter
 #exec --no-startup-id caffeine
 exec --no-startup-id parcellite
-exec_always --no-startup-id setxkbmap -layout us -variant intl
+#exec_always --no-startup-id setxkbmap -layout us -variant intl
 #exec --no-startup-id ~/.fehbg
 #exec --no-startup-id lxsession
 #exec --no-startup-id redshift-gtk

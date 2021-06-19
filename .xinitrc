@@ -1,9 +1,11 @@
-xrandr --output HDMI1 --mode 1920x1080 --left-of LVDS1 --output LVDS1 --off &
+xrandr --output HDMI1 --mode 1920x1080 --left-of eDP --output eDP --off &
 picom --config /home/tiago/.config/picom/picom.conf &
 ~/.fehbg &
 caffeine &
 unclutter &
 lxsession &
+redshift &
+setxkbmap -layout us -variant intl &
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
@@ -42,4 +44,4 @@ fi
 [ -f ~/.xprofile ] && source ~/.xprofile
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-exec dwm
+exec i3
