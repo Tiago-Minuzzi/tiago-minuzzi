@@ -65,9 +65,10 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ cpu_perc, " CPU %2s%% | ",     NULL },
+	/*{ run_command, " %s | ",     "curl 'wttr.in?format=1' &" },*/
+	{ cpu_perc, "CPU %2s%% | ",     NULL },
 	{ ram_perc, "RAM %2s%% | ",     NULL },
 	{ swap_perc, "SWP %2s%% | ",     NULL },
 	{ disk_perc, "DSK %2s%% | ",     "/" },
-	{ datetime, "%s",           "%F | %H:%M" },
+	{ datetime, "%s",           "%a %e, %b | %H:%M " },
 };
