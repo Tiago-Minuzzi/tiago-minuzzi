@@ -71,6 +71,7 @@ static const char *voldowncmd[] = { "pactl", "set-sink-volume", "0", "-5%", NULL
 static const char *playcmd[] = { "playerctl", "play-pause", NULL };
 static const char *prevcmd[] = { "playerctl", "previous", NULL };
 static const char *nextcmd[] = { "playerctl", "next", NULL };
+static const char *suslock[]  = { "bash", "susLocker.sh", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -81,6 +82,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = fmtui } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = firefox } },
 	{ MODKEY|ShiftMask|ControlMask, XK_b,      spawn,          {.v = bravein } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = suslock } },
 	{ MODKEY|ControlMask,           XK_space,  togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
     { MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
