@@ -72,10 +72,12 @@ static const char *playcmd[] = { "playerctl", "play-pause", NULL };
 static const char *prevcmd[] = { "playerctl", "previous", NULL };
 static const char *nextcmd[] = { "playerctl", "next", NULL };
 static const char *suslock[]  = { "bash", "susLocker.sh", NULL };
+static const char *clipmenu[]  = { "clipmenu", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = clipmenu } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ Mod1Mask|ControlMask,         XK_t,      spawn,          {.v = xfce4term } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = fmgui } },
