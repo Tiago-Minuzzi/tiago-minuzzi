@@ -72,7 +72,7 @@ static const char *playcmd[] = { "playerctl", "play-pause", NULL };
 static const char *prevcmd[] = { "playerctl", "previous", NULL };
 static const char *nextcmd[] = { "playerctl", "next", NULL };
 static const char *suslock[]  = { "bash", "susLocker.sh", NULL };
-static const char *logout[]  = { "killall", "xinit", NULL };
+/*static const char *logout[]  = { "killall", "xinit", NULL };*/
 static const char *clipmenu[]  = { "clipmenu", NULL };
 
 static Key keys[] = {
@@ -120,7 +120,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
-	{ MODKEY|ControlMask,           XK_e,      spawn,          {.v = logout } },
+	/*{ MODKEY|ControlMask,           XK_e,      spawn,          {.v = logout } },*/
     { 0,                            XF86XK_AudioPlay, spawn, {.v = playcmd } },
     { 0,                            XF86XK_AudioPrev, spawn, {.v = prevcmd } },
     { 0,                            XF86XK_AudioNext, spawn, {.v = nextcmd } },
