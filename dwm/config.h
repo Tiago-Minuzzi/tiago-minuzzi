@@ -28,7 +28,7 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
+	/* class                instance    title       tags mask     isfloating   monitor */
 	
     /* Floating apps */
     { "Galculator",         NULL,       NULL,       0,            1,           -1 },
@@ -78,22 +78,23 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
-static const char *xfce4term[]  = { "xfce4-terminal", NULL };
-static const char *fmgui[]  = { "pcmanfm", NULL };
-static const char *fmtui[]  = { "xfce4-terminal", "-e", "ranger", NULL };
-static const char *firefox[]  = { "firefox", NULL };
-static const char *bravein[]  = { "brave", "--incognito", NULL };
-static const char *mutecmd[] = { "pactl", "set-sink-mute", "1", "toggle", NULL };
-static const char *volupcmd[] = { "pactl", "set-sink-volume", "1", "+5%", NULL };
-static const char *voldowncmd[] = { "pactl", "set-sink-volume", "1", "-5%", NULL };
-static const char *playcmd[] = { "playerctl", "play-pause", NULL };
-static const char *prevcmd[] = { "playerctl", "previous", NULL };
-static const char *nextcmd[] = { "playerctl", "next", NULL };
-static const char *suslock[]  = { "bash", "susLocker.sh", NULL };
 /*static const char *logout[]  = { "killall", "xinit", NULL };*/
-static const char *clipmenu[]  = { "clipmenu", NULL };
+static const char *clipmenu[]   = { "clipmenu", NULL };
+static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *firefox[]    = { "firefox", NULL };
+static const char *bravein[]    = { "brave", "--incognito", NULL };
+static const char *qutebro[]    = { "qutebrowser", NULL };
+static const char *fmgui[]      = { "pcmanfm", NULL };
+static const char *fmtui[]      = { "xfce4-terminal", "-e", "ranger", NULL };
+static const char *mutecmd[]    = { "pactl", "set-sink-mute", "1", "toggle", NULL };
+static const char *suslock[]    = { "bash", "susLocker.sh", NULL };
+static const char *nextcmd[]    = { "playerctl", "next", NULL };
+static const char *playcmd[]    = { "playerctl", "play-pause", NULL };
+static const char *prevcmd[]    = { "playerctl", "previous", NULL };
+static const char *voldowncmd[] = { "pactl", "set-sink-volume", "1", "-5%", NULL };
+static const char *volupcmd[]   = { "pactl", "set-sink-volume", "1", "+5%", NULL };
+static const char *termcmd[]    = { "alacritty", NULL };
+static const char *xfce4term[]  = { "xfce4-terminal", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -105,6 +106,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = fmtui } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = firefox } },
 	{ MODKEY|ShiftMask|ControlMask, XK_b,      spawn,          {.v = bravein } },
+	{ MODKEY|ControlMask,           XK_b,      spawn,          {.v = qutebro } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = suslock } },
 	{ MODKEY|ControlMask,           XK_space,  togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
