@@ -88,6 +88,8 @@ static const char *fmgui[]      = { "pcmanfm", NULL };
 static const char *fmtui[]      = { "xfce4-terminal", "-e", "ranger", NULL };
 static const char *mutecmd[]    = { "pactl", "set-sink-mute", "1", "toggle", NULL };
 static const char *suslock[]    = { "bash", "susLocker.sh", NULL };
+static const char *displaysel[] = { "bash", "dwmDisplay", NULL };
+static const char *emojis[]     = { "bash", "emoji-select", NULL };
 static const char *nextcmd[]    = { "playerctl", "next", NULL };
 static const char *playcmd[]    = { "playerctl", "play-pause", NULL };
 static const char *prevcmd[]    = { "playerctl", "previous", NULL };
@@ -100,6 +102,8 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = clipmenu } },
+	{ MODKEY|ControlMask,           XK_d,      spawn,          {.v = displaysel } },
+	{ MODKEY|Mod1Mask,              XK_e,      spawn,          {.v = emojis } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ Mod1Mask|ControlMask,         XK_t,      spawn,          {.v = xfce4term } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = fmgui } },
