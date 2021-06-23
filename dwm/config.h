@@ -47,7 +47,7 @@ static const Rule rules[] = {
 	{ "Pcmanfm",            NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Virt-manager",       NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Spotify",            NULL,       NULL,       1 << 4,       0,           -1 },
-	{ "Brave-browser",      NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "Vivaldi-stable",     NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "qutebrowser",        NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "Zathura",            NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "libreoffice-writer", NULL,       NULL,       1 << 7,       0,           -1 },
@@ -82,9 +82,10 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *clipmenu[]   = { "clipmenu", NULL };
 static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *firefox[]    = { "firefox", NULL };
-static const char *bravein[]    = { "brave", "--incognito", NULL };
+static const char *vivaldi[]    = { "vivaldi-stable", "--incognito", NULL };
 static const char *qutebro[]    = { "qutebrowser", NULL };
 static const char *fmgui[]      = { "pcmanfm", NULL };
+static const char *flameshot[]  = { "flameshot", "gui", NULL };
 static const char *fmtui[]      = { "xfce4-terminal", "-e", "ranger", NULL };
 static const char *mutecmd[]    = { "pactl", "set-sink-mute", "1", "toggle", NULL };
 static const char *suslock[]    = { "bash", "susLocker.sh", NULL };
@@ -107,9 +108,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ Mod1Mask|ControlMask,         XK_t,      spawn,          {.v = xfce4term } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = fmgui } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = flameshot } },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = fmtui } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = firefox } },
-	{ MODKEY|ShiftMask|ControlMask, XK_b,      spawn,          {.v = bravein } },
+	{ MODKEY|ShiftMask|ControlMask, XK_b,      spawn,          {.v = vivaldi } },
 	{ MODKEY|ControlMask,           XK_b,      spawn,          {.v = qutebro } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = suslock } },
 	{ MODKEY|ControlMask,           XK_space,  togglebar,      {0} },
