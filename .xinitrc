@@ -44,4 +44,4 @@ fi
 [ -f ~/.xprofile ] && source ~/.xprofile
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-exec i3
+exec dwm
