@@ -44,7 +44,7 @@ static const Rule rules[] = {
     /* Open apps on tags*/
 	{ "firefox",            NULL,       NULL,       1 << 0,       0,           -1 },
 	{ "Alacritty",          NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Pcmanfm",            NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "Thunar",            NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Virt-manager",       NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Spotify",            NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "Vivaldi-stable",     NULL,       NULL,       1 << 5,       0,           -1 },
@@ -84,7 +84,7 @@ static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufon
 static const char *firefox[]    = { "firefox", NULL };
 static const char *vivaldi[]    = { "vivaldi-stable", "--incognito", NULL };
 static const char *qutebro[]    = { "qutebrowser", NULL };
-static const char *fmgui[]      = { "pcmanfm", NULL };
+static const char *fmgui[]      = { "thunar", NULL };
 static const char *flameshot[]  = { "flameshot", "gui", NULL };
 static const char *fmtui[]      = { "xfce4-terminal", "-e", "ranger", NULL };
 static const char *mutecmd[]    = { "pactl", "set-sink-mute", "1", "toggle", NULL };
