@@ -31,27 +31,29 @@ static const Rule rules[] = {
 	/* class                instance    title       tags mask     isfloating   monitor */
 	
     /* Floating apps */
-    { "Galculator",         NULL,       NULL,       0,            1,           -1 },
-    { "Gimp",               NULL,       NULL,       0,            1,           -1 },
-    { "Gpick",              NULL,       NULL,       0,            1,           -1 },
-    { "Lxappearance",       NULL,       NULL,       0,            1,           -1 },
-    { "Org.gnome.DejaDup",  NULL,       NULL,       0,            1,           -1 },
-    { "Pavucontrol",        NULL,       NULL,       0,            1,           -1 },
-    { "Ristretto",          NULL,       NULL,       0,            1,           -1 },
-    { "Timeshift",          NULL,       NULL,       0,            1,           -1 },
-	{ "Xfce4-terminal",     NULL,       NULL,       0,            1,           -1 },
+    { "Galculator",             NULL,       NULL,       0,            1,           -1 },
+    { "Gimp",                   NULL,       NULL,       0,            1,           -1 },
+    { "Gpick",                  NULL,       NULL,       0,            1,           -1 },
+    { "Lxappearance",           NULL,       NULL,       0,            1,           -1 },
+    { "Org.gnome.DejaDup",      NULL,       NULL,       0,            1,           -1 },
+    { "Pavucontrol",            NULL,       NULL,       0,            1,           -1 },
+    { "Ristretto",              NULL,       NULL,       0,            1,           -1 },
+    { "Timeshift",              NULL,       NULL,       0,            1,           -1 },
+    { "SimpleScreenRecorder",   NULL,       NULL,       0,            1,           -1 },
+	{ "Xfce4-terminal",         NULL,       NULL,       0,            1,           -1 },
     
     /* Open apps on tags*/
-	{ "firefox",            NULL,       NULL,       1 << 0,       0,           -1 },
-	{ "Alacritty",          NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Thunar",            NULL,       NULL,       1 << 2,       0,           -1 },
-	{ "Virt-manager",       NULL,       NULL,       1 << 3,       0,           -1 },
-	{ "Spotify",            NULL,       NULL,       1 << 4,       0,           -1 },
-	{ "Vivaldi-stable",     NULL,       NULL,       1 << 5,       0,           -1 },
-	{ "qutebrowser",        NULL,       NULL,       1 << 5,       0,           -1 },
-	{ "Zathura",            NULL,       NULL,       1 << 6,       0,           -1 },
-	{ "libreoffice-writer", NULL,       NULL,       1 << 7,       0,           -1 },
-	{ "libreoffice-calc",   NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "firefox",                NULL,       NULL,       1 << 0,       0,           -1 },
+	{ "Alacritty",              NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "Thunar",                 NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "SimpleScreenRecorder",   NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "Virt-manager",           NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "Spotify",                NULL,       NULL,       1 << 4,       0,           -1 },
+	{ "Vivaldi-stable",         NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "qutebrowser",            NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "Zathura",                NULL,       NULL,       1 << 6,       0,           -1 },
+	{ "libreoffice-writer",     NULL,       NULL,       1 << 7,       0,           -1 },
+	{ "libreoffice-calc",       NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
