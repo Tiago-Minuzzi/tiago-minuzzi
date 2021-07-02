@@ -236,15 +236,15 @@ exec --no-startup-id parcellite
 #exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
 # Windows to workspaces
 for_window [class="firefox"] move to workspace $ws1
-for_window [class="Pcmanfm"] move to workspace $ws3
+for_window [class="Thunar"] move to workspace $ws3
 for_window [class="Alacritty"] move to workspace $ws2
 for_window [class="Virt-manager"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
-for_window [class="Brave-browser"] move to workspace $ws6
+for_window [class="Vivaldi-stable"] move to workspace $ws6
 for_window [class="qutebrowser"] move to workspace $ws6
 for_window [class="Zathura"] move to workspace $ws7
 for_window [class="Com.github.johnfactotum.Foliate"] move to workspace $ws7
-for_window [class="Leafpad"] move to workspace $ws8
+for_window [class="Mousepad"] move to workspace $ws8
 for_window [class="aliview-AliView"] move to workspace $ws8
 for_window [class="libreoffice-writer"] move to workspace $ws9
 for_window [class="libreoffice-calc"] move to workspace $ws10
@@ -271,11 +271,11 @@ bindsym $mod+Shift+h exec --no-startup-id xfce4-terminal -e htop
 bindsym $mod+Shift+z exec --no-startup-id i3lock -c 000000 && xset dpms force off
 bindsym $mod+b exec --no-startup-id firefox
 #bindsym $mod+c exec --no-startup-id gnome-calendar
-bindsym $mod+n exec --no-startup-id pcmanfm
+bindsym $mod+n exec --no-startup-id thunar
 bindsym $mod+t exec --no-startup-id org.telegram.desktop
 bindsym Ctrl+Mod1+t exec --no-startup-id xfce4-terminal
 bindsym Ctrl+$mod+b exec --no-startup-id qutebrowser
-bindsym Ctrl+$mod+Shift+b exec --no-startup-id brave --incognito
+bindsym Ctrl+$mod+Shift+b exec --no-startup-id vivaldi-stable --incognito
 bindsym $mod+Shift+p exec --no-startup-id flameshot full -p $HOME
 bindsym $mod+p exec --no-startup-id flameshot gui
 bindsym $mod+Mod1+e exec --no-startup-id bash emoji-select
