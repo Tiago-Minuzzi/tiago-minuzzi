@@ -1,11 +1,13 @@
 xrandr --output HDMI1 --mode 1920x1080 --left-of eDP --output eDP --off &
 picom --config /home/tiago/.config/picom/picom.conf &
 ~/.fehbg &
+redshift &
 caffeine &
 unclutter &
 lxsession &
-redshift &
+greenclip daemon &
 setxkbmap -layout us -variant intl &
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
@@ -43,5 +45,12 @@ fi
 [ -f /etc/xprofile ] && source /etc/xprofile
 [ -f ~/.xprofile ] && source ~/.xprofile
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+
+while true; do
+    # Log stderror to a file
+    #dwm 2> ~/.dwm.log
+    # No error logging
+    dwm >/dev/null 2>&1
+done
 
 exec dwm
