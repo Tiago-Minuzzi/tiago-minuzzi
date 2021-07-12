@@ -3,6 +3,10 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tiago/.oh-my-zsh"
+# Get color support for 'less'
+export LESS="--RAW-CONTROL-CHARS"
+# Use colors for less, man, etc.
+[ -f ~/.LESS_TERMCAP ] && . ~/.LESS_TERMCAP
 
 # Set name of the theme to load --- if set to "random", it will
 ZSH_THEME="gnzh"
@@ -23,23 +27,34 @@ RPROMPT="%T"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ## Aliases
+alias bpy="bpytop"
 alias catfas="perl $HOME/sftw/catfasta2phyml/catfasta2phyml.pl -c -f"
 alias cfas="grep -c '>'"
+alias clo="$HOME/sftw/clustalo-1.2.4"
+alias desmon="udisksctl unmount -b"
+alias fproc="ps axf | grep -i"
+alias fpup="flatpak update -y"
+alias jl="jupyter-lab"
+alias kw="xset s noblank; xset s off; xset -dpms"
+alias limpar_restos="sudo pacman -Rns $(pacman -Qdtq)"
+alias lsd="lsblk"
 alias macse2="java -jar $HOME/sftw/macse/macse_v2.05.jar"
+alias mon="udisksctl mount -b"
 alias nfet="clear && neofetch"
 alias open="xdg-open"
-alias restos="pacman -Qdtq"
 alias ord="sort | uniq -c | sed 's/[ \t]*//;s/ /\t/'"
-alias clo="$HOME/sftw/clustalo-1.2.4"
-alias limpar_restos="sudo pacman -Rns $(pacman -Qdtq)"
-alias fproc="ps axf | grep -i"
-alias rg="ranger"
-alias fpup="flatpak update -y"
 alias pmf="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
-alias mon="udisksctl mount -b"
-alias desmon="udisksctl unmount -b"
+alias previsao="clear && curl http://wttr.in"
+alias restos="pacman -Qdtq"
+alias rg="ranger"
+alias sx="startx"
 alias tempo="curl 'wttr.in?format=3'"
-alias previsao="curl http://wttr.in"
 ## Paths
 export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:$HOME/sftw/ncbi-blast-2.11.0+/bin/"
+
+PATH="/home/tiago/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/tiago/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/tiago/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/tiago/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/tiago/perl5"; export PERL_MM_OPT;
