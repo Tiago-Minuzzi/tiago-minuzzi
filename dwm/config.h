@@ -99,6 +99,7 @@ static const char *voldowncmd[] = { "pactl", "set-sink-volume", "1", "-5%", NULL
 static const char *volupcmd[]   = { "pactl", "set-sink-volume", "1", "+5%", NULL };
 static const char *termcmd[]    = { "alacritty", NULL };
 static const char *xfce4term[]  = { "xfce4-terminal", NULL };
+static const char *xkill[]      = { "xkill", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -150,6 +151,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
 	{ MODKEY|ControlMask,           XK_e,      spawn,          {.v = logout } },
+	{ MODKEY|ShiftMask|ControlMask, XK_k,      spawn,          {.v = xkill } },
     { 0,                            XF86XK_AudioPlay, spawn, {.v = playcmd } },
     { 0,                            XF86XK_AudioPrev, spawn, {.v = prevcmd } },
     { 0,                            XF86XK_AudioNext, spawn, {.v = nextcmd } },
