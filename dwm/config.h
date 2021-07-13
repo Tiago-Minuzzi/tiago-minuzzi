@@ -32,7 +32,6 @@ static const Rule rules[] = {
 	
     /* Floating apps */
     { "Galculator",             NULL,       NULL,       0,            1,           -1 },
-    { "Gimp",                   NULL,       NULL,       0,            1,           -1 },
     { "Gpick",                  NULL,       NULL,       0,            1,           -1 },
     { "Lxappearance",           NULL,       NULL,       0,            1,           -1 },
     { "Org.gnome.DejaDup",      NULL,       NULL,       0,            1,           -1 },
