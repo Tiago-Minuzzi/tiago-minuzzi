@@ -150,7 +150,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
-	{ MODKEY|ControlMask,           XK_e,      spawn,          {.v = logout } },
+	{ MODKEY|ShiftMask|ControlMask, XK_e,      spawn,          {.v = logout } },
 	{ MODKEY|ShiftMask|ControlMask, XK_k,      spawn,          {.v = xkill } },
     { 0,                            XF86XK_AudioPlay, spawn, {.v = playcmd } },
     { 0,                            XF86XK_AudioPrev, spawn, {.v = prevcmd } },
