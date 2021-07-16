@@ -37,7 +37,7 @@ alias fpup="flatpak update -y"
 alias ipy="ipython"
 alias jl="jupyter-lab"
 alias kw="xset s noblank; xset s off; xset -dpms"
-alias limpar_restos="sudo pacman -Rns $(pacman -Qdtq)"
+alias limpar_restos="sudo pacman -R $(pacman -Qdtq)"
 alias lsd="lsblk"
 alias macse2="java -jar $HOME/sftw/macse/macse_v2.05.jar"
 alias mon="udisksctl mount -b"
@@ -55,9 +55,6 @@ alias tempo="curl 'wttr.in?format=3'"
 ## Paths
 export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:$HOME/sftw/ncbi-blast-2.11.0+/bin/"
-
-PATH="/home/tiago/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/tiago/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/tiago/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/tiago/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/tiago/perl5"; export PERL_MM_OPT;
+# Pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
