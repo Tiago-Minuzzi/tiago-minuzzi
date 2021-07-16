@@ -17,7 +17,7 @@ font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Noto Sans Bold 9
+#font pango:Noto Sans Bold 9
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -201,6 +201,7 @@ client.background       #FFFFFF
 # finds out, if available)
 bar {
         status_command i3status
+        font pango:Noto Sans Mono Bold 9
         modifier none # dont show bar when pressing mod key and in hidden state
         #strip_workspace_numbers yes
         #i3bar_command i3bar --transparency
