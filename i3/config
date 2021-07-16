@@ -51,8 +51,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id dmenu_run
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 #bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -display-drun ''
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -190,7 +190,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 # i3 colors
 # class                 border  bground text    indicator
-client.focused          #4C7899 #279881 #FFFFFF #2E9EF4
+client.focused          #4C7899 #4877b1 #FFFFFF #2E9EF4
 client.focused_inactive #333333 #5F676A #FFFFFF #484E50
 client.unfocused        #333333 #222222 #888888 #292D2E
 client.urgent           #2F343A #900000 #FFFFFF #900000
@@ -207,11 +207,11 @@ bar {
         position bottom
         tray_output primary
         colors {
-                background #212121
+                background #171a1f
                 statusline #FFFFFF
                 separator  #666666
 
-                focused_workspace  #4C7899 #279881 #FFFFFF
+                focused_workspace  #4C7899 #4877b1 #FFFFFF
                 active_workspace   #333333 #222222 #FFFFFF
                 inactive_workspace #333333 #222222 #888888
                 urgent_workspace   #2F343A #900000 #FFFFFF
@@ -228,7 +228,7 @@ smart_borders on
 # Apps
 #exec --no-startup-id unclutter
 #exec --no-startup-id caffeine
-exec --no-startup-id parcellite
+#exec --no-startup-id parcellite
 #exec_always --no-startup-id setxkbmap -layout us -variant intl
 #exec --no-startup-id ~/.fehbg
 #exec --no-startup-id lxsession
@@ -249,38 +249,33 @@ for_window [class="aliview-AliView"] move to workspace $ws8
 for_window [class="libreoffice-writer"] move to workspace $ws9
 for_window [class="libreoffice-calc"] move to workspace $ws10
 # Floating windows
-for_window [class="Lxappearance"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="Blanket"] floating enable
 for_window [class="Caffeine"] floating enable # caffeine preferences
+for_window [class="Mate-calculator"] floating enable
 for_window [class="Gpick"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Org.gnome.DejaDup"] floating enable
+for_window [class="Pavucontrol"] floating enable
 for_window [class="Ristretto"] floating enable
-for_window [class="Galculator"] floating enable
-#for_window [class="Gnome-calendar"] floating enable
-for_window [class="Xfce4-terminal"] floating enable
-#for_window [class="Org.gnome.Weather"] floating enable
-#for_window [class="Alacritty"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 for_window [class="TelegramDesktop"] floating enable
-for_window [class="Org.gnome.DejaDup"] floating enable
-#for_window [class="Virt-manager"] floating enable
+for_window [class="Xfce4-terminal"] floating enable
 # Keybindgs
-bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
-bindsym $mod+Shift+n exec --no-startup-id xfce4-terminal -e ranger
-bindsym $mod+Shift+h exec --no-startup-id xfce4-terminal -e htop
-bindsym $mod+Shift+z exec --no-startup-id i3lock -c 000000 && xset dpms force off
-bindsym $mod+b exec --no-startup-id firefox
-#bindsym $mod+c exec --no-startup-id gnome-calendar
-bindsym $mod+n exec --no-startup-id thunar
-bindsym $mod+t exec --no-startup-id org.telegram.desktop
-bindsym Ctrl+Mod1+t exec --no-startup-id xfce4-terminal
-bindsym Ctrl+$mod+b exec --no-startup-id qutebrowser
-bindsym Ctrl+$mod+Shift+b exec --no-startup-id vivaldi-stable --incognito
-bindsym $mod+Shift+p exec --no-startup-id flameshot full -p $HOME
-bindsym $mod+p exec --no-startup-id flameshot gui
 bindsym $mod+Mod1+e exec --no-startup-id bash emoji-select
 bindsym $mod+Shift+a exec --no-startup-id pavucontrol
+bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
+bindsym $mod+Shift+d exec --no-startup-id bash copyToClip
+bindsym $mod+Shift+h exec --no-startup-id xfce4-terminal -e htop
+bindsym $mod+Shift+n exec --no-startup-id xfce4-terminal -e ranger
+bindsym $mod+Shift+p exec --no-startup-id flameshot full -p $HOME
+bindsym $mod+Shift+z exec --no-startup-id i3lock -c 000000 && xset dpms force off
+bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+n exec --no-startup-id thunar
+bindsym $mod+p exec --no-startup-id flameshot gui
+bindsym $mod+t exec --no-startup-id org.telegram.desktop
+bindsym Ctrl+$mod+Shift+b exec --no-startup-id vivaldi-stable --incognito
+bindsym Ctrl+$mod+b exec --no-startup-id qutebrowser
 bindsym Ctrl+$mod+d exec --no-startup-id bash displaySelect
+bindsym Ctrl+Mod1+t exec --no-startup-id xfce4-terminal
 # Workspace prev/next
 bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Tab workspace next
