@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+# Open tmux by default on shell
+#[ $TERM != "screen" ] && exec tmux
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tiago/.oh-my-zsh"
 # Get color support for 'less'
@@ -8,6 +9,8 @@ export LESS="--RAW-CONTROL-CHARS"
 # Use colors for less, man, etc.
 [ -f ~/.LESS_TERMCAP ] && . ~/.LESS_TERMCAP
 
+# Pywal colors
+cat ~/.cache/wal/sequences
 # Set name of the theme to load --- if set to "random", it will
 ZSH_THEME="gnzh"
 
@@ -32,11 +35,13 @@ alias catfas="perl $HOME/sftw/catfasta2phyml/catfasta2phyml.pl -c -f"
 alias cfas="grep -c '>'"
 alias clo="$HOME/sftw/clustalo-1.2.4"
 alias desmon="udisksctl unmount -b"
+alias fbg="feh --bg-fill"
 alias fproc="ps axf | grep -i"
 alias fpup="flatpak update -y"
 alias ipy="ipython"
 alias jl="jupyter-lab"
-alias kw="xset s noblank; xset s off; xset -dpms"
+alias xsf="xset s 0 0; xset -dpms; xset s noexpose; xset s noblank"
+alias xsq="xset q"
 alias limpar_restos="sudo pacman -R $(pacman -Qdtq)"
 alias lsd="lsblk"
 alias macse2="java -jar $HOME/sftw/macse/macse_v2.05.jar"
@@ -52,9 +57,13 @@ alias setus="setxkbmap -layout us -variant intl"
 alias setbr="setxkbmap -layout br -variant abnt2"
 alias sx="startx"
 alias tempo="curl 'wttr.in?format=3'"
+alias tx="tmux"
+alias txa="tmux attach-session -t"
+alias txl="tmux list-sessions"
 ## Paths
 export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:$HOME/sftw/ncbi-blast-2.11.0+/bin/"
 # Pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
+
