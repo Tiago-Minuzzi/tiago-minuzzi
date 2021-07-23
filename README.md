@@ -1,5 +1,5 @@
 # Who am I
-Hello, my name is Tiago Minuzzi, I'm a PhD student in genetics and molecular biology, focusing on bioionformatics. I'm also a linux and FOSS enthusiast.
+Hello, my name is Tiago Minuzzi, I'm a PhD student in genetics and molecular biology, focusing on bioinformatics and transposable elements. I'm also a linux and FOSS enthusiast.
 
 # Repositories
 ## Personal (tiago-minuzzi)
