@@ -1,3 +1,4 @@
+#xrandr --output HDMI1 --off --left-of eDP --output eDP --primary --mode 1366x768 &
 xrandr --output HDMI1 --mode 1920x1080 --left-of eDP --output eDP --off &
 picom --config /home/tiago/.config/picom/picom.conf &
 ~/.fehbg &
@@ -46,11 +47,4 @@ fi
 [ -f ~/.xprofile ] && source ~/.xprofile
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-while true; do
-    # Log stderror to a file
-    #dwm 2> ~/.dwm.log
-    # No error logging
-    dwm >/dev/null 2>&1
-done
-
-exec dwm
+exec dwmLoop

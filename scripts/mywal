@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Wallpaper from stdin
+PICTURE=$1
+# Set directories
+CACHE=$HOME/.cache/wal/colors-wal-dwm.h
+RDWM=$HOME/repos/tiago-minuzzi/dwm
+RDMENU=$HOME/repos/tiago-minuzzi/dmenu
+# Set wallpaper
+wal -i "$PICTURE" &&\
+# Remove Urg from pywal generated header file
+sed -i '/SchemeUrg/d;/urg_/d' "$CACHE" &&\
+# recompile dwm and dmenu
+cd "$RDWM" && sudo make clean install &&\
+cd "$RDMENU" && sudo make clean install &&\
+# Reload dwm
+cd && killall dwm
