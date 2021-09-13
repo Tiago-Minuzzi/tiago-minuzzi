@@ -37,21 +37,20 @@ static const Rule rules[] = {
     { "Lxappearance",           NULL,       NULL,       0,            1,           -1 },
     { "Org.gnome.DejaDup",      NULL,       NULL,       0,            1,           -1 },
     { "Pavucontrol",            NULL,       NULL,       0,            1,           -1 },
-    { "Ristretto",              NULL,       NULL,       0,            1,           -1 },
+    { "Eog",                    NULL,       NULL,       0,            1,           -1 },
     { "Timeshift",              NULL,       NULL,       0,            1,           -1 },
     { "SimpleScreenRecorder",   NULL,       NULL,       0,            1,           -1 },
-	{ "Xfce4-terminal",         NULL,       NULL,       0,            1,           -1 },
+	{ "Gnome-terminal",         NULL,       NULL,       0,            1,           -1 },
     
     /* Open apps on tags*/
 	{ "firefox",                NULL,       NULL,       1 << 0,       0,           -1 },
 	{ "Alacritty",              NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Thunar",                 NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "Nautilus",               NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "SimpleScreenRecorder",   NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Virt-manager",           NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Spotify",                NULL,       NULL,       1 << 4,       0,           -1 },
-	{ "Vivaldi-stable",         NULL,       NULL,       1 << 5,       0,           -1 },
-	{ "qutebrowser",            NULL,       NULL,       1 << 5,       0,           -1 },
-	{ "Zathura",                NULL,       NULL,       1 << 6,       0,           -1 },
+	{ "Epiphany",                NULL,       NULL,       1 << 4,       0,           -1 },
+	{ "Evince",                 NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "libreoffice-writer",     NULL,       NULL,       1 << 7,       0,           -1 },
 	{ "libreoffice-calc",       NULL,       NULL,       1 << 8,       0,           -1 },
 };
@@ -84,11 +83,11 @@ static const char *logout[]     = { "killall", "xinit", NULL };
 static const char *clipmenu[]   = { "bash", "copyToClip", NULL };
 static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *firefox[]    = { "firefox", NULL };
-static const char *vivaldi[]    = { "vivaldi-stable", "--incognito", NULL };
-static const char *qutebro[]    = { "qutebrowser", NULL };
-static const char *fmgui[]      = { "thunar", NULL };
+static const char *vivaldi[]    = { "firefox", "--private-window", NULL };
+static const char *qutebro[]    = { "epiphany", NULL };
+static const char *fmgui[]      = { "nautilus", NULL };
 static const char *flameshot[]  = { "flameshot", "gui", NULL };
-static const char *fmtui[]      = { "xfce4-terminal", "-e", "ranger", NULL };
+static const char *fmtui[]      = { "gnome-terminal", "-e", "ranger", NULL };
 static const char *mutecmd[]    = { "pactl", "set-sink-mute", "1", "toggle", NULL };
 static const char *suslock[]    = { "bash", "susLocker.sh", NULL };
 static const char *displaysel[] = { "bash", "dwmDisplay", NULL };
@@ -99,7 +98,7 @@ static const char *prevcmd[]    = { "playerctl", "previous", NULL };
 static const char *voldowncmd[] = { "pactl", "set-sink-volume", "1", "-5%", NULL };
 static const char *volupcmd[]   = { "pactl", "set-sink-volume", "1", "+5%", NULL };
 static const char *termcmd[]    = { "alacritty", NULL };
-static const char *xfce4term[]  = { "xfce4-terminal", NULL };
+static const char *xfce4term[]  = { "gnome-terminal", NULL };
 static const char *xkill[]      = { "xkill", NULL };
 
 static Key keys[] = {
