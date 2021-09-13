@@ -80,7 +80,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *logout[]     = { "killall", "xinit", NULL };
-static const char *clipmenu[]   = { "bash", "copyToClip", NULL };
+static const char *clipmenu[]   = { "bash", ".local/bin/copyToClip", NULL };
 static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *firefox[]    = { "firefox", NULL };
 static const char *vivaldi[]    = { "firefox", "--private-window", NULL };
@@ -90,7 +90,7 @@ static const char *flameshot[]  = { "flameshot", "gui", NULL };
 static const char *fmtui[]      = { "gnome-terminal", "-e", "ranger", NULL };
 static const char *mutecmd[]    = { "pactl", "set-sink-mute", "1", "toggle", NULL };
 static const char *suslock[]    = { "bash", "susLocker.sh", NULL };
-static const char *displaysel[] = { "bash", "dwmDisplay", NULL };
+static const char *displaysel[] = { "bash", ".local/bin/dwmDisplay", NULL };
 static const char *emojis[]     = { "bash", "emoji-select", NULL };
 static const char *nextcmd[]    = { "playerctl", "next", NULL };
 static const char *playcmd[]    = { "playerctl", "play-pause", NULL };
