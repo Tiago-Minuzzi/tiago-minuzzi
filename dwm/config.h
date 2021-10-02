@@ -32,7 +32,7 @@ static const Rule rules[] = {
 	/* class                instance    title       tags mask     isfloating   monitor */
 	
     /* Floating apps */
-    { "Galculator",             NULL,       NULL,       0,            1,           -1 },
+    { "Gnome-calculator",       NULL,       NULL,       0,            1,           -1 },
     { "Gpick",                  NULL,       NULL,       0,            1,           -1 },
     { "Lxappearance",           NULL,       NULL,       0,            1,           -1 },
     { "Org.gnome.DejaDup",      NULL,       NULL,       0,            1,           -1 },
@@ -49,7 +49,7 @@ static const Rule rules[] = {
 	{ "SimpleScreenRecorder",   NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Virt-manager",           NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Spotify",                NULL,       NULL,       1 << 4,       0,           -1 },
-	{ "Epiphany",                NULL,       NULL,       1 << 4,       0,           -1 },
+	{ "Epiphany",               NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "Evince",                 NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "libreoffice-writer",     NULL,       NULL,       1 << 7,       0,           -1 },
 	{ "libreoffice-calc",       NULL,       NULL,       1 << 8,       0,           -1 },
