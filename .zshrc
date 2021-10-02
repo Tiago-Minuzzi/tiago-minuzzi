@@ -1,5 +1,11 @@
+# Show git branch
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+zstyle ':vcs_info:git:*' formats ' [ %b ]'
 # Set up the prompt
-PROMPT="%F{blue}%n%f%F{cyan}@%f%F{magenta}%m%f %F{cyan}%~%f$ "
+setopt prompt_subst
+PROMPT="%F{blue}%n%f%F{cyan}@%f%F{magenta}%m%f %F{cyan}%~%f\${vcs_info_msg_0_}$ "
 RPROMPT="%T"
 #autoload -Uz promptinit
 #promptinit
