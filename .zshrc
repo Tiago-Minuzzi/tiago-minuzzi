@@ -5,6 +5,13 @@ precmd_functions+=( precmd_vcs_info )
 zstyle ':vcs_info:git:*' formats ' %F{green}[ %b%u ]%f'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '*'
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
++vi-git-untracked() {
+  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+  [[ $(git ls-files --other --directory --exclude-standard | sed q | wc -l | tr -d ' ') == 1 ]] ; then
+  hook_com[unstaged]+='?'
+fi
+}
 # Set up the prompt
 setopt prompt_subst
 PROMPT="%F{blue}%n%f%F{cyan}@%f%F{magenta}%m%f %F{cyan}%~%f\${vcs_info_msg_0_}$ "
@@ -90,3 +97,19 @@ alias xsq="xset q"
 alias dsc="dnf search -C"
 alias mkache="sudo dnf makecache"
 alias upd="sudo dnf check-update"
+alias upg="sudo dnf upgrade -y"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/tiago/sftw/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/tiago/sftw/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/tiago/sftw/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/tiago/sftw/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
