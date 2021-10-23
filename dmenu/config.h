@@ -7,14 +7,14 @@ static const char *fonts[] = {
     "Noto Sans Mono:style=Bold:size=11"	
 };
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
-#include "/home/tiago/.cache/wal/colors-wal-dmenu.h"
-//static const char *colors[SchemeLast][2] = {
-	/*     fg         bg       */
-//	[SchemeNorm] = { "#bbbbbb", "#212121" },
-//	[SchemeSel] = { "#eeeeee", "#4877b1" },
-//	[SchemeOut] = { "#000000", "#00ffff" },
-//};
-/* -l option; if nonzero, dmenu uses vertical list with given number of lines */
+//#include "/home/tiago/.cache/wal/colors-wal-dmenu.h"
+static const char *colors[SchemeLast][2] = {
+  /*     fg         bg       */
+	[SchemeNorm] = { "#bbbbbb", "#212121" },
+	[SchemeSel] = { "#eeeeee", "#4877b1" },
+	[SchemeOut] = { "#000000", "#00ffff" },
+};
+// -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
 
 /*
