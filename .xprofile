@@ -1,0 +1,4 @@
+lxsession &
+bash .local/bin/weather.sh &
+redshift -l -29.7766:-53.8354 &
+caffeine &
