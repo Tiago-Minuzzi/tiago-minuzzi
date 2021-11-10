@@ -1,0 +1,4 @@
+DATA_CUST=$(date +"%a, %d/%m | %H:%M")
+BAT_INFO=$(cat /sys/class/power_supply/BAT0/capacity)
+
+echo "Battery: $BAT_INFO%" '|' "$DATA_CUST"
