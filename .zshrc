@@ -2,14 +2,15 @@
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
-zstyle ':vcs_info:git:*' formats ' %F{green}[ %b%u ]%f'
+zstyle ':vcs_info:git:*' formats ' %F{green}[ %b%u%c ]%f'
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr '*'
+zstyle ':vcs_info:*' unstagedstr '%F{magenta}*%F{green}'
+zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 +vi-git-untracked() {
   if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
   [[ $(git ls-files --other --directory --exclude-standard | sed q | wc -l | tr -d ' ') == 1 ]] ; then
-  hook_com[unstaged]+='?'
+  hook_com[unstaged]+='%F{red}?%F{green}'
 fi
 }
 # Set up the prompt
@@ -89,6 +90,7 @@ alias txa="tmux attach-session -t"
 alias txl="tmux list-sessions"
 alias xsf="xset s 0 0; xset -dpms; xset s noexpose; xset s noblank"
 alias xsq="xset q"
+alias v="vim"
 ## Arch aliases
 #alias limpar_restos="sudo pacman -R $(pacman -Qdtq)"
 #alias pmf="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
@@ -99,6 +101,8 @@ alias mkache="sudo dnf makecache"
 alias upd="sudo dnf check-update"
 alias upg="sudo dnf upgrade -y"
 
+export PATH="/home/tiago/.local/bin:$PATH"
+export PATH="/home/tiago/sftw/blast-2.12/bin:$PATH"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/tiago/sftw/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -113,3 +117,10 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+# Autostart conda env
+#conda activate bioinfo
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init - --no-rehash zsh)"
+eval "$(pyenv virtualenv-init - zsh)"
