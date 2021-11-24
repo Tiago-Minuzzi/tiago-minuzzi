@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Needs alsa-utils package
+amixer get Master | awk '/ Left:/ { if ($6=="[on]") { gsub(/\[|\]/,""); print $5 } else if ($6=="[off]") { print "mute" } }'
+
