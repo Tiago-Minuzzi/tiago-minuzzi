@@ -5,7 +5,7 @@ precmd_functions+=( precmd_vcs_info )
 zstyle ':vcs_info:git:*' formats ' %F{green}[ %b%u%c ]%f'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '%F{magenta}*%F{green}'
-zstyle ':vcs_info:*' stagedstr '+'
+zstyle ':vcs_info:*' stagedstr '%F{yellow}+%F{green}'
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 +vi-git-untracked() {
   if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
