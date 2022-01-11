@@ -147,14 +147,6 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# Multi-monitor bindings
-## focus monitor
-bindsym $mod+greater focus output left
-bindsym $mod+less focus output right
-## move to monitor
-bindsym $mod+Shift+greater move container to output left
-bindsym $mod+Shift+less move container to output right
-
 # reload the configuration file
 #bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -188,6 +180,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
 # i3 colors
 # class                 border  bground text    indicator
 client.focused          #4C7899 #4877b1 #FFFFFF #2E9EF4
@@ -195,13 +188,13 @@ client.focused_inactive #333333 #5F676A #FFFFFF #484E50
 client.unfocused        #333333 #222222 #888888 #292D2E
 client.urgent           #2F343A #900000 #FFFFFF #900000
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000
-
 client.background       #FFFFFF
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
-        font pango:Noto Sans Mono Bold 9
+        font pango:Noto Sans Mono Bold 9;Font Awesome 5 Free Solid 9
         modifier none # dont show bar when pressing mod key and in hidden state
         #strip_workspace_numbers yes
         #i3bar_command i3bar --transparency
@@ -219,76 +212,83 @@ bar {
                 binding_mode       #2F343A #900000 #FFFFFF
                }
     }
+
+# Apps
+exec --no-startup-id unclutter
+exec --no-startup-id caffeine
+exec_always --no-startup-id setxkbmap -layout us -variant intl
+exec --no-startup-id ~/.fehbg
+exec --no-startup-id lxsession
+exec --no-startup-id redshift
+#exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
+
 # Windows
 for_window [class=".*"] border pixel 2
 focus_follows_mouse no
+smart_borders on
 #gaps inner 5
 #gaps outer 1
 #smart_gaps on
-smart_borders on
-# Apps
-#exec --no-startup-id unclutter
-#exec --no-startup-id caffeine
-#exec --no-startup-id parcellite
-#exec_always --no-startup-id setxkbmap -layout us -variant intl
-#exec --no-startup-id ~/.fehbg
-#exec --no-startup-id lxsession
-#exec --no-startup-id redshift-gtk
-#exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
-# Windows to workspaces
-for_window [class="firefox"] move to workspace $ws1
-for_window [class="Thunar"] move to workspace $ws3
-for_window [class="Alacritty"] move to workspace $ws2
-for_window [class="Virt-manager"] move to workspace $ws4
-for_window [class="Spotify"] move to workspace $ws5
-for_window [class="Vivaldi-stable"] move to workspace $ws6
-for_window [class="qutebrowser"] move to workspace $ws6
-for_window [class="Zathura"] move to workspace $ws7
-for_window [class="Com.github.johnfactotum.Foliate"] move to workspace $ws7
-for_window [class="Mousepad"] move to workspace $ws8
-for_window [class="aliview-AliView"] move to workspace $ws8
-for_window [class="libreoffice-writer"] move to workspace $ws9
-for_window [class="libreoffice-calc"] move to workspace $ws10
-# Floating windows
+## Floating windows
 for_window [class="Caffeine"] floating enable # caffeine preferences
-for_window [class="Mate-calculator"] floating enable
 for_window [class="Gpick"] floating enable
 for_window [class="Lxappearance"] floating enable
+for_window [class="Mate-calculator"] floating enable
 for_window [class="Org.gnome.DejaDup"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Ristretto"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 for_window [class="TelegramDesktop"] floating enable
 for_window [class="Xfce4-terminal"] floating enable
+for_window [class="konsole"] floating enable
+## Windows to workspaces
+for_window [class="Com.github.johnfactotum.Foliate"] move to workspace $ws7
+for_window [class="Spotify"] move to workspace $ws5
+for_window [class="Thunar"] move to workspace $ws2
+for_window [class="Virt-manager"] move to workspace $ws4
+for_window [class="Zathura"] move to workspace $ws7
+for_window [class="aliview-AliView"] move to workspace $ws8
+for_window [class="firefox"] move to workspace $ws1
+for_window [class="kate"] move to workspace $ws8
+for_window [class="libreoffice-calc"] move to workspace $ws10
+for_window [class="libreoffice-writer"] move to workspace $ws9
+for_window [class="okular"] move to workspace $ws7
+
 # Keybindgs
 bindsym $mod+Mod1+e exec --no-startup-id bash emoji-select
 bindsym $mod+Shift+a exec --no-startup-id pavucontrol
 bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
 bindsym $mod+Shift+d exec --no-startup-id bash copyToClip
-bindsym $mod+Shift+h exec --no-startup-id xfce4-terminal -e htop
-bindsym $mod+Shift+n exec --no-startup-id xfce4-terminal -e ranger
+bindsym $mod+Shift+h exec --no-startup-id alacritty --class htop,Htop -t htop -e htop
+bindsym $mod+Shift+n exec --no-startup-id alacritty --class ranger,ranger -t ranger -e ranger
 bindsym $mod+Shift+p exec --no-startup-id flameshot full -p $HOME
 bindsym $mod+Shift+z exec --no-startup-id i3lock -c 000000 && xset dpms force off
 bindsym $mod+b exec --no-startup-id firefox
-bindsym $mod+n exec --no-startup-id thunar
+bindsym $mod+n exec --no-startup-id thunar || dolphin
 bindsym $mod+p exec --no-startup-id flameshot gui
 bindsym $mod+t exec --no-startup-id org.telegram.desktop
-bindsym Ctrl+$mod+Shift+b exec --no-startup-id vivaldi-stable --incognito
-bindsym Ctrl+$mod+b exec --no-startup-id qutebrowser
 bindsym Ctrl+$mod+d exec --no-startup-id bash displaySelect
-bindsym Ctrl+Mod1+t exec --no-startup-id xfce4-terminal
-# Workspace prev/next
+bindsym Ctrl+Mod1+t exec --no-startup-id xfce4-terminal || konsole
+## Multi-monitor bindings
+### focus monitor
+bindsym $mod+greater focus output left
+bindsym $mod+less focus output right
+### move to monitor
+bindsym $mod+Shift+greater move container to output left
+bindsym $mod+Shift+less move container to output right
+## Workspace prev/next
 bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Tab workspace next
-# Scratchpad
+## Scratchpad
 bindsym $mod+Ctrl+Up move scratchpad
 bindsym $mod+Ctrl+Down scratchpad show
-# Hide/unhide bar
+## Hide/unhide bar
 bindsym $mod+Control+space bar mode toggle
-# Alternate windows in full screen
+## Alternate windows in full screen
 bindsym $mod+Shift+f fullscreen disable, focus right, fullscreen enable
-# Sticky (floating) window
+## Sticky (floating) window
 bindsym $mod+Shift+s sticky toggle
+
 # Lock, logout etc
 set $Locker i3lock --color 000000 && xset dpms force off
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, \
