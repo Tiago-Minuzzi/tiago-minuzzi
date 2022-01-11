@@ -17,8 +17,7 @@ font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:Noto Sans Bold 9
-
+#font pango:JetBrains Mono Medium 9
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -112,16 +111,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: "
-set $ws2 "2: " 
-set $ws3 "3: " 
-set $ws4 "4: "
-set $ws5 "5: "
-set $ws6 "6: 爵"
-set $ws7 "7: 龎"
-set $ws8 "8: "
-set $ws9 "9: "
-set $ws10 "10: "
+set $ws1 "1"
+set $ws2 "2" 
+set $ws3 "3" 
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -193,9 +192,10 @@ client.background       #FFFFFF
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-        font pango:Noto Sans Mono Bold 9;Font Awesome 5 Free Solid 9
+        status_command i3status -c /home/tiago/.config/i3/i3status.conf
+        font pango:Noto Sans Mono Black 9
         modifier none # dont show bar when pressing mod key and in hidden state
+        separator_symbol "|"
         #strip_workspace_numbers yes
         #i3bar_command i3bar --transparency
         position bottom
@@ -214,12 +214,14 @@ bar {
     }
 
 # Apps
-exec --no-startup-id unclutter
 exec --no-startup-id caffeine
-exec_always --no-startup-id setxkbmap -layout us -variant intl
-exec --no-startup-id ~/.fehbg
+exec --no-startup-id greenclip daemon
 exec --no-startup-id lxsession
 exec --no-startup-id redshift
+exec --no-startup-id unclutter
+exec --no-startup-id ~/.fehbg
+exec_always --no-startup-id setxkbmap -layout us -variant intl
+exec_always --no-startup-id xrandr --output HDMI-A-0 --primary --mode 1920x1080 --output eDP --off
 #exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
 
 # Windows
@@ -258,7 +260,7 @@ for_window [class="okular"] move to workspace $ws7
 bindsym $mod+Mod1+e exec --no-startup-id bash emoji-select
 bindsym $mod+Shift+a exec --no-startup-id pavucontrol
 bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
-bindsym $mod+Shift+d exec --no-startup-id bash copyToClip
+bindsym $mod+Shift+d exec --no-startup-id bash $HOME/.local/bin/copyToClip
 bindsym $mod+Shift+h exec --no-startup-id alacritty --class htop,Htop -t htop -e htop
 bindsym $mod+Shift+n exec --no-startup-id alacritty --class ranger,ranger -t ranger -e ranger
 bindsym $mod+Shift+p exec --no-startup-id flameshot full -p $HOME
@@ -267,7 +269,7 @@ bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+n exec --no-startup-id thunar || dolphin
 bindsym $mod+p exec --no-startup-id flameshot gui
 bindsym $mod+t exec --no-startup-id org.telegram.desktop
-bindsym Ctrl+$mod+d exec --no-startup-id bash displaySelect
+bindsym Ctrl+$mod+d exec --no-startup-id bash $HOME/.local/bin/displaySelect
 bindsym Ctrl+Mod1+t exec --no-startup-id xfce4-terminal || konsole
 ## Multi-monitor bindings
 ### focus monitor
