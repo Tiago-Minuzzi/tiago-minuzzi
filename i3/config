@@ -223,7 +223,8 @@ client.background       #FFFFFF
 # finds out, if available)
 bar {
         status_command i3status -c /home/tiago/.config/i3/i3status.conf
-        font pango:Noto Sans Mono Black 9
+        font Font Awesome 5 Free Solid 10
+        font pango:Noto Sans Mono Black 10
         modifier none # dont show bar when pressing mod key and in hidden state
         separator_symbol "|"
         #strip_workspace_numbers yes
@@ -245,6 +246,7 @@ bar {
 
 # Apps
 exec --no-startup-id caffeine
+exec --no-startup-id dunst
 exec --no-startup-id greenclip daemon
 exec --no-startup-id lxsession
 exec --no-startup-id redshift
