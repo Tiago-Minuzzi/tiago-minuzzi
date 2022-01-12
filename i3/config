@@ -291,8 +291,8 @@ bindsym $mod+Mod1+e exec --no-startup-id bash emoji-select
 bindsym $mod+Shift+a exec --no-startup-id pavucontrol
 bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
 bindsym $mod+Shift+d exec --no-startup-id bash $HOME/.local/bin/copyToClip
-bindsym $mod+Shift+h exec --no-startup-id alacritty --class htop,Htop -t htop -e htop
-bindsym $mod+Shift+n exec --no-startup-id alacritty --class ranger,ranger -t ranger -e ranger
+bindsym $mod+Shift+h exec --no-startup-id alacritty --class htop -t htop -e htop
+bindsym $mod+Shift+n exec --no-startup-id alacritty --class ranger -t ranger -e ranger
 bindsym $mod+Shift+p exec --no-startup-id flameshot full -p $HOME
 bindsym $mod+Shift+z exec --no-startup-id i3lock -c 000000 && xset dpms force off
 bindsym $mod+b exec --no-startup-id firefox
