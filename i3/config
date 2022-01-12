@@ -276,17 +276,19 @@ for_window [class="TelegramDesktop"] floating enable
 for_window [class="Xfce4-terminal"] floating enable
 for_window [class="konsole"] floating enable
 ## Windows to workspaces
-for_window [class="Com.github.johnfactotum.Foliate"] move to workspace $ws7
-for_window [class="Spotify"] move to workspace $ws5
-for_window [class="Thunar"] move to workspace $ws2
-for_window [class="Virt-manager"] move to workspace $ws4
-for_window [class="Zathura"] move to workspace $ws7
-for_window [class="aliview-AliView"] move to workspace $ws8
 for_window [class="firefox"] move to workspace $ws1
-for_window [class="kate"] move to workspace $ws8
-for_window [class="libreoffice-calc"] move to workspace $ws10
-for_window [class="libreoffice-writer"] move to workspace $ws9
+for_window [class="Atom"] move to workspace $ws2
+for_window [class="Subl"] move to workspace $ws2
+for_window [class="Thunar"] move to workspace $ws3
+for_window [class="Virt-manager"] move to workspace $ws4
+for_window [class="Spotify"] move to workspace $ws5
+for_window [class="Com.github.johnfactotum.Foliate"] move to workspace $ws7
+for_window [class="Zathura"] move to workspace $ws7
 for_window [class="okular"] move to workspace $ws7
+for_window [class="aliview-AliView"] move to workspace $ws8
+for_window [class="kate"] move to workspace $ws8
+for_window [class="libreoffice-writer"] move to workspace $ws9
+for_window [class="libreoffice-calc"] move to workspace $ws10
 
 # Keybindgs
 bindsym $mod+Mod1+e exec --no-startup-id bash emoji-select
