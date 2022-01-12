@@ -274,6 +274,7 @@ for_window [class="Ristretto"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 for_window [class="TelegramDesktop"] floating enable
 for_window [class="Xfce4-terminal"] floating enable
+for_window [class="gwenview"] floating enable
 for_window [class="konsole"] floating enable
 ## Windows to workspaces
 for_window [class="firefox"] move to workspace $ws1
