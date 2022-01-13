@@ -264,6 +264,7 @@ smart_borders on
 #gaps outer 1
 #smart_gaps on
 ## Floating windows
+for_window [class="Blanket"] floating enable
 for_window [class="Caffeine"] floating enable # caffeine preferences
 for_window [class="Gpick"] floating enable
 for_window [class="Lxappearance"] floating enable
@@ -304,7 +305,7 @@ bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+n exec --no-startup-id thunar || dolphin
 bindsym $mod+p exec --no-startup-id flameshot gui
 bindsym $mod+t exec --no-startup-id org.telegram.desktop
-bindsym Ctrl+$mod+d exec --no-startup-id bash $HOME/.local/bin/displaySelect
+bindsym $mod+Ctrl+d exec --no-startup-id bash $HOME/.local/bin/displaySelect
 bindsym Ctrl+Mod1+t exec --no-startup-id xfce4-terminal || konsole
 ## Multi-monitor bindings
 ### focus monitor
