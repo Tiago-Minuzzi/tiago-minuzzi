@@ -301,6 +301,7 @@ bindsym $mod+Shift+h exec --no-startup-id alacritty --class htop -t htop -e htop
 bindsym $mod+Shift+n exec --no-startup-id alacritty --class ranger -t ranger -e ranger
 bindsym $mod+Shift+p exec --no-startup-id flameshot full -p $HOME
 bindsym $mod+Shift+z exec --no-startup-id i3lock -c 000000 && xset dpms force off
+bindsym $mod+Ctrl+Shift+z exec --no-startup-id bash /home/tiago/.local/bin/susLocker.sh
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+n exec --no-startup-id thunar || dolphin
 bindsym $mod+p exec --no-startup-id flameshot gui
