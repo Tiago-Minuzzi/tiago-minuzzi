@@ -7,12 +7,10 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
     " Color schemes
-    Plug 'joshdick/onedark.vim'
-    Plug 'jdsimcoe/abstract.vim'
+    Plug 'navarasu/onedark.nvim'
     Plug 'Mofiqul/dracula.nvim'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'

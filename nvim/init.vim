@@ -1,9 +1,23 @@
 " (N)Vim plugins
 source $HOME/.config/nvim/vim-plug/plugins.vim
+" Set leader key
+let mapleader = "\<Space>"
+
+" Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+" Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
 " My configs
 filetype plugin indent on
 set autoindent
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 set cursorline
 set expandtab
 set inccommand=split
@@ -13,8 +27,7 @@ set shiftwidth=4
 set tabstop=4
 syntax on
 
-hi Comment cterm=italic
-let g:onedark_hide_endofbuffer=1
-let g:onedark_terminal_italics=1
-let g:onedark_termcolors=16
-colorscheme dracula
+let g:onedark_config = {
+    \ 'style': 'darker',
+\}
+colorscheme onedark
