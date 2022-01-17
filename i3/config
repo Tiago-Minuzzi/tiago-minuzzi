@@ -264,6 +264,7 @@ smart_borders on
 #gaps outer 1
 #smart_gaps on
 ## Floating windows
+for_window [class="Anki"] floating enable
 for_window [class="Blanket"] floating enable
 for_window [class="Caffeine"] floating enable # caffeine preferences
 for_window [class="Gpick"] floating enable
@@ -274,7 +275,9 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Ristretto"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 for_window [class="TelegramDesktop"] floating enable
+for_window [class="Tor Browser"] floating enable
 for_window [class="gwenview"] floating enable
+for_window [class="kdeconnect.app"] floating enable
 for_window [class="konsole"] floating enable
 ## Windows to workspaces
 for_window [class="firefox"] move to workspace $ws1
