@@ -287,6 +287,7 @@ for_window [class="dolphin"] move to workspace $ws3
 for_window [class="Virt-manager"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Com.github.johnfactotum.Foliate"] move to workspace $ws7
+for_window [class="Mendeley Desktop"] move to workspace $ws7
 for_window [class="Zathura"] move to workspace $ws7
 for_window [class="okular"] move to workspace $ws7
 for_window [class="aliview-AliView"] move to workspace $ws8
