@@ -22,6 +22,7 @@ set cursorline
 set expandtab
 set inccommand=split
 set number
+set noswapfile
 set rnu
 set shiftwidth=4
 set tabstop=4
