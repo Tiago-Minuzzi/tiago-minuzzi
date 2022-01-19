@@ -14,6 +14,8 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+noremap <silent> k gk
+noremap <silent> j gj
 " My configs
 filetype plugin indent on
 set autoindent
