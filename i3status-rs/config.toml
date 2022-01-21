@@ -1,0 +1,45 @@
+theme = "semi-native"
+icons = "awesome5"
+
+[[block]]
+block = "custom"
+command = "cat /tmp/currWeather.txt"
+
+[[block]]
+block = "cpu"
+icons_format = " "
+interval = 1
+
+[[block]]
+block = "memory"
+display_type = "memory"
+icons_format = "  "
+format_mem = "{mem_used_percents}"
+
+[[block]]
+block = "memory"
+display_type = "swap"
+icons_format = "  "
+format_swap = "{swap_used_percents}"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "available"
+unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+format = "{icon} {used}/{total}"
+
+[[block]]
+block = "sound"
+icons_format = ""
+format = " ♪ {volume}"
+
+[[block]]
+block = "time"
+interval = 5
+icons_format = ""
+format = "  %A,%e %B  %H:%M"
