@@ -7,7 +7,7 @@ command = "cat /tmp/currWeather.txt"
 
 [[block]]
 block = "cpu"
-icons_format = " "
+icons_format = "  "
 interval = 1
 
 [[block]]
@@ -32,6 +32,15 @@ interval = 20
 warning = 20.0
 alert = 10.0
 format = "{icon} {used}/{total}"
+
+[[block]]
+block = "music"
+player = "spotify"
+buttons = ["play", "next"]
+#on_collapsed_click = "flatpak run com.spotify.Client"
+format = "{combo}"
+separator = " - "
+hide_when_empty = true
 
 [[block]]
 block = "sound"
