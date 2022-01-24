@@ -111,7 +111,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Fira Code Retina
+    family: JetBrains Mono Medium
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -150,7 +150,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 15.0
+  size: 13.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -339,8 +339,8 @@ font:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.85
-#background_opacity: 1
+#background_opacity: 0.90
+window_opacity: 1
 
 #selection:
   # This string contains all characters that are used as separators for
@@ -894,6 +894,36 @@ schemes:
       cyan:    '#9aedfe'
       white:   '#e6e6e6'        
         
+  Base-16: &base16
+    # Default colors
+    primary:
+      background: '0x181818'
+      foreground: '0xd8d8d8'
+    # Colors the cursor will use if `custom_cursor_colors` is true
+    cursor:
+      text: '0xd8d8d8'
+      cursor: '0xd8d8d8'
+    # Normal colors
+    normal:
+      black:   '0x181818'
+      red:     '0xab4642'
+      green:   '0xa1b56c'
+      yellow:  '0xf7ca88'
+      blue:    '0x7cafc2'
+      magenta: '0xba8baf'
+      cyan:    '0x86c1b9'
+      white:   '0xd8d8d8'
+    # Bright colors
+    bright:
+      black:   '0x585858'
+      red:     '0xab4642'
+      green:   '0xa1b56c'
+      yellow:  '0xf7ca88'
+      blue:    '0x7cafc2'
+      magenta: '0xba8baf'
+      cyan:    '0x86c1b9'
+      white:   '0xf8f8f8'
+
   # My color scheme
   Tiago: &tiago
     primary:
