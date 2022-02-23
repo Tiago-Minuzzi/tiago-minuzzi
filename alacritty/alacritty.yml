@@ -963,7 +963,7 @@ schemes:
       cyan:    '0x56b6c2'
       white:   '0x828791'
 
-colors: *tiago
+colors: *onedark
 
   # Indexed Colors
   #
