@@ -143,6 +143,6 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init - --no-rehash zsh)"
 eval "$(pyenv virtualenv-init - zsh)"
 # Startup fetch art
-if which rndFetch > /dev/null;then
+if which rndFetch &> /dev/null;then
     rndFetch
 fi
