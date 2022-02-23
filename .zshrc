@@ -15,7 +15,7 @@ fi
 }
 # Set up the prompt
 setopt prompt_subst
-PROMPT="%F{blue}%n%f%F{cyan}@%f%F{magenta}%m%f %F{cyan}%~%f\${vcs_info_msg_0_}$ "
+PROMPT="%F{blue}%n%f%F{cyan}@%f%F{magenta}%m%f %F{cyan}%~%f\${vcs_info_msg_0_}$ "$'\n'"%F{blue}%f "
 RPROMPT="%T"
 #autoload -Uz promptinit
 #promptinit
