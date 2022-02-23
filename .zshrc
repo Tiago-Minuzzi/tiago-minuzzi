@@ -48,8 +48,23 @@ export LESS="--RAW-CONTROL-CHARS"
       alias egrep='egrep --color=auto'
   fi
 # Enable syntax highlighting and autosuggestions
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if grep 'Arch Linux' /etc/os-release > /dev/null;then
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    alias limpar_restos="sudo pacman -R $(pacman -Qdtq)"
+    alias pmf="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+    alias restos="pacman -Qdtq"
+    alias yup="checkupdates"
+
+elif grep 'Fedora' /etc/os-release > /dev/null;then
+    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    alias dsc="dnf search -C"
+    alias mkache="sudo dnf makecache"
+    alias upd="sudo dnf check-update"
+    alias upg="sudo dnf upgrade -y"
+fi
+
 # Use modern completion system
 autoload -Uz compinit
 compinit
@@ -90,6 +105,7 @@ alias mon="udisksctl mount -b"
 alias nfet="clear && neofetch"
 alias open="xdg-open"
 alias ord="sort | uniq -c | sed 's/[ \t]*//;s/ /\t/'"
+alias pmem="sudo ps_mem"
 alias previsao="clear && curl http://wttr.in"
 alias rg="ranger"
 alias setbr="setxkbmap -layout br -variant abnt2"
@@ -102,15 +118,6 @@ alias txl="tmux list-sessions"
 alias xsf="xset s 0 0; xset -dpms; xset s noexpose; xset s noblank"
 alias xsq="xset q"
 alias v="vim"
-## Arch aliases
-#alias limpar_restos="sudo pacman -R $(pacman -Qdtq)"
-#alias pmf="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
-#alias restos="pacman -Qdtq"
-## Fedora aliases
-alias dsc="dnf search -C"
-alias mkache="sudo dnf makecache"
-alias upd="sudo dnf check-update"
-alias upg="sudo dnf upgrade -y"
 
 export PATH="/home/tiago/.local/bin:$PATH"
 export PATH="/home/tiago/sftw/blast-2.12/bin:$PATH"
@@ -136,5 +143,6 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init - --no-rehash zsh)"
 eval "$(pyenv virtualenv-init - zsh)"
 # Startup fetch art
-rndFetch
-eval $(thefuck --alias)
+if which rndFetch > /dev/null;then
+    rndFetch
+fi
