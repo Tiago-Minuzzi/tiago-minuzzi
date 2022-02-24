@@ -285,6 +285,7 @@ for_window [class="firefox"] move to workspace $ws1
 for_window [class="Atom"] move to workspace $ws2
 for_window [class="Subl"] move to workspace $ws2
 for_window [class="dolphin"] move to workspace $ws3
+for_window [title="ranger"] move to workspace $ws3
 for_window [class="Virt-manager"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Com.github.johnfactotum.Foliate"] move to workspace $ws7
