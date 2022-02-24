@@ -2,8 +2,13 @@ theme = "semi-native"
 icons = "awesome5"
 
 [[block]]
-block = "custom"
-command = "cat /tmp/currWeather.txt"
+block = "focused_window"
+max_width = 50
+show_marks = "visible"
+
+#[[block]]
+#block = "custom"
+#command = "cat /tmp/currWeather.txt"
 
 [[block]]
 block = "cpu"
