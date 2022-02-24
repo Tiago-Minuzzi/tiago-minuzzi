@@ -104,6 +104,7 @@ alias gtp="git push"
 alias gts="git status"
 alias ipy="ipython"
 alias jl="jupyter-lab"
+alias kssh="kitty +kitten ssh"
 alias ls='exa -l'
 alias lsd="lsblk"
 alias macse2="java -jar $HOME/sftw/macse/macse_v2.05.jar"
