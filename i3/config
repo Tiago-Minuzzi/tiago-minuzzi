@@ -253,6 +253,7 @@ exec --no-startup-id lxsession
 exec --no-startup-id redshift
 exec --no-startup-id unclutter
 exec --no-startup-id ~/.fehbg
+exec --no-startup-id bash ~/.local/bin/killLauncher
 exec_always --no-startup-id setxkbmap -layout us -variant intl
 exec_always --no-startup-id xrandr --output HDMI-A-0 --primary --mode 1920x1080 --output eDP --off
 #exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
@@ -349,3 +350,4 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Ctrl+e mode "$mode_system"
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+killLauncher () {
+    if pgrep ulauncher &> /dev/null
+    then
+        pkill ulauncher
+    fi
+}
+
+sleep 3 &&
+killLauncher
