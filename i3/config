@@ -303,12 +303,12 @@ bindsym $mod+Shift+a exec --no-startup-id pavucontrol
 bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
 bindsym $mod+Shift+d exec --no-startup-id bash $HOME/.local/bin/copyToClip
 bindsym $mod+Ctrl+h exec --no-startup-id alacritty --class htop -t htop -e htop
-bindsym $mod+Shift+n exec --no-startup-id alacritty --class ranger -t ranger -e ranger
+bindsym $mod+n exec --no-startup-id alacritty --class ranger -t ranger -e ranger
 bindsym $mod+Shift+p exec --no-startup-id flameshot full -p $HOME
 bindsym $mod+Shift+z exec --no-startup-id i3lock -c 000000 && xset dpms force off
 bindsym $mod+Ctrl+Shift+z exec --no-startup-id bash /home/tiago/.local/bin/susLocker.sh
 bindsym $mod+b exec --no-startup-id firefox
-bindsym $mod+n exec --no-startup-id nemo
+bindsym $mod+Shift+n exec --no-startup-id nemo
 bindsym $mod+p exec --no-startup-id flameshot gui
 bindsym $mod+t exec --no-startup-id org.telegram.desktop
 bindsym $mod+Ctrl+d exec --no-startup-id bash $HOME/.local/bin/displaySelect
