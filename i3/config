@@ -230,7 +230,7 @@ bar {
         separator_symbol "|"
         #strip_workspace_numbers yes
         #i3bar_command i3bar --transparency
-        position bottom
+        position top
         tray_output primary
         colors {
                 background #171a1f
