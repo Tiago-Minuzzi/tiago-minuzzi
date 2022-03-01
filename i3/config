@@ -334,7 +334,7 @@ bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+Shift+n exec --no-startup-id nemo
 bindsym $mod+p exec --no-startup-id flameshot gui
 bindsym $mod+t exec --no-startup-id org.telegram.desktop
-bindsym $mod+Ctrl+d exec --no-startup-id bash $HOME/.local/bin/displaySelect
+bindsym $mod+Ctrl+d exec --no-startup-id bash $HOME/.local/bin/dwmDisplay
 bindsym Ctrl+Mod1+t exec --no-startup-id konsole
 ## Multi-monitor bindings
 ### focus monitor
