@@ -132,6 +132,27 @@ set $ws18 "18"
 set $ws19 "19"
 set $ws20 "20"
 
+workspace $ws1 output HDMI-A-0 eDP
+workspace $ws2 output HDMI-A-0 eDP
+workspace $ws3 output HDMI-A-0 eDP
+workspace $ws4 output HDMI-A-0 eDP
+workspace $ws5 output HDMI-A-0 eDP
+workspace $ws6 output HDMI-A-0 eDP
+workspace $ws7 output HDMI-A-0 eDP
+workspace $ws8 output HDMI-A-0 eDP
+workspace $ws9 output HDMI-A-0 eDP
+workspace $ws10 output HDMI-A-0 eDP
+workspace $ws11 output eDP HDMI-A-0
+workspace $ws12 output eDP HDMI-A-0
+workspace $ws13 output eDP HDMI-A-0
+workspace $ws14 output eDP HDMI-A-0
+workspace $ws15 output eDP HDMI-A-0
+workspace $ws16 output eDP HDMI-A-0
+workspace $ws17 output eDP HDMI-A-0
+workspace $ws18 output eDP HDMI-A-0
+workspace $ws19 output eDP HDMI-A-0
+workspace $ws20 output eDP HDMI-A-0
+
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
