@@ -132,26 +132,30 @@ set $ws18 "18"
 set $ws19 "19"
 set $ws20 "20"
 
-workspace $ws1 output HDMI-A-0 eDP
-workspace $ws2 output HDMI-A-0 eDP
-workspace $ws3 output HDMI-A-0 eDP
-workspace $ws4 output HDMI-A-0 eDP
-workspace $ws5 output HDMI-A-0 eDP
-workspace $ws6 output HDMI-A-0 eDP
-workspace $ws7 output HDMI-A-0 eDP
-workspace $ws8 output HDMI-A-0 eDP
-workspace $ws9 output HDMI-A-0 eDP
-workspace $ws10 output HDMI-A-0 eDP
-workspace $ws11 output eDP HDMI-A-0
-workspace $ws12 output eDP HDMI-A-0
-workspace $ws13 output eDP HDMI-A-0
-workspace $ws14 output eDP HDMI-A-0
-workspace $ws15 output eDP HDMI-A-0
-workspace $ws16 output eDP HDMI-A-0
-workspace $ws17 output eDP HDMI-A-0
-workspace $ws18 output eDP HDMI-A-0
-workspace $ws19 output eDP HDMI-A-0
-workspace $ws20 output eDP HDMI-A-0
+# Set monitor vars
+set $EXTERNO HDMI-A-0
+set $IMBUTIDO eDP
+# Assign default monitor to workspace
+workspace $ws1 output $EXTERNO $IMBUTIDO primary
+workspace $ws2 output $EXTERNO $IMBUTIDO primary
+workspace $ws3 output $EXTERNO $IMBUTIDO primary
+workspace $ws4 output $EXTERNO $IMBUTIDO primary
+workspace $ws5 output $EXTERNO $IMBUTIDO primary
+workspace $ws6 output $EXTERNO $IMBUTIDO primary
+workspace $ws7 output $EXTERNO $IMBUTIDO primary
+workspace $ws8 output $EXTERNO $IMBUTIDO primary
+workspace $ws9 output $EXTERNO $IMBUTIDO primary
+workspace $ws10 output $EXTERNO $IMBUTIDO primary
+workspace $ws11 output $IMBUTIDO $EXTERNO primary
+workspace $ws12 output $IMBUTIDO $EXTERNO primary
+workspace $ws13 output $IMBUTIDO $EXTERNO primary
+workspace $ws14 output $IMBUTIDO $EXTERNO primary
+workspace $ws15 output $IMBUTIDO $EXTERNO primary
+workspace $ws16 output $IMBUTIDO $EXTERNO primary
+workspace $ws17 output $IMBUTIDO $EXTERNO primary
+workspace $ws18 output $IMBUTIDO $EXTERNO primary
+workspace $ws19 output $IMBUTIDO $EXTERNO primary
+workspace $ws20 output $IMBUTIDO $EXTERNO primary
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
