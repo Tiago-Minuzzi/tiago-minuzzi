@@ -305,7 +305,6 @@ for_window [class="TelegramDesktop"] floating enable
 for_window [class="Tor Browser"] floating enable
 for_window [class="gwenview"] floating enable
 for_window [class="kdeconnect.app"] floating enable
-for_window [class="konsole"] floating enable
 ## Windows to workspaces
 for_window [class="Atom"] move to workspace $ws2
 for_window [class="Subl"] move to workspace $ws2
@@ -340,7 +339,6 @@ bindsym $mod+Mod1+e exec --no-startup-id bash emoji-select
 bindsym $mod+Ctrl+h exec --no-startup-id alacritty --class htop -t htop -e htop
 bindsym $mod+Ctrl+d exec --no-startup-id bash $HOME/.local/bin/dwmDisplay
 bindsym $mod+Ctrl+Shift+z exec --no-startup-id bash /home/tiago/.local/bin/susLocker.sh
-bindsym Ctrl+Mod1+t exec --no-startup-id konsole
 ## Multi-monitor bindings
 ### focus monitor
 bindsym $mod+greater focus output left
