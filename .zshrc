@@ -132,7 +132,8 @@ alias xsf="xset s 0 0; xset -dpms; xset s noexpose; xset s noblank"
 alias xsq="xset q"
 
 export PATH="/home/tiago/.local/bin:$PATH"
-export PATH="/home/tiago/sftw/blast-2.12/bin:$PATH"
+export PATH="/home/tiago/sftw/ncbi-blast-2.12.0+/bin:$PATH"
+export PATH="/home/tiago/sftw/sratoolkit/bin:$PATH"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/tiago/sftw/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
