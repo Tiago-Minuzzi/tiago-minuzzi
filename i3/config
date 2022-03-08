@@ -259,7 +259,7 @@ bar {
         tray_output primary
         colors {
                 background #171a1f
-                statusline #FFFFFF
+                statusline #a0a8b7
                 separator  #666666
 
                 focused_workspace  #4C7899 #4877b1 #FFFFFF
