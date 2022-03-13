@@ -329,7 +329,7 @@ bindsym $mod+t exec --no-startup-id org.telegram.desktop
 bindsym $mod+p exec --no-startup-id flameshot gui
 bindsym $mod+n exec --no-startup-id alacritty --class ranger -t ranger -e ranger
 bindsym $mod+b exec --no-startup-id firefox
-bindsym $mod_Ctrl+b exec --no-startup-id qutebrowser
+bindsym $mod+Ctrl+b exec --no-startup-id qutebrowser
 bindsym $mod+Shift+z exec --no-startup-id i3lock -c 000000 && xset dpms force off
 bindsym $mod+Shift+p exec --no-startup-id flameshot full -p $HOME
 bindsym $mod+Shift+n exec --no-startup-id nemo
