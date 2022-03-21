@@ -307,6 +307,7 @@ for_window [class="gwenview"] floating enable
 for_window [class="kdeconnect.app"] floating enable
 ## Windows to workspaces
 for_window [class="Atom"] move to workspace $ws2
+for_window [class="Mousepad"] move to workspace $ws2
 for_window [class="Subl"] move to workspace $ws2
 for_window [class="Nemo"] move to workspace $ws3
 for_window [title="ranger"] move to workspace $ws3
