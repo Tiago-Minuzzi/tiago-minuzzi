@@ -323,6 +323,7 @@ for_window [class="aliview-AliView"] move to workspace $ws8
 for_window [class="libreoffice-calc"] move to workspace $ws8
 for_window [class="libreoffice-writer"] move to workspace $ws9
 for_window [class="firefox"] move to workspace $ws10
+for_window [class="Transmission-gtk"] move to workspace $ws12
 for_window [class="qutebrowser"] move to workspace $ws20
 
 # Keybindgs
