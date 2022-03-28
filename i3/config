@@ -292,6 +292,7 @@ for_window [class="Ristretto"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 for_window [class="TelegramDesktop"] floating enable
 for_window [class="Tor Browser"] floating enable
+for_window [class="calendario"] floating enable
 for_window [class="gwenview"] floating enable
 for_window [class="kdeconnect.app"] floating enable
 ## Windows to workspaces
