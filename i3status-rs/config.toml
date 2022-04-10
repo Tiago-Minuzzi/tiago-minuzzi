@@ -56,5 +56,5 @@ format = "{volume}"
 block = "time"
 interval = 5
 icons_format = ""
-format = "  %A, %e %B  %H:%M"
+format = "  %A, %B %e  %H:%M"
 on_click = "alacritty --hold --class calendario,calendario -t calendario -e cal -y"
