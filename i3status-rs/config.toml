@@ -53,6 +53,11 @@ block = "sound"
 format = "{volume}"
 
 [[block]]
+block = "battery"
+interval = 10
+format = "{percentage}"
+
+[[block]]
 block = "time"
 interval = 5
 icons_format = ""
