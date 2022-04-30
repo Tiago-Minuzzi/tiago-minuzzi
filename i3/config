@@ -299,6 +299,7 @@ for_window [class="Mousepad"] move to workspace $ws2
 for_window [class="Subl"] move to workspace $ws2
 for_window [class="Nemo"] move to workspace $ws3
 for_window [class="Nautilus"] move to workspace $ws3
+for_window [class="Thunar"] move to workspace $ws3
 for_window [title="ranger"] move to workspace $ws3
 for_window [class="Virt-manager"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
@@ -323,7 +324,7 @@ bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+Ctrl+b exec --no-startup-id qutebrowser
 bindsym $mod+Shift+z exec --no-startup-id i3lock -c 000000 && xset dpms force off
 bindsym $mod+Shift+p exec --no-startup-id flameshot full -p $HOME
-bindsym $mod+Shift+n exec --no-startup-id nemo || nautilus
+bindsym $mod+Shift+n exec --no-startup-id thunar || nemo || nautilus
 bindsym $mod+Shift+d exec --no-startup-id bash $HOME/.local/bin/copyToClip
 bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
 bindsym $mod+Shift+a exec --no-startup-id pavucontrol
