@@ -13,7 +13,7 @@ Para ler um arquivo em formato CSV/TSV usamos, dentre outras formas, o seguinte:
 df <- read.table('tabela_exemplo.tsv', sep = '\t', header = 1)
 ```
 
-  O parâmetro `sep = '\t'` determina o separador das colunas do arquivo. No caso, usamos um `\t` para usar o tab, podendo-se usar também outros como, por exemplo, `,` para arquivos csv. Por padrão a função `read.table` usa o tab. Podemos a usar a função `read.csv2` para, por padrão, termos a vírgula como separador. O parâmtro `header = 1` é usado para usarmos a primeira linha do arquivo como cabeçalho.
+  O parâmetro `sep = '\t'` determina o separador das colunas do arquivo. No caso, usamos um `\t` para usar o tab, podendo-se usar também outros como, por exemplo, `,` para arquivos csv. Por padrão a função `read.table` usa o tab. Podemos a usar a função `read.csv` para, por padrão, termos a vírgula como separador. O parâmtro `header = 1` é usado para usarmos a primeira linha do arquivo como cabeçalho.
 
 Para visualizarmos todos os parâmetros de uma função e seus possíveis valores usamos, no console do R, `?nome.da.função` ou `help(nome.da.função)`, por exemplo, `?read.table`.
 
@@ -105,9 +105,13 @@ colunasDesejadas <- c("Not.TE","Non.LTR")
 df[2:4, colunasDesejadas]
 ```
 
-Pode-se selecionar os valores de uma coluna usando-se o cifrão.
+Pode-se selecionar os valores de uma coluna usando-se o cifrão, podendo-se também usar da forma `tabela[,"coluna"]`. No caso do uso de `tabela[,"coluna"]`, deixamos em branco o campo das linhas (`tabela[linha, coluna]`) para indicar que queremos retornar todas as linhas. Note que neste caso devemos colocar o nome da coluna entre aspas.
+
 ```{r}
-head(df$LTR)
+# Primeira forma
+df$candidate
+# Segunda forma
+df[,"candidate"]
 ```
 
 Com o cifrão podemos adicionar colunas ao dataframe.
@@ -118,3 +122,58 @@ df$DNA <- (df$DNAscI + df$DNAscII)/2
 df$TEs <- (df$Retro + df$DNA) / 2
 head(df)
 ```
+
+---
+
+## Seleção condicional
+Para verificar as linhas com valor `x` na coluna `y` usamos `tabela$coluna=="condição"`. Em caso de valores númericos na coluna, além de `==`, podemos usar os operadores `>=`, `<=` ou `!=` (este também pode ser usado em casos não-numéricos (categóricos)).
+
+```{r}
+# Valores categóricos (não-numéricos)
+df$candidate == "Y"
+df$candidate != "N"
+
+# Valore numéricos
+df$DNAscI >= 0.5
+df$DNAscI <= 0.5
+
+```
+
+No exemplo anterior, o `R` nos retorna valores booleanos indicando onde a condição é verdadeira ou não. Para obtermos a porção da tabela contendo os dados usamos: da sintaxe `tabela[tabela$coluna=="condição,]`. Colocamos a condição no campo das linhas, pois queremos todas as linhas onde a condição desejada é verdadeira, deixando o campo das colunas vazio para indicar que queremos todas as colunas.
+
+```{r}
+# retorna as linha onde a coluna 'candidate' possui valor igual a 'Y'.
+head(df[df$candidate == "Y",])
+# retorna as linhas onde a coluna 'DNAscI' possui valor menor ou igual a 0.5.
+head(df[df$DNAscI <= 0.5,])
+```
+
+Para retornar apenas algumas colunas, podemos passar um vetor no campo das colunas indicando o nome das colunas de interesse ou passando o index (posição) da coluna.
+
+```{r}
+# usando o nome
+head(df[df$candidate == "Y", c("id","DNAscI","candidate")])
+# usando o índice
+head(df[df$candidate == "Y", c(1,2,7)])
+```
+
+---
+
+**Contando número de ocorrências dos valores em uma coluna**
+
+
+```{r}
+table(df$candidate)
+```
+
+**Obtendo valores da coluna sem repetição**
+```{r}
+unique(df$candidate)
+```
+
+**Transformando dados da coluna em `factor`**
+```{r}
+as.factor(df$candidate)
+```
+
+---
