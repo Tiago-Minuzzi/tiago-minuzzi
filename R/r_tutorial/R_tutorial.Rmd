@@ -1,0 +1,120 @@
+---
+title: "Tutorial básico de R"
+author: "Tiago Minuzzi"
+#date: '2022-05-01'
+output: html_document
+---
+
+# Lendo um arquivo CSV/TSV
+
+Para ler um arquivo em formato CSV/TSV usamos, dentre outras formas, o seguinte:
+
+```{r}
+df <- read.table('tabela_exemplo.tsv', sep = '\t', header = 1)
+```
+
+  O parâmetro `sep = '\t'` determina o separador das colunas do arquivo. No caso, usamos um `\t` para usar o tab, podendo-se usar também outros como, por exemplo, `,` para arquivos csv. Por padrão a função `read.table` usa o tab. Podemos a usar a função `read.csv2` para, por padrão, termos a vírgula como separador. O parâmtro `header = 1` é usado para usarmos a primeira linha do arquivo como cabeçalho.
+
+Para visualizarmos todos os parâmetros de uma função e seus possíveis valores usamos, no console do R, `?nome.da.função` ou `help(nome.da.função)`, por exemplo, `?read.table`.
+
+---
+
+Usando a função `head` podemos ver as primeiras `n` (6 por padrão) linhas do arquivo, podendo alterar o `n` o colocando como segundo argumento da função.
+
+```{r}
+# head sem alterar o padrão (default)
+head(df)
+
+# head alterando o default
+head(df, 3)
+```
+
+Para as linhas finais, usamos a função `tail`, a qual também pode-se passar quantas `n` linhas se deseja.
+
+```{r}
+tail(df, 4)
+```
+
+---
+
+## Customizando o cabeçalho
+
+Se quisermos usar nomes customizados para o cabeçalho, adicionamos o parâmetro `col.names`.
+
+```{r}
+df <- read.table('tabela_exemplo.tsv', sep = '\t', header = 1, col.names = c("Identificador", "Classe 2 - sc 1", "Classe 2 - sc 2", "Classe 1 - LTR", "Não TE","Classe 1 - não-LTR", "candidato"))
+head(df)
+```
+
+## Informações sobre a tabela
+
+Podemos obter informações gerais sobre uma tabela com funções como`nrow`, `ncol`, `dim`, `names`, dentre outras.
+
+Para o número de linhas e colunas usamos `nrow` e `ncol`, respectivamente.
+```{r}
+nrow(df)
+ncol(df)
+```
+
+Para a dimensão da tabela (linhas x colunas) usamos a função `dim`.
+```{r}
+dim(df)
+```
+
+ ---
+
+Para o tamanho de um vetor, `lenght(vetor)`
+```{r}
+meuVetor <- c('maçã', 'banana', 'laranja')
+length(meuVetor)
+```
+
+---
+
+Para os nomes das colunas usamos `names` ou `colnames`.
+```{r, echo=TRUE}
+df <- read.table('tabela_exemplo.tsv', sep = '\t', header = 1)
+```
+```{r}
+names(df)
+
+colnames(df)
+```
+
+---
+
+# Selecionando linhas e colunas
+
+Para selecionar uma parte da tabela, __i.e.__, algumas linhas/colunas usamos a seguinte notação `minhaTabela[linha_inicio:linha_final, coluna_inicio:_final]` 
+
+```{r}
+# Valores das linhas 2 até 4, nas colunas 5 e 6
+df[2:4, 5:6]
+```
+
+Para selecionar usando o nome das colunas as passamos como um vetor. A mesma lógica de seleção de colunas por nomes pode ser aplicada às linha com índices não-numéricos.
+
+```{r}
+df[2:4,c("Not.TE","Non.LTR")]
+```
+
+Podemos criar um objeto com as colunas desejadas para passar no código.
+
+```{r}
+colunasDesejadas <- c("Not.TE","Non.LTR")
+df[2:4, colunasDesejadas]
+```
+
+Pode-se selecionar os valores de uma coluna usando-se o cifrão.
+```{r}
+head(df$LTR)
+```
+
+Com o cifrão podemos adicionar colunas ao dataframe.
+
+```{r}
+df$Retro <- (df$LTR + df$Non.LTR)/2
+df$DNA <- (df$DNAscI + df$DNAscII)/2
+df$TEs <- (df$Retro + df$DNA) / 2
+head(df)
+```
