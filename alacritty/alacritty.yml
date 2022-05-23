@@ -963,7 +963,8 @@ schemes:
       cyan:    '0x56b6c2'
       white:   '0x828791'
 
-colors: *tiago
+# color profiles: onedark, nord, dracula, base16, tiago.
+colors: *nord
 
   # Indexed Colors
   #
