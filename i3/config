@@ -293,6 +293,7 @@ for_window [class="Tor Browser"] floating enable
 for_window [class="calendario"] floating enable
 for_window [class="gwenview"] floating enable
 for_window [class="kdeconnect.app"] floating enable
+for_window [class="Xarchiver"] floating enable
 ## Windows to workspaces
 for_window [class="Atom"] move to workspace $ws2
 for_window [class="Mousepad"] move to workspace $ws2
