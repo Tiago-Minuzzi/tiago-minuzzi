@@ -305,6 +305,7 @@ for_window [title="ranger"] move to workspace $ws3
 for_window [class="Virt-manager"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Rhythmbox"] move to workspace $ws5
+for_window [class="smplayer"] move to workspace $ws6
 for_window [class="Com.github.johnfactotum.Foliate"] move to workspace $ws7
 for_window [class="Mendeley Desktop"] move to workspace $ws7
 for_window [class="Xreader"] move to workspace $ws7
