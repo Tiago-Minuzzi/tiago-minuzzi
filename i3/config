@@ -294,6 +294,7 @@ for_window [class="calendario"] floating enable
 for_window [class="gwenview"] floating enable
 for_window [class="kdeconnect.app"] floating enable
 for_window [class="org.gnome.DejaDup"] floating enable
+for_window [class="warp"] floating enable
 for_window [title="htop"] floating enable
 ## Windows to workspaces
 for_window [class="Atom"] move to workspace $ws2
