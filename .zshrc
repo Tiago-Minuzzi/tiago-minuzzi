@@ -87,6 +87,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion:::*:default' menu yes select
 # Aliases
+alias bp="bat -p"
 alias bpy="bpytop"
 alias catfas="perl $HOME/sftw/catfasta2phyml/catfasta2phyml.pl -c -f"
 alias cfas="grep -c '>'"
