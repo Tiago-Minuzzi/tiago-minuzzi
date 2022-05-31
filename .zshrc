@@ -90,6 +90,7 @@ zstyle ':completion:::*:default' menu yes select
 alias bp="bat -p"
 alias bpy="bpytop"
 alias catfas="perl $HOME/sftw/catfasta2phyml/catfasta2phyml.pl -c -f"
+alias cdwm="sudo rm config.h && sudo make clean install"
 alias cfas="grep -c '>'"
 alias clo="$HOME/sftw/clustalo-1.2.4"
 alias desmon="udisksctl unmount -b"
