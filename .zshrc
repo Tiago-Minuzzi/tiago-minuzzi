@@ -132,7 +132,7 @@ alias tx="tmux"
 alias txa="tmux attach-session -t"
 alias txl="tmux list-sessions"
 alias txn="tmux new-session -s"
-alias v="vim"
+alias vsci="source /home/tiago/sftw/venv/sci/bin/activate"
 alias xsf="xset s 0 0; xset -dpms; xset s noexpose; xset s noblank"
 alias xsq="xset q"
 
