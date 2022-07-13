@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term tilix
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -228,9 +228,9 @@ input * {
 	xkb_variant "intl"
 }
 # Display
-output LVDS-1 disable
+#output LVDS-1 disable
 # Wallpaper
-output * bg /home/tiago/Pictures/pexels-errin-casano-2356087.jpg fill
+output * bg /home/tiago/Pictures/arch-rainbow-1920x1080.png fill
 # Gaps etc
 gaps inner 5
 gaps outer 1
