@@ -242,7 +242,7 @@ bar {
         separator_symbol "|"
         #strip_workspace_numbers yes
         #i3bar_command i3bar --transparency
-        position top
+        position bottom
         tray_output primary
         colors {
                 background #171a1f
@@ -274,8 +274,9 @@ exec_always --no-startup-id xrandr --output HDMI-A-0 --primary --mode 1920x1080 
 for_window [class=".*"] border pixel 2
 focus_follows_mouse no
 smart_borders on
-#gaps inner 5
-#gaps outer 1
+smart_gaps on
+gaps inner 6
+gaps outer 1
 #smart_gaps on
 ## Floating windows
 for_window [class="Anki"] floating enable
