@@ -20,54 +20,14 @@ set $term alacritty
 # on the original workspace that the command was run on.
 set $menu dmenu_path | i3-dmenu-desktop | xargs swaymsg exec --
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
-
 ### Key bindings
 #
 # Basics:
 #
     # Start a terminal
     bindsym $mod+Return exec $term
-
     # Kill focused window
     bindsym $mod+Shift+q kill
-
     # Start your launcher
     bindsym $mod+d exec $menu
     # Drag floating windows by holding down $mod and left mouse button.
@@ -76,20 +36,18 @@ set $menu dmenu_path | i3-dmenu-desktop | xargs swaymsg exec --
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
     floating_modifier $mod normal
-
     # Reload the configuration file
     bindsym $mod+Shift+c reload
-
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
     # Move your focus around
-    #bindsym $mod+$left focus left
-    #bindsym $mod+$down focus down
-    #bindsym $mod+$up focus up
-    #bindsym $mod+$right focus right
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
     # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -97,10 +55,10 @@ set $menu dmenu_path | i3-dmenu-desktop | xargs swaymsg exec --
     bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
-    #bindsym $mod+Shift+$left move left
-    #bindsym $mod+Shift+$down move down
-    #bindsym $mod+Shift+$up move up
-    #bindsym $mod+Shift+$right move right
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
     # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
@@ -120,6 +78,17 @@ set $menu dmenu_path | i3-dmenu-desktop | xargs swaymsg exec --
     bindsym $mod+8 workspace number 8
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
+    bindsym $mod+Ctrl+1 workspace number 11
+    bindsym $mod+Ctrl+2 workspace number 12
+    bindsym $mod+Ctrl+3 workspace number 13
+    bindsym $mod+Ctrl+4 workspace number 14
+    bindsym $mod+Ctrl+5 workspace number 15
+    bindsym $mod+Ctrl+6 workspace number 16
+    bindsym $mod+Ctrl+7 workspace number 17
+    bindsym $mod+Ctrl+8 workspace number 18
+    bindsym $mod+Ctrl+9 workspace number 19
+    bindsym $mod+Ctrl+0 workspace number 20
+
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
@@ -131,15 +100,51 @@ set $menu dmenu_path | i3-dmenu-desktop | xargs swaymsg exec --
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
+    bindsym $mod+Ctrl+Shift+1 move container to workspace number 11
+    bindsym $mod+Ctrl+Shift+2 move container to workspace number 12
+    bindsym $mod+Ctrl+Shift+3 move container to workspace number 13
+    bindsym $mod+Ctrl+Shift+4 move container to workspace number 14
+    bindsym $mod+Ctrl+Shift+5 move container to workspace number 15
+    bindsym $mod+Ctrl+Shift+6 move container to workspace number 16
+    bindsym $mod+Ctrl+Shift+7 move container to workspace number 17
+    bindsym $mod+Ctrl+Shift+8 move container to workspace number 18
+    bindsym $mod+Ctrl+Shift+9 move container to workspace number 19
+    bindsym $mod+Ctrl+Shift+0 move container to workspace number 20
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-#
+# Set monitor vars
+    set $IMBUTIDO eDP-1
+    set $EXTERNO HDMI-A-1
+    output $IMBUTIDO pos 0 0 res 1366x768
+    output $EXTERNO pos 1366 0 res 1920x1080
+    # Assign default monitor to workspace
+    workspace 1 output $EXTERNO $IMBUTIDO primary
+    workspace 2 output $EXTERNO $IMBUTIDO primary
+    workspace 3 output $EXTERNO $IMBUTIDO primary
+    workspace 4 output $EXTERNO $IMBUTIDO primary
+    workspace 5 output $EXTERNO $IMBUTIDO primary
+    workspace 6 output $EXTERNO $IMBUTIDO primary
+    workspace 7 output $EXTERNO $IMBUTIDO primary
+    workspace 8 output $EXTERNO $IMBUTIDO primary
+    workspace 9 output $EXTERNO $IMBUTIDO primary
+    workspace 10 output $EXTERNO $IMBUTIDO primary
+    workspace 11 output $IMBUTIDO $EXTERNO primary
+    workspace 12 output $IMBUTIDO $EXTERNO primary
+    workspace 13 output $IMBUTIDO $EXTERNO primary
+    workspace 14 output $IMBUTIDO $EXTERNO primary
+    workspace 15 output $IMBUTIDO $EXTERNO primary
+    workspace 16 output $IMBUTIDO $EXTERNO primary
+    workspace 17 output $IMBUTIDO $EXTERNO primary
+    workspace 18 output $IMBUTIDO $EXTERNO primary
+    workspace 19 output $IMBUTIDO $EXTERNO primary
+    workspace 20 output $IMBUTIDO $EXTERNO primary
+
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+h splith
+    bindsym $mod+Shift+v splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
@@ -200,28 +205,34 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    #swaybar_command waybar
-    position bottom
-
-    ## When the status_command prints a new line to stdout, swaybar updates.
-    ## The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    status_command i3status-rs /home/tiago/.config/i3status-rs/config.toml
+    position top
+    font pango:Noto Sans Mono Black,Font Awesome 6 Free Solid 10
+    tray_output primary
 
     colors {
-        statusline #ffffff
-        background #323232
-	    focused_workspace  #4e7496 #169bfa  #000000
-        inactive_workspace #666666 #333333 #ffffff
-    }
+            background #171a1f
+            statusline #a0a8b7
+            separator  #666666
+
+            focused_workspace  #4C7899 #4877b1 #FFFFFF
+            active_workspace   #333333 #222222 #FFFFFF
+            inactive_workspace #333333 #222222 #888888
+            urgent_workspace   #2F343A #900000 #FFFFFF
+            binding_mode       #2F343A #900000 #FFFFFF
+           }
 }
 #include .config/waybar/config
 include /etc/sway/config.d/*
 # By Tiago Minuzzi
-# class                 border  backgr. text    indicator
-client.focused          #4c7899 #169bfa #ffffff #a2cffe
-client.focused_inactive #333333 #5f676a #ffffff #484e50
-client.unfocused        #333333 #222222 #888888 #292d2e
-client.urgent           #2f343a #900000 #ffffff #900000
+# class                 border  bground text    indicator
+client.focused          #4C7899 #4877b1 #FFFFFF #2E9EF4
+client.focused_inactive #333333 #5F676A #FFFFFF #484E50
+client.unfocused        #333333 #222222 #888888 #292D2E
+client.urgent           #2F343A #900000 #FFFFFF #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000
+client.background       #FFFFFF
+
 # Keyboard
 input * {
 	xkb_layout "us"
@@ -232,10 +243,10 @@ input * {
 # Wallpaper
 output * bg /home/tiago/Pictures/arch-rainbow-1920x1080.png fill
 # Gaps etc
-gaps inner 5
+gaps inner 6
 gaps outer 1
-smart_gaps off
-smart_borders off
+smart_gaps on
+smart_borders on
 focus_follows_mouse no
 # Services
 ## exec
@@ -245,13 +256,14 @@ exec mako
 exec_always wlsunset
 exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Windows
-for_window [title=".*"] border pixel 3
+for_window [title=".*"] border pixel 2
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="org.gnome.DejaDup"] floating enable
 for_window [app_id="org.telegram.desktop"] floating enable
 for_window [app_id="gnome-terminal-server"] floating enable
 # Assign apps to workspaces
-assign [class="firefox"] 1
+assign [app_id="org.gnome.Nautilus"] 3
+assign [class="firefox"] 10
 assign [class="Brave-browser"] 7
 for_window [class="Spotify"] move window to workspace 8
 # Keybindings
@@ -259,7 +271,10 @@ bindsym $mod+n exec nautilus
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec firefox --private-window
 bindsym $mod+t exec flatpak run org.telegram.desktop
-bindsym $mod+l exec swaylock -c 000000 && busctl --user set-property org.gnome.Mutter.DisplayConfig /org/gnome/Mutter/DisplayConfig org.gnome.Mutter.DisplayConfig PowerSaveMode i 1
+bindsym $mod+Shift+z exec swaylock -c 000000 && busctl --user set-property org.gnome.Mutter.DisplayConfig /org/gnome/Mutter/DisplayConfig org.gnome.Mutter.DisplayConfig PowerSaveMode i 1
+## Workspace prev/next
+bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Tab workspace next
 # Multimedia
 bindsym --locked XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym --locked XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
