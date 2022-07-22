@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+PASTAS=$(find /home/tiago/repos -maxdepth 1 -type d | tail -n +2)
+for PASTA in $PASTAS
+do 
+	cd $PASTA &&
+	echo ""
+    echo "# Entering $PASTA" &&
+	git pull &&
+	echo "-----"
+done
