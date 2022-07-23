@@ -273,7 +273,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec firefox --private-window
 bindsym $mod+m exec rofi -modi drun -show drun -show-icons -display-drun '' -disable-history
 bindsym $mod+Shift+d exec clipman pick --tool=rofi
-bindsym $mod+Shift+Ctrl+z exec swaylock -i Pictures/lock-screen.jpg -f && systemctl suspend i
+bindsym $mod+Shift+Ctrl+z exec $HOME/.local/bin/locksway
 ## Workspace prev/next
 bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Tab workspace next

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+swaylock -f -i ~/Pictures/lock-screen.jpg && sync && systemctl suspend -i
