@@ -117,26 +117,26 @@ exec wl-paste -p --watch wl-copy
     output $EXTERNO resolution 1920x1080 position 1366,0 
     output $IMBUTIDO resolution 1366x768 position 0,0
     # Assign default monitor to workspace
-    workspace 1 output $EXTERNO $IMBUTIDO
-    workspace 2 output $EXTERNO $IMBUTIDO
-    workspace 3 output $EXTERNO $IMBUTIDO
-    workspace 4 output $EXTERNO $IMBUTIDO
-    workspace 5 output $EXTERNO $IMBUTIDO
-    workspace 6 output $EXTERNO $IMBUTIDO
-    workspace 7 output $EXTERNO $IMBUTIDO
-    workspace 8 output $EXTERNO $IMBUTIDO
-    workspace 9 output $EXTERNO $IMBUTIDO
-    workspace 10 output $EXTERNO $IMBUTIDO
-    workspace 11 output $IMBUTIDO $EXTERNO
-    workspace 12 output $IMBUTIDO $EXTERNO
-    workspace 13 output $IMBUTIDO $EXTERNO
-    workspace 14 output $IMBUTIDO $EXTERNO
-    workspace 15 output $IMBUTIDO $EXTERNO
-    workspace 16 output $IMBUTIDO $EXTERNO
-    workspace 17 output $IMBUTIDO $EXTERNO
-    workspace 18 output $IMBUTIDO $EXTERNO
-    workspace 19 output $IMBUTIDO $EXTERNO
-    workspace 20 output $IMBUTIDO $EXTERNO
+    workspace 1 output $EXTERNO
+    workspace 2 output $EXTERNO
+    workspace 3 output $EXTERNO
+    workspace 4 output $EXTERNO
+    workspace 5 output $EXTERNO
+    workspace 6 output $EXTERNO
+    workspace 7 output $EXTERNO
+    workspace 8 output $EXTERNO
+    workspace 9 output $EXTERNO
+    workspace 10 output $EXTERNO
+    workspace 11 output $IMBUTIDO
+    workspace 12 output $IMBUTIDO
+    workspace 13 output $IMBUTIDO
+    workspace 14 output $IMBUTIDO
+    workspace 15 output $IMBUTIDO
+    workspace 16 output $IMBUTIDO
+    workspace 17 output $IMBUTIDO
+    workspace 18 output $IMBUTIDO
+    workspace 19 output $IMBUTIDO
+    workspace 20 output $IMBUTIDO
 
 # Layout stuff:
 #
