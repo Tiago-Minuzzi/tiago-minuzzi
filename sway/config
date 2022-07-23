@@ -20,6 +20,7 @@ set $term alacritty
 # on the original workspace that the command was run on.
 set $menu dmenu_path | i3-dmenu-desktop | xargs swaymsg exec --
 
+exec wl-paste -p --watch wl-copy
 ### Key bindings
 #
 # Basics:
@@ -271,6 +272,8 @@ bindsym $mod+n exec nautilus
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec firefox --private-window
 bindsym $mod+t exec flatpak run org.telegram.desktop
+bindsym $mod+m exec rofi -modi drun -show drun -show-icons -display-drun '' -disable-history
+bindsym $mod+Shift+d exec clipman pick --tool=rofi
 bindsym $mod+Shift+z exec swaylock -c 000000 && busctl --user set-property org.gnome.Mutter.DisplayConfig /org/gnome/Mutter/DisplayConfig org.gnome.Mutter.DisplayConfig PowerSaveMode i 1
 ## Workspace prev/next
 bindsym $mod+Shift+Tab workspace prev
@@ -282,3 +285,6 @@ bindsym --locked XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym --locked XF86AudioPlay exec playerctl play-pause
 bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioPrev exec playerctl previous
+# Backlight
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
