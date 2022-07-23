@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+OPTIONS="Laptop\nDual\nHDMI"
+SELECT=$(echo -e "$OPTIONS" | rofi -dmenu -p "Select display mode:")
+
+case "$SELECT" in
+    Laptop) swaymsg output eDP-1 enable pos 0 0 res 1366x768; swaymsg output HDMI-A-1 disable 
+        ;;
+    Dual) swaymsg output HDMI-A-1 enable pos 1366 0 res 1920x1080; swaymsg output eDP-1 enable pos 0 0 res 1366x768 
+        ;;
+    HDMI) swaymsg output HDMI-A-1 enable pos 1366 0 res 1920x1080 && swaymsg output eDP-1 disable 
+        ;;
+esac
