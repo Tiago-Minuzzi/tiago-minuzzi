@@ -263,19 +263,17 @@ for_window [app_id="org.gnome.DejaDup"] floating enable
 for_window [app_id="org.telegram.desktop"] floating enable
 for_window [app_id="gnome-terminal-server"] floating enable
 # Assign apps to workspaces
+assign [class="VSCodium"] 2
 assign [app_id="org.gnome.Nautilus"] 3
 assign [class="firefox"] 10
-assign [class="Brave-browser"] 7
-for_window [class="Spotify"] move window to workspace 8
+for_window [class="Spotify"] move window to workspace 5
 # Keybindings
 bindsym $mod+n exec nautilus
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec firefox --private-window
-bindsym $mod+t exec flatpak run org.telegram.desktop
 bindsym $mod+m exec rofi -modi drun -show drun -show-icons -display-drun '' -disable-history
 bindsym $mod+Shift+d exec clipman pick --tool=rofi
-bindsym $mod+Shift+z exec swaylock -c 000000 && busctl --user set-property org.gnome.Mutter.DisplayConfig /org/gnome/Mutter/DisplayConfig org.gnome.Mutter.DisplayConfig PowerSaveMode i 1
-bindsym $mod+Shift+Ctrl+z exec systemctl suspend -i
+bindsym $mod+Shift+Ctrl+z exec swaylock -i Pictures/lock-screen.jpg -f && systemctl suspend i
 ## Workspace prev/next
 bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Tab workspace next
