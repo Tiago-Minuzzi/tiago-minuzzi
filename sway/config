@@ -97,8 +97,6 @@ set $menu dmenu_path | i3-dmenu-desktop | xargs swaymsg exec --
     bindsym $mod+Shift+5 move container to workspace number 5
     bindsym $mod+Shift+6 move container to workspace number 6
     bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
     bindsym $mod+Ctrl+Shift+1 move container to workspace number 11
     bindsym $mod+Ctrl+Shift+2 move container to workspace number 12
@@ -113,31 +111,31 @@ set $menu dmenu_path | i3-dmenu-desktop | xargs swaymsg exec --
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 # Set monitor vars
-    set $IMBUTIDO eDP-1
     set $EXTERNO HDMI-A-1
-    output $IMBUTIDO pos 0 0 res 1366x768
-    output $EXTERNO pos 1366 0 res 1920x1080
+    set $IMBUTIDO eDP-1
+    output $EXTERNO resolution 1920x1080 position 1366,0 
+    output $IMBUTIDO resolution 1366x768 position 0,0
     # Assign default monitor to workspace
-    workspace 1 output $EXTERNO $IMBUTIDO primary
-    workspace 2 output $EXTERNO $IMBUTIDO primary
-    workspace 3 output $EXTERNO $IMBUTIDO primary
-    workspace 4 output $EXTERNO $IMBUTIDO primary
-    workspace 5 output $EXTERNO $IMBUTIDO primary
-    workspace 6 output $EXTERNO $IMBUTIDO primary
-    workspace 7 output $EXTERNO $IMBUTIDO primary
-    workspace 8 output $EXTERNO $IMBUTIDO primary
-    workspace 9 output $EXTERNO $IMBUTIDO primary
-    workspace 10 output $EXTERNO $IMBUTIDO primary
-    workspace 11 output $IMBUTIDO $EXTERNO primary
-    workspace 12 output $IMBUTIDO $EXTERNO primary
-    workspace 13 output $IMBUTIDO $EXTERNO primary
-    workspace 14 output $IMBUTIDO $EXTERNO primary
-    workspace 15 output $IMBUTIDO $EXTERNO primary
-    workspace 16 output $IMBUTIDO $EXTERNO primary
-    workspace 17 output $IMBUTIDO $EXTERNO primary
-    workspace 18 output $IMBUTIDO $EXTERNO primary
-    workspace 19 output $IMBUTIDO $EXTERNO primary
-    workspace 20 output $IMBUTIDO $EXTERNO primary
+    workspace 1 output $EXTERNO $IMBUTIDO
+    workspace 2 output $EXTERNO $IMBUTIDO
+    workspace 3 output $EXTERNO $IMBUTIDO
+    workspace 4 output $EXTERNO $IMBUTIDO
+    workspace 5 output $EXTERNO $IMBUTIDO
+    workspace 6 output $EXTERNO $IMBUTIDO
+    workspace 7 output $EXTERNO $IMBUTIDO
+    workspace 8 output $EXTERNO $IMBUTIDO
+    workspace 9 output $EXTERNO $IMBUTIDO
+    workspace 10 output $EXTERNO $IMBUTIDO
+    workspace 11 output $IMBUTIDO $EXTERNO
+    workspace 12 output $IMBUTIDO $EXTERNO
+    workspace 13 output $IMBUTIDO $EXTERNO
+    workspace 14 output $IMBUTIDO $EXTERNO
+    workspace 15 output $IMBUTIDO $EXTERNO
+    workspace 16 output $IMBUTIDO $EXTERNO
+    workspace 17 output $IMBUTIDO $EXTERNO
+    workspace 18 output $IMBUTIDO $EXTERNO
+    workspace 19 output $IMBUTIDO $EXTERNO
+    workspace 20 output $IMBUTIDO $EXTERNO
 
 # Layout stuff:
 #
@@ -206,9 +204,10 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     status_command i3status-rs /home/tiago/.config/i3status-rs/config.toml
+    #status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
     position top
     font pango:Noto Sans Mono Black,Font Awesome 6 Free Solid 10
-    tray_output primary
+    tray_output $EXTERNO
 
     colors {
             background #171a1f
@@ -252,6 +251,7 @@ focus_follows_mouse no
 ## exec
 exec flatpak run org.telegram.desktop
 exec mako
+exec nm-applet
 ## exec_always
 exec_always wlsunset
 exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
