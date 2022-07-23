@@ -275,6 +275,7 @@ bindsym $mod+t exec flatpak run org.telegram.desktop
 bindsym $mod+m exec rofi -modi drun -show drun -show-icons -display-drun '' -disable-history
 bindsym $mod+Shift+d exec clipman pick --tool=rofi
 bindsym $mod+Shift+z exec swaylock -c 000000 && busctl --user set-property org.gnome.Mutter.DisplayConfig /org/gnome/Mutter/DisplayConfig org.gnome.Mutter.DisplayConfig PowerSaveMode i 1
+bindsym $mod+Shift+Ctrl+z exec systemctl suspend -i
 ## Workspace prev/next
 bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Tab workspace next
