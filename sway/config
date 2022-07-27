@@ -19,9 +19,14 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu dmenu_path | i3-dmenu-desktop | xargs swaymsg exec --
+
+# titlebar font
 font pango:Noto Sans Mono Black 8
-#exec wl-paste -p --watch wl-copy
+
+# Exec at startup
+#exec_always nm-applet --indicator
 exec_always wl-paste -t text --watch clipman store
+
 ### Key bindings
 #
 # Basics:
