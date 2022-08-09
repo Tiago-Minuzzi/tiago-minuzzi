@@ -13,5 +13,5 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'navarasu/onedark.nvim'
     Plug 'Mofiqul/dracula.nvim'
     " Auto pairs for '(' '[' '{'
-    Plug 'jiangmiao/auto-pairs'
+    "Plug 'jiangmiao/auto-pairs'
 call plug#end()
