@@ -964,7 +964,7 @@ schemes:
       white:   '0x828791'
 
 # color profiles: onedark, nord, dracula, base16, tiago.
-colors: *nord
+colors: *onedark
 
   # Indexed Colors
   #
