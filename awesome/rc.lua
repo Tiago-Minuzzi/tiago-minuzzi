@@ -572,7 +572,7 @@ autorunApps =
     "lxsession",
     "greenclip daemon",
     "caffeine",
-    "exec_always --no-startup-id xrandr --output HDMI-A-0 --primary --mode 1920x1080 --output eDP --off",
+    --"exec_always --no-startup-id xrandr --output HDMI-A-0 --primary --mode 1920x1080 --output eDP --off",
     "redshift",
     "~/.fehbg",
     "unclutter",
