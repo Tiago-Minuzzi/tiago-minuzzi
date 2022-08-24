@@ -43,7 +43,7 @@ window {
 
     location:   center;
     width:      580px;
-    y-offset:   -160px;
+    /*y-offset:   -160px;*/
     border:     1px;
 }
 
@@ -65,7 +65,7 @@ listview {
     lines:      8;
     columns:    1;
 
-    fixed-height:   false;
+    fixed-height:   true;
 }
 
 element {
