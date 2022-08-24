@@ -448,7 +448,15 @@ awful.rules.rules = {
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
     },
-
+    -- Firefox rules
+    { rule = { class = "firefox" },
+        properties = { maximized = false,
+                       maximized_horizontal = false,
+                       maximized_vertical = false,
+                       border_width = false,
+                       tag = "9"
+                    }, 
+    },
     -- Floating clients.
     { rule_any = {
         instance = {
