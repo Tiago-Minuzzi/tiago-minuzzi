@@ -272,6 +272,8 @@ for_window [app_id="gnome-terminal-server"] floating enable
 # Assign apps to workspaces
 assign [class="VSCodium"] 2
 assign [app_id="org.gnome.Nautilus"] 3
+assign [app_id="libreoffice-calc"] 7
+assign [app_id="libreoffice-writer"] 8
 assign [class="firefox"] 10
 for_window [class="Spotify"] move window to workspace 5
 # Keybindings
