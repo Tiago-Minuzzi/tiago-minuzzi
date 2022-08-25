@@ -254,6 +254,7 @@ gaps outer 1
 smart_gaps on
 smart_borders on
 focus_follows_mouse no
+seat * hide_cursor 3000
 # Services
 ## exec
 exec flatpak run org.telegram.desktop
