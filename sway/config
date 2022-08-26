@@ -221,7 +221,7 @@ bar {
             statusline #a0a8b7
             separator  #666666
 
-            focused_workspace  #4C7899 #4877b1 #FFFFFF
+            focused_workspace  #4C7899 #285577 #FFFFFF
             active_workspace   #333333 #222222 #FFFFFF
             inactive_workspace #333333 #222222 #888888
             urgent_workspace   #2F343A #900000 #FFFFFF
@@ -232,7 +232,7 @@ bar {
 include /etc/sway/config.d/*
 # By Tiago Minuzzi
 # class                 border  bground text    indicator
-client.focused          #4C7899 #4877b1 #FFFFFF #2E9EF4
+client.focused          #4C7899 #285577 #FFFFFF #2E9EF4
 client.focused_inactive #333333 #5F676A #FFFFFF #484E50
 client.unfocused        #333333 #222222 #888888 #292D2E
 client.urgent           #2F343A #900000 #FFFFFF #900000
