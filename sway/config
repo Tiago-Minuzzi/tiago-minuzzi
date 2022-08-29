@@ -271,10 +271,11 @@ for_window [app_id="org.gnome.DejaDup"] floating enable
 for_window [app_id="org.telegram.desktop"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 # Assign apps to workspaces
-assign [class="VSCodium"] 2
 assign [app_id="org.gnome.Nautilus"] 3
 assign [app_id="libreoffice-calc"] 7
 assign [app_id="libreoffice-writer"] 8
+assign [class="VSCodium"] 2
+assign [class="smplayer"] 5
 assign [class="firefox"] 10
 for_window [class="Spotify"] move window to workspace 5
 # Keybindings
