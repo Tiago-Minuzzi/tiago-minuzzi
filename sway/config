@@ -212,7 +212,7 @@ bindsym $mod+r mode "resize"
 bar {
     status_command i3status-rs /home/tiago/.config/i3status-rs/config.toml
     #status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-    position top
+    position bottom
     font pango:Noto Sans Mono Black,Font Awesome 6 Free Solid 10
     tray_output $EXTERNO
 
