@@ -267,7 +267,7 @@ exec --no-startup-id unclutter
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id bash ~/.local/bin/killLauncher
 exec_always --no-startup-id setxkbmap -layout us -variant intl
-#exec_always --no-startup-id xrandr --output HDMI-A-0 --primary --mode 1920x1080 --output eDP --off
+exec_always $HOME/.local/bin/displayConnect
 #exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
 
 # Windows
