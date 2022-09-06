@@ -107,6 +107,7 @@ alias gts="git status"
 alias gtu="git pull"
 alias ipy="ipython"
 alias jl="jupyter-lab"
+alias jn="jupyter notebook"
 alias kat="kitty +kitten icat"
 alias kssh="kitty +kitten ssh"
 alias ll='exa -l'
