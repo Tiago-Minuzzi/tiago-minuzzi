@@ -1,23 +1,15 @@
-# Who am I
-Hello, my name is Tiago Minuzzi, I'm a PhD student in genetics and molecular biology, focusing on bioinformatics and transposable elements. I'm also a linux and FOSS enthusiast.
+# About me
+## Background
 
-# Repositories
-## Personal (tiago-minuzzi)
-My personal repositorie for my linux-related stuff and personal usage scripts. Like:
-- **Arch linux:**
-Arch linux post-installation scripts for different DE's and programs.
-- **Debian:**
-Debian post-installation scripts for different DE's and programs.
-- **Else:**
-Some other personal scripts to execute tasks.
+Hello,
 
-## Laboratory activities (lab-stuff)
-Scripts that I use in my work in the laboratory or that I've made to help my colleagues.
+I'm Tiago Minuzzi, I have a master degree in Celular and Molecular Biology ([PPGBCM/UFRGS](https://www.ufrgs.br/ppgbcm/)) and I'm doing my PhD in Genetics and Molecular Biology ([PPGBM/UFRGS](http://www.ufrgs.br/ppgbm/)), focusing on bioinformatics and transposable elements (TEs). On my PhD projetct, I'm developing a tool to find TEs on eukaryotic genomes and classify them using convolutional neural networks.
 
-## PhD project (phd-proj)
-Here I'm posting scripts part of my phd project. The goal of my project is to use deep learning for transposable elements identification and classification.
+## Programming and data analysis
+
+I have experience in Python, shell scripting, R and the basics of Julia programmig language. I'm particularly skilled using Pandas (Python library) for data analysis. Also, I'm proficient in machine learning/deep learning due to my practice using scikit-learn and tensorflow/keras for my PhD project.
+
+I'm a GNU/Linux and FOSS enthusiast with expertise using many different Linux-based operating systems as, for instance, Debian, Ubuntu, Fedora, CentOS, Arch Linux, Gentoo, with knowledge using many of the most popular GNU/Linux related tools.
+
 
 ---
-
-**Note of interest:**
-I need to better organize my github and my codes, but that's a work in progress. I promisse it'll get better ASAP.
