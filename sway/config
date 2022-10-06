@@ -247,7 +247,7 @@ input * {
 # Display
 #output LVDS-1 disable
 # Wallpaper
-output * bg /home/tiago/Pictures/s4w15xwbiki91.png fill
+output * bg /home/tiago/Pictures/1aqdaekuftp81.png fill
 # Gaps etc
 gaps inner 6
 gaps outer 1
@@ -286,6 +286,7 @@ bindsym $mod+m exec rofi -modi drun -show drun -show-icons -display-drun '' -dis
 bindsym $mod+Shift+d exec clipman pick --tool=rofi
 bindsym $mod+Ctrl+d exec $HOME/.local/bin/swayMon
 bindsym $mod+Shift+Ctrl+z exec $HOME/.local/bin/locksway
+bindsym $mod+Shift+p exec $HOME/.local/bin/grimshot save area
 ## Workspace prev/next
 bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Tab workspace next
