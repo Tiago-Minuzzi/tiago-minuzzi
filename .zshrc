@@ -160,9 +160,11 @@ unset __conda_setup
 #conda activate bioinfo
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init - --no-rehash zsh)"
-eval "$(pyenv virtualenv-init - zsh)"
+if which pyenv &> /dev/null;then
+    eval "$(pyenv init --path)"
+    eval "$(pyenv init - --no-rehash zsh)"
+    eval "$(pyenv virtualenv-init - zsh)"
+fi
 # Startup fetch art
 if which rndFetch &> /dev/null;then
     rndFetch
