@@ -247,7 +247,7 @@ input * {
 # Display
 #output LVDS-1 disable
 # Wallpaper
-output * bg /home/tiago/Pictures/1aqdaekuftp81.png fill
+output * bg /home/tiago/Pictures/wallhaven-g7lyd7.jpg fill
 # Gaps etc
 gaps inner 6
 gaps outer 1
