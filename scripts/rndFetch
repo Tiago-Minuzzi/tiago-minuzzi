@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+arr[0]="magenta"
+arr[1]="blue"
+rand=$[ $RANDOM % 2 ] # bash internal function $RANDOM
+# Run array
+clear &&
+fm6000 -r --color bright_${arr[$rand]}
