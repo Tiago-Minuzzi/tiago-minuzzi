@@ -12,4 +12,15 @@ I have experience in Python, shell scripting, R and the basics of Julia programm
 I'm a GNU/Linux and FOSS enthusiast with expertise using many different Linux-based operating systems as, for instance, Debian, Ubuntu, Fedora, CentOS, Arch Linux, Gentoo, with knowledge using many of the most popular GNU/Linux related tools.
 
 
+### Languages and Tools
+
+<img align="left" alt="Linux" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" />
+<img align="left" alt="Bash" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" />
+<img align="left" alt="Python" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" />
+<img align="left" alt="Git" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
+<img align="left" alt="GitHub" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+<img align="left" alt="R" width="30px" style="padding-right:10px;" src="[https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg](https://img.icons8.com/fluency/512/r-project.png)" />
+<br />
+
+
 ---
