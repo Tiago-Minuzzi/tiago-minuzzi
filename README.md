@@ -1,11 +1,11 @@
 # About me
-## Background
+## 🧑🏻‍🔬 Background
 
 Hello,
 
 I'm Tiago Minuzzi, I have a master degree in Celular and Molecular Biology ([PPGBCM/UFRGS](https://www.ufrgs.br/ppgbcm/)) and I'm doing my PhD in Genetics and Molecular Biology ([PPGBM/UFRGS](http://www.ufrgs.br/ppgbm/)), focusing on bioinformatics and transposable elements (TEs). On my PhD projetct, I'm developing a tool to find TEs on eukaryotic genomes and classify them using convolutional neural networks.
 
-## Programming and data analysis
+## 🧑🏻‍💻 Programming and data analysis
 
 I have experience in Python, shell scripting, R and the basics of Julia programmig language. I'm particularly skilled using Pandas (Python library) for data analysis. Also, I'm proficient in machine learning/deep learning due to my practice using scikit-learn and tensorflow/keras for my PhD project.
 
@@ -25,6 +25,15 @@ I'm a GNU/Linux and FOSS enthusiast with expertise using many different Linux-ba
 <img align="left" alt="Docker" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" />
 <img align="left" alt="R" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" />
 
-<br><br><br> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Tiago-Minuzzi&hide=c,html&theme=gruvbox" />
+<br><br><br> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Tiago-Minuzzi&hide=c,html&theme=react&hide_border=true&count_private=true" />
+
+## Connect with me:
+<p align="left">
+
+<a href = "https://www.linkedin.com/in/tiago-minuzzi-626567125/"><img src="https://img.icons8.com/fluent/48/000000/linkedin.png"/></a>
+<a href = "https://www.instagram.com/tiago_minuzzi/"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
+<a href = "https://www.youtube.com/@drosophilars7645/videos"><img src="https://img.icons8.com/color/48/000000/youtube-play.png"/></a>
+
+</p>
 
 #
