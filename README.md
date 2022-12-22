@@ -24,7 +24,7 @@ I'm a GNU/Linux and FOSS enthusiast with expertise using many different Linux-ba
 <img align="left" alt="GitHub" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 <img align="left" alt="Docker" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" />
 <img align="left" alt="R" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" />
-<br />
 
+<br><br><br> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Tiago-Minuzzi&hide=c,html&theme=gruvbox" />
 
----
+#
