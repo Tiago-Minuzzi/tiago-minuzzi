@@ -3,6 +3,10 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 " Set leader key
 let mapleader = "\<Space>"
 
+vnoremap <C-J> :m '>+1<CR>gv=gv
+vnoremap <C-K> :m '<-2<CR>gv=gv
+
+
 " Copy to clipboard
 vnoremap  <leader>y  "+y
 nnoremap  <leader>Y  "+yg_
