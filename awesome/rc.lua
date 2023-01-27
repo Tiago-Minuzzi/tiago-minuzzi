@@ -45,12 +45,12 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
---beautiful.init("/home/tiago/repos/tiago-minuzzi/awesome/themes/gtk/theme.lua")
+--beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init("/home/tiago/.config/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
-editor = os.getenv("EDITOR") or "neovim"
+editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -63,12 +63,14 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
+    awful.layout.suit.floating,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
-    awful.layout.suit.floating,
+    awful.layout.suit.fair,
+    awful.layout.suit.fair.horizontal,
     awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
+    awful.layout.suit.magnifier,
 }
 -- }}}
 
@@ -270,7 +272,7 @@ globalkeys = gears.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift", "Control"   }, "e", awesome.quit,
+    awful.key({ modkey, "Shift"   }, "e", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
@@ -448,15 +450,12 @@ awful.rules.rules = {
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
     },
-    -- Firefox rules
+
     { rule = { class = "firefox" },
-        properties = { maximized = false,
-                       maximized_horizontal = false,
-                       maximized_vertical = false,
-                       border_width = false,
-                       tag = "9"
-                    }, 
-    },
+    properties = { opacity = 1,
+                    maximized = false,
+                    floating = false } },
+
     -- Floating clients.
     { rule_any = {
         instance = {
@@ -554,9 +553,6 @@ client.connect_signal("request::titlebars", function(c)
     }
 end)
 
--- GAPS
-beautiful.useless_gap = 4
-beautiful.gap_single_client = false
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
@@ -565,20 +561,36 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
--- Autorun programs
-autorun = true
-autorunApps =
-{
-    "lxsession",
-    "greenclip daemon",
-    "caffeine",
-    --"exec_always --no-startup-id xrandr --output HDMI-A-0 --primary --mode 1920x1080 --output eDP --off",
-    "redshift",
-    "~/.fehbg",
-    "unclutter",
-}
-if autorun then
-   for app = 1, #autorunApps do
-       awful.util.spawn(autorunApps[app])
-   end
+local function titlebar_for_floating_client(c)
+	if c.floating then
+		c:emit_signal("request::titlebars")
+	else
+		local t = c:tags()[1]
+		if t and t.layout.name == "floating" then
+			c:emit_signal("request::titlebars")
+		else
+			awful.titlebar.hide(c, "top")
+			awful.titlebar.hide(c, "bottom")
+			awful.titlebar.hide(c, "left")
+			awful.titlebar.hide(c, "right")
+		end
+	end
+end
+
+client.connect_signal("property::floating", titlebar_for_floating_client)
+
+for s in screen do
+	for _, t in pairs(s.tags) do
+		t:connect_signal("property::layout", function(tag)
+			if tag.layout.name == "floating" then
+				for _, c in pairs(tag:clients()) do
+					c:emit_signal("request::titlebars")
+				end
+			else
+				for _, c in pairs(tag:clients()) do
+					titlebar_for_floating_client(c)
+				end
+			end
+		end)
+	end
 end
