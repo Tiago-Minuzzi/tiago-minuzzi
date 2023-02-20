@@ -594,3 +594,6 @@ for s in screen do
 		end)
 	end
 end
+
+-- Autostart applications
+awful.spawn.with_shell("~/.config/awesome/autorun.sh")
