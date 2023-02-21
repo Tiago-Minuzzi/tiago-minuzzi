@@ -292,17 +292,17 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
 
-    awful.key({ modkey, "Control" }, "n",
-              function ()
-                  local c = awful.client.restore()
-                  -- Focus restored client
-                  if c then
-                    c:emit_signal(
-                        "request::activate", "key.unminimize", {raise = true}
-                    )
-                  end
-              end,
-              {description = "restore minimized", group = "client"}),
+--    awful.key({ modkey, "Control" }, "n",
+--              function ()
+--                  local c = awful.client.restore()
+--                  -- Focus restored client
+--                  if c then
+--                    c:emit_signal(
+--                        "request::activate", "key.unminimize", {raise = true}
+--                    )
+--                  end
+--              end,
+--              {description = "restore minimized", group = "client"}),
 
     -- Prompt
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
@@ -340,13 +340,13 @@ clientkeys = gears.table.join(
               {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
-    awful.key({ modkey,           }, "n",
-        function (c)
-            -- The client currently has the input focus, so it cannot be
-            -- minimized, since minimized clients can't have the focus.
-            c.minimized = true
-        end ,
-        {description = "minimize", group = "client"}),
+--    awful.key({ modkey,           }, "n",
+--        function (c)
+--            -- The client currently has the input focus, so it cannot be
+--            -- minimized, since minimized clients can't have the focus.
+--            c.minimized = true
+--        end ,
+--        {description = "minimize", group = "client"}),
     awful.key({ modkey,           }, "m",
         function (c)
             c.maximized = not c.maximized
