@@ -15,11 +15,17 @@ theme.wallpaper = "/home/tiago/.config/awesome/themes/catppuccin/wallpaper.png"
 theme.font      = "JetBrains Mono Bold 9"
 
 -- {{{ Colors
-theme.fg_normal  = "#cad3f5"
-theme.fg_focus   = "#cad3f5"
+macchiato_base = "#24273a"
+macchiato_lavender = "#b7bdf8"
+macchiato_surface0 = "#363a4f"
+macchiato_surface1 = "#494d64"
+macchiato_text = "#cad3f5"
+
+theme.fg_normal  = macchiato_text 
+theme.fg_focus   = macchiato_text 
 theme.fg_urgent  = "#CC9393"
-theme.bg_normal  = "#494d64"
-theme.bg_focus   = "#24273a"
+theme.bg_normal  = macchiato_surface1
+theme.bg_focus   = macchiato_base
 theme.bg_urgent  = "#3F3F3F"
 theme.bg_systray = theme.bg_normal
 -- }}}
@@ -27,8 +33,8 @@ theme.bg_systray = theme.bg_normal
 -- {{{ Borders
 theme.useless_gap   = dpi(2)
 theme.border_width  = dpi(2)
-theme.border_normal = "#363a4f"
-theme.border_focus  = "#b7bdf8"
+theme.border_normal = macchiato_surface0
+theme.border_focus  = macchiato_lavender
 theme.border_marked = "#CC9393"
 -- }}}
 
