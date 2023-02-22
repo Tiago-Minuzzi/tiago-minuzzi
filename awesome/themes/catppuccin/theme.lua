@@ -39,8 +39,8 @@ theme.border_marked = "#CC9393"
 -- }}}
 
 -- {{{ Titlebars
-theme.titlebar_bg_focus  = "#3F3F3F"
-theme.titlebar_bg_normal = "#3F3F3F"
+theme.titlebar_bg_focus  = macchiato_base
+theme.titlebar_bg_normal = macchiato_surface1
 -- }}}
 
 -- There are other variable sets
