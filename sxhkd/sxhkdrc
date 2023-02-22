@@ -1,10 +1,13 @@
 # Reload sxhkd config file
-super + ctrl + Esc
+super + ctrl + x
     pkill -USR1 -x sxhkd
 
 # Open firefox
 super + b
     firefox
+
+super + shift + b
+    firefox --private-window
 
 # Open ranger
 super + n
