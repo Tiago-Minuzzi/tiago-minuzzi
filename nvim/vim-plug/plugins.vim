@@ -12,6 +12,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Color schemes
     Plug 'navarasu/onedark.nvim'
     Plug 'Mofiqul/dracula.nvim'
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     " Auto pairs for '(' '[' '{'
     "Plug 'jiangmiao/auto-pairs'
 call plug#end()

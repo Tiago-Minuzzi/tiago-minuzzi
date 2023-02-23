@@ -37,4 +37,4 @@ syntax on
 let g:onedark_config = {
     \ 'style': 'darker',
 \}
-colorscheme onedark
+colorscheme catppuccin-macchiato
