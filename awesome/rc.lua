@@ -8,6 +8,8 @@ local awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
@@ -204,6 +206,8 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            batteryarc_widget({show_current_level = true}),
+            volume_widget({widget_type = 'arc'}),
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
