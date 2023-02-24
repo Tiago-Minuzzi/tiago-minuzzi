@@ -1,0 +1,9 @@
+awesome
+alacritty
+picom-ibhagwan-git
+sxhkd
+ranger
+w3m
+xclip
+lxsession-gtk3
+acpi
