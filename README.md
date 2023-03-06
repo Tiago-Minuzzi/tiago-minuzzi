@@ -32,7 +32,7 @@ I'm a GNU/Linux and FOSS enthusiast with expertise using many different Linux-ba
 
 <a href = "https://www.linkedin.com/in/tiago-minuzzi-626567125/"><img src="https://img.icons8.com/fluent/48/000000/linkedin.png"/></a>
 <a href = "https://www.instagram.com/tiago_minuzzi/"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
-<a href = "https://www.youtube.com/@drosophilars7645/videos"><img src="https://img.icons8.com/color/48/000000/youtube-play.png"/></a>
+<a href = "https://www.youtube.com/channel/UCCsXSMtOAw80-BqKfyUZ5MA"><img src="https://img.icons8.com/color/48/000000/youtube-play.png"/></a>
 
 </p>
 
