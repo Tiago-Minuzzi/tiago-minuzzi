@@ -17,6 +17,14 @@ super + n
 super + ctrl + shift + s
     systemctl suspend
 
+# Arandr
+super + shift + r
+    arandr
+
+# htop
+super + shift + t
+    alacritty -e htop
+
 # Volume
 XF86AudioLowerVolume
     pactl set-sink-volume @DEFAULT_SINK@ -5%
