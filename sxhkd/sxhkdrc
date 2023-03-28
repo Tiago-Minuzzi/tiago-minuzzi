@@ -25,6 +25,10 @@ super + shift + r
 super + shift + t
     alacritty -e htop
 
+# Clipboard
+super + shift + d
+    ~/.local/bin/copyToClip
+
 # Volume
 XF86AudioLowerVolume
     pactl set-sink-volume @DEFAULT_SINK@ -5%
