@@ -14,4 +14,5 @@ run ~/.screenlayout/awesome.sh
 run lxpolkit
 run greenclip daemon
 run nm-applet
+run unclutter
 xset dpms 0 0 0 && xset s noblank  && xset s off
