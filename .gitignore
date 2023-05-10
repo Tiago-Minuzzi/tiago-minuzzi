@@ -2,3 +2,5 @@ nvim/autoload/*
 nvim/autoload/plugged/*
 README.md.backup
 R/curso_r_rna-seq/*.pdf
+python/__pycache__
+python/__pycache__/*

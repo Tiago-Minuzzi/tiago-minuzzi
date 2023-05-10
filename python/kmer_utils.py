@@ -15,7 +15,7 @@ class Tokenator:
         return kcount
     
     
-    def kmer_index(self) -> dict[str, int]:
+    def generate_table(self) -> dict[str, int]:
         """Returns a dictionary with indexes for unique k-mers"""
         uni_k = np.unique(np.concatenate(self.kmerized_seqs))
         self.kmer_table = { v:k+1 for k,v in enumerate(uni_k) }
