@@ -24,11 +24,14 @@ class Tokenator:
     
     def tokenize(self) -> np.ndarray:
         """Converts string type k-mers to a integer tokens"""
-        tokenized = []
-        for i in self.kmerized_seqs:
-            new_i = np.array([ self.kmer_table[j] for j in i])
-            tokenized.append(new_i)
-        return tokenized
+        try:
+            tokenized = []
+            for i in self.kmerized_seqs:
+                new_i = np.array([ self.kmer_table[j] for j in i])
+                tokenized.append(new_i)
+            return tokenized
+        except TypeError:
+            print("Please, generate k-mer table before tokenizing by running the generate_table() method.")
  
 
 def kmerizer(sequencia: str, k: int = 4) -> np.ndarray:
