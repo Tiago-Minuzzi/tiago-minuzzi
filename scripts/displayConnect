@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
-if xrandr -q | grep 'HDMI-A-0 connected';then
-    xrandr --output HDMI-A-0 --primary --mode 1920x1080 --right-of eDP --output eDP --mode 1366x768 &&
-    ~/.fehbg
+if xrandr -q | grep 'HDMI-A-0 connected' > /dev/null;then
+    xrandr --output HDMI-A-0 --primary --mode 1920x1080 --right-of eDP --output eDP --mode 1366x768 && \
+        if command -v feh > /dev/null;then
+            ~/.fehbg
+        fi
 else
-    xrandr --output HDMI-A-0 --off --output eDP --primary --mode 1366x768 &&
-    ~/.fehbg
+    xrandr --output HDMI-A-0 --off --output eDP --primary --mode 1366x768 && \
+        if command -v feh > /dev/null;then
+            ~/.fehbg
+        fi
 fi
