@@ -30,14 +30,14 @@ super + shift + d
     ~/.local/bin/copyToClip
 
 # Volume
-#XF86AudioLowerVolume
-super + bracketleft
+XF86AudioLowerVolume
+#super + bracketleft
     pactl set-sink-volume @DEFAULT_SINK@ -5%
-#XF86AudioRaiseVolume
-super + bracketright
+XF86AudioRaiseVolume
+#super + bracketright
     pactl set-sink-volume @DEFAULT_SINK@ +5%
-#XF86AudioMute
-super + backslash
+XF86AudioMute
+#super + backslash
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 XF86AudioPlay
     playerctl play-pause
@@ -47,3 +47,7 @@ XF86AudioPrev
     playerctl previous
 XF86AudioStop
     playerctl stop
+XF86MonBrightnessUp
+    brightnessctl set +5%
+XF86MonBrightnessDown
+    brightnessctl set 5%-
