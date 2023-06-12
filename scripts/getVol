@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-pactl list sinks | grep 'Sink #1486' -A10 | grep '[[:space:]]Volume:' | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'
+pactl list sinks | grep 'analog-stereo' -A7 | grep '[[:space:]]Volume:' | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'
