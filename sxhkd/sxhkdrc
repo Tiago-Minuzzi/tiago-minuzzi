@@ -29,6 +29,10 @@ super + shift + t
 super + shift + d
     ~/.local/bin/copyToClip
 
+# dwmDisplay
+super + ctrl + d
+    ~/.local/bin/dwmDisplay
+
 # Volume
 XF86AudioLowerVolume
 #super + bracketleft
