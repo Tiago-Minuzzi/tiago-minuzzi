@@ -11,7 +11,7 @@ super + shift + b
 
 # Open ranger
 super + n
-    konsole -e ranger
+    alacritty -e ranger
 
 # Suspend
 super + ctrl + shift + s
@@ -23,7 +23,7 @@ super + shift + r
 
 # htop
 super + shift + t
-    konsole -e htop
+    alacritty -e htop
 
 # Clipboard
 super + shift + d
