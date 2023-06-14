@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
-pactl list sinks | grep 'analog-stereo' -A7 | grep '[[:space:]]Volume:' | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'
+#pactl list sinks | grep 'analog-stereo' -A7 | grep '[[:space:]]Volume:' | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'
+
+if pactl list sinks | grep 'analog-stereo' -A7 | grep 'Mute: yes' > /dev/null;then
+    echo "Mute"
+else
+    pactl list sinks | grep 'analog-stereo' -A7 | grep '[[:space:]]Volume:' | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,' | sed 's/$/&%/'
+fi
