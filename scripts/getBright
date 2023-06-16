@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Show brightness
+brightnessctl info | grep '(.*%)' -o | sed -E 's/^\((.*%)\)$/\1/'
