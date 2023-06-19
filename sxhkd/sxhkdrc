@@ -31,7 +31,7 @@ super + shift + ctrl + k
 
 # Scrot selection
 super + shift + s
-    scrot -s -f -l "#FF0000"
+    scrot -s -f -l color=red,width=3
 
 # Clipboard
 super + shift + d
