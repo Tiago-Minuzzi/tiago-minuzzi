@@ -25,6 +25,14 @@ super + shift + r
 super + shift + t
     alacritty -e htop
 
+# Xkill
+super + shift + ctrl + k
+    xkill
+
+# Scrot selection
+super + shift + s
+    scrot -s -f -l "#FF0000"
+
 # Clipboard
 super + shift + d
     ~/.local/bin/copyToClip
