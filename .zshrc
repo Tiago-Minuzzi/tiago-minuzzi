@@ -23,6 +23,7 @@ RPROMPT="%T"
 setopt histignorealldups sharehistory
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -v
+bindkey '^?' backward-delete-char
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=10000
