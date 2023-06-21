@@ -11,7 +11,7 @@ super + shift + b
 
 # Open ranger
 super + n
-    alacritty -e ranger
+    st -e ranger
 
 # Suspend
 super + ctrl + shift + s
@@ -23,7 +23,7 @@ super + shift + r
 
 # htop
 super + shift + t
-    alacritty -e htop
+    st -e htop
 
 # Xkill
 super + shift + ctrl + k
