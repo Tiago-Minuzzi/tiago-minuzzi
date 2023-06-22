@@ -5,4 +5,4 @@ BIN="bin/${ARQ%.c}"
 
 gcc -o $BIN $ARQ
 
-./$BIN && rm $BIN
+./$BIN; rm $BIN
