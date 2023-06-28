@@ -10,7 +10,7 @@ void main() {
     comp = regcomp(&regex,"^tc.*ct[ag][ag]$",0);
 
     char *sequencias[] = { "tctgactgtagcctaa", "cttagctgactatagcctaa", "tctgactgtagctgagcggaact", "tctttaaagggcccctga" };
-    int tamanho = sizeof(sequencias) / sizeof(sequencias[0]);
+    size_t tamanho = sizeof(sequencias) / sizeof(sequencias[0]);
 
     for(int i = 0; i < tamanho; i++) {
         comp = regexec(&regex, sequencias[i], 0, NULL, 0); // execute regular expression
