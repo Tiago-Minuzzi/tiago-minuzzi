@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ARQ=$1
+
+# Open file and release terminal
+xdg-open "${ARQ}" &
