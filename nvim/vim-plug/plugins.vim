@@ -15,4 +15,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     " Auto pairs for '(' '[' '{'
     "Plug 'jiangmiao/auto-pairs'
+    " :MasonUpdate updates registry contents
+    Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
 call plug#end()

@@ -1,5 +1,6 @@
 -- (N)Vim plugins
 vim.cmd('source $HOME/.config/nvim/vim-plug/plugins.vim')
+require("mason").setup()
 -- Set leader key
 vim.g.mapleader = ' '
 
