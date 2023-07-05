@@ -66,11 +66,11 @@ void main() {
 
             while(ci <= ciclos){
                 printf(">>> Ciclo %d\n",ci);
-                printf("--- Denaturation step---\n");
+                printf("--- Denaturation step ---\n");
                 while(controlador(temp_des,&ti, 7) == 0){}
-                printf("--- Annealing step---\n");
+                printf("--- Annealing step ---\n");
                 while(controlador(temp_ane,&ti, 10) == 0){}
-                printf("--- Extension step---\n");
+                printf("--- Extension step ---\n");
                 while(controlador(temp_ext,&ti, 5) == 0){}
                 ci++;
             } 
