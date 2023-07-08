@@ -1,6 +1,9 @@
 -- (N)Vim plugins
 vim.cmd('source $HOME/.config/nvim/vim-plug/plugins.vim')
 require("mason").setup()
+require("mason-lspconfig").setup()
+require("lspconfig")["pylsp"].setup{}
+
 -- Set leader key
 vim.g.mapleader = ' '
 
