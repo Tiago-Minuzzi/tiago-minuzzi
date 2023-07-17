@@ -41,6 +41,10 @@ super + shift + d
 super + ctrl + d
     ~/.local/bin/dwmDisplay
 
+# screen locking
+super + shift + l
+    dm-tool lock && xset dpms force off
+
 # Zotero
 super + shift + z
     zotero
