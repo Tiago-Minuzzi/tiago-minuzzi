@@ -6,7 +6,7 @@ SELECT=$(echo -e "$OPTIONS" | dmenu -i -p "Select display mode:")
 case "$SELECT" in
     Laptop) xrandr --output HDMI-A-0 --off --output eDP --primary --mode 1366x768 &&
         ~/.fehbg ;;
-    Dual) xrandr --output HDMI-A-0 --primary --mode 1920x1080 --right-of eDP --output eDP --mode 1366x768 &&
+    Dual) xrandr --output HDMI-A-0 --primary --mode 1920x1080 --pos 1366x0 --output eDP --mode 1366x768 --pos 0x312 &&
         ~/.fehbg ;;
     HDMI) xrandr --output HDMI-A-0 --primary --mode 1920x1080 --right-of eDP --output eDP --off &&
         ~/.fehbg ;;
