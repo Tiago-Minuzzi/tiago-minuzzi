@@ -7,6 +7,9 @@ require("lspconfig")["pylsp"].setup{}
 -- Set leader key
 vim.g.mapleader = ' '
 
+-- Save and continue on file
+vim.api.nvim_set_keymap('n', 'zz', ":update<CR>", { noremap = true })
+
 vim.api.nvim_set_keymap('v', '<C-J>', ":m '>+1<CR>gv=gv", { noremap = true })
 vim.api.nvim_set_keymap('v', '<C-K>', ":m '<-2<CR>gv=gv", { noremap = true })
 
