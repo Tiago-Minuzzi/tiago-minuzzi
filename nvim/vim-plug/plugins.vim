@@ -19,4 +19,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
     Plug 'williamboman/mason-lspconfig.nvim'
     Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
 call plug#end()

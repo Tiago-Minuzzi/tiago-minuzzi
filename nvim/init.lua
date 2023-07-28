@@ -5,6 +5,19 @@ require("mason-lspconfig").setup()
 require("lspconfig")["pylsp"].setup{}
 require("lspconfig")["clangd"].setup{}
 
+-- load nvim-cmp
+local cmp = require('cmp')
+local lspconfig = require('lspconfig')
+
+-- Configure cmp sources
+cmp.setup({
+  sources = {
+    { name = 'nvim_lsp' }, -- Enable nvim-cmp LSP source
+    { name = 'buffer' },   -- Enable buffer completion source
+    { name = 'path' },     -- Enable path completion source
+  },
+})
+
 -- Set up LSP key mappings for pylsp
 -- Example: Go to definition
 vim.api.nvim_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
