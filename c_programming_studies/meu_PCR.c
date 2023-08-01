@@ -21,7 +21,7 @@ int time_ane = 10;
 int time_ext = 8;
 int time_man = -1;
 
-int controlador(int target_temp, int *t0, int timef) {
+int controlador(int target_temp, int *t0, int timef, int ciclo) {
     
     if ( *t0 <= (target_temp - tolerancia) ) { 
         printf("Aumentando. T: %d\n",*t0);
@@ -38,7 +38,7 @@ int controlador(int target_temp, int *t0, int timef) {
         }
         printf("Mantendo. T: %d\n",*t0); 
         do { 
-            printf("Tempo: %d\n",time0); 
+            printf("- Ciclo: %d -> Tempo: %d\n",ciclo,time0);
             if (time0 == timef) {
                 return 1; }
             time0++; 
@@ -64,7 +64,7 @@ void main() {
         
 
         if (halter == false) {
-            int f0 = controlador(temp_des, &ti, 5);
+            int f0 = controlador(temp_des, &ti, 5, 0);
             if (f0 == 1) {
                 halter = true; 
             } 
@@ -74,11 +74,11 @@ void main() {
             while(ci <= ciclos){
                 printf(">>> Ciclo %d\n",ci);
                 printf("--- Denaturation step ---\n");
-                while(controlador(temp_des,&ti, time_des) == 0);
+                while(controlador(temp_des,&ti, time_des, ci) == 0);
                 printf("--- Annealing step ---\n");
-                while(controlador(temp_ane,&ti, time_ane) == 0);
+                while(controlador(temp_ane,&ti, time_ane, ci) == 0);
                 printf("--- Extension step ---\n");
-                while(controlador(temp_ext,&ti, time_ext) == 0);
+                while(controlador(temp_ext,&ti, time_ext, ci) == 0);
                 ci++;
             } 
 
@@ -89,7 +89,7 @@ void main() {
             }
 
         } else { 
-            controlador(temp_man, &ti, time_man);
+            controlador(temp_man, &ti, time_man, 0);
             }
 
 
