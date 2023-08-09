@@ -177,5 +177,5 @@ if which pyenv &> /dev/null;then
 fi
 # Startup fetch art
 if which rndFetch &> /dev/null;then
-    rndFetch
+    rndFetch 2> /dev/null
 fi
