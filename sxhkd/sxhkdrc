@@ -49,6 +49,10 @@ super + shift + l
 super + shift + z
     zotero
 
+# Pavucontrol
+super + shift + a
+    pavucontrol
+
 # Volume
 XF86AudioLowerVolume
 #super + bracketleft
