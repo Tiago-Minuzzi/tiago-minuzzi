@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # To use this script
 # Create a cronservice with the command
 # crontab -e (may need to specify the editor: EDITOR=nvim crontab -e)
