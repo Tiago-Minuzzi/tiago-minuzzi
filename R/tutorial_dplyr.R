@@ -74,3 +74,8 @@ iris %>% select(Species, Sepal.Length, Petal.Length) %>% group_by(Species) %>% s
 
 # Usando relocate para reorganizar colunas
 iris %>% select(Species, Sepal.Length, Petal.Length) %>% relocate(Species, Petal.Length, Sepal.Length) %>% head()
+
+# -----//-----
+
+# Aplicando condição a mútiplas colunas com if_all/if_any e função anônima (lambda)
+iris %>% arrange(desc(Species)) %>% select(Species, Sepal.Length, Petal.Length) %>% filter(if_all(-Species, function(x) x > 5))
