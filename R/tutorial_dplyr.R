@@ -79,3 +79,13 @@ iris %>% select(Species, Sepal.Length, Petal.Length) %>% relocate(Species, Petal
 
 # Aplicando condição a mútiplas colunas com if_all/if_any e função anônima (lambda)
 iris %>% arrange(desc(Species)) %>% select(Species, Sepal.Length, Petal.Length) %>% filter(if_all(-Species, function(x) x > 5))
+
+# -----//-----
+
+# Usando a função count para contar os valores de uma coluna
+iris %>% count(Species)
+
+# -----//-----
+
+# Usando a função distinct para verificar os valores únicos
+iris %>% distinct(Species)
