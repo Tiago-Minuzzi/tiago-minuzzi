@@ -90,6 +90,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion:::*:default' menu yes select
 # Aliases
 alias bp="bat -p"
+alias bpw="bat --wrap never -p"
 alias bpy="bpytop"
 alias cac="conda activate"
 alias catfas="perl $HOME/sftw/catfasta2phyml/catfasta2phyml.pl -c -f"
