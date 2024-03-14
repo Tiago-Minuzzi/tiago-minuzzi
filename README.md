@@ -3,7 +3,7 @@
 
 Hello,
 
-I'm Tiago Minuzzi, I have a master degree in Celular and Molecular Biology ([PPGBCM/UFRGS](https://www.ufrgs.br/ppgbcm/)) and I'm doing my PhD in Genetics and Molecular Biology ([PPGBM/UFRGS](http://www.ufrgs.br/ppgbm/)), focusing on bioinformatics and transposable elements (TEs). On my PhD projetct, I'm developing a tool to find TEs on eukaryotic genomes and classify them using convolutional neural networks.
+I'm Tiago Minuzzi, I have a master degree in Celular and Molecular Biology ([PPGBCM/UFRGS](https://www.ufrgs.br/ppgbcm/)) and a PhD in Genetics and Molecular Biology ([PPGBM/UFRGS](http://www.ufrgs.br/ppgbm/)). I'm a bioinformatician working at Insituto Carlos Chagas - Fiocruz/PR.
 
 ## 🧑🏻‍💻 Programming and data analysis
 
