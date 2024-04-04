@@ -43,7 +43,7 @@ super + ctrl + d
 
 # screen locking
 super + shift + l
-    dm-tool lock && xset dpms force off
+    i3lock -c 000000 && xset dpms force off
 
 # Zotero
 super + shift + z
