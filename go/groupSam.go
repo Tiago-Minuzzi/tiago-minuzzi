@@ -1,17 +1,16 @@
 package main
 
 import (
-    "io"
     "os"
     "fmt"
     //"regexp"
+    "bufio"
     "strings"
-    "encoding/csv"
 )
 
 func main() {
     if len(os.Args) != 2 {
-		fmt.Println("Uso: ./seu_programa <nome_do_arquivo>")
+		fmt.Println("Uso: ./groupSam nome_do_arquivo.sam > saida.tsv")
 		os.Exit(1)
 	}
 
@@ -22,19 +21,17 @@ func main() {
 
     defer arquivo.Close()
 
-    reader := csv.NewReader(arquivo)
-    reader.Comma = '\t'
+    reader := bufio.NewScanner(arquivo)
     
     sam_map := make(map[string][]string)
 
-    for {
-        records, err := reader.Read()
-        if err == io.EOF {
-            break
-        }
+    for reader.Scan() {
+        linha := reader.Text()
+        linha = strings.TrimSpace(linha)
 
-        idx := records[0]
-        cgr := records[5]
+        splitted := strings.Split(linha, "\t")
+        idx,_,cgr,_ := splitted[0], splitted[1:5], splitted[5], splitted[6:]
+
         sam_map[idx] = append(sam_map[idx], cgr)
     }
 
