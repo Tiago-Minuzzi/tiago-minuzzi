@@ -30,10 +30,11 @@ func main() {
         linha := reader.Text()
         linha = strings.TrimSpace(linha)
 
-        splitted := strings.Split(linha, "\t")
-        idx,_,cgr,_ := splitted[0], splitted[1:5], splitted[5], splitted[6:]
-
-        sam_map[idx] = append(sam_map[idx], cgr)
+        if !strings.HasPrefix(linha, "@"){
+            splitted := strings.Split(linha, "\t")
+            idx,_,cgr,_ := splitted[0], splitted[1:5], splitted[5], splitted[6:]
+            sam_map[idx] = append(sam_map[idx], cgr)
+        }
     }
 
     var resultado strings.Builder
