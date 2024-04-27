@@ -10,6 +10,7 @@ import (
 
 func main() {
     if len(os.Args) != 2 {
+		fmt.Println("### Criado por Tiago Minuzzi ###","\n")
 		fmt.Println("Uso: ./groupSam nome_do_arquivo.sam > saida.tsv")
 		os.Exit(1)
 	}
