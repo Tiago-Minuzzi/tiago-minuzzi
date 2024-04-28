@@ -22,9 +22,24 @@ func main() {
 
     defer arquivo.Close()
 
-    reader := bufio.NewScanner(arquivo)
+    groupedSam := createSamMap(arquivo)
+
+    var resultado strings.Builder
+
+    for i, j := range groupedSam {
+        resultado.WriteString(i)
+        resultado.WriteString("\t")
+        resultado.WriteString(strings.Join(j, "\t"))
+        resultado.WriteString("\n")
+    }
+
+    fmt.Println(resultado.String())
+}
+
+func createSamMap(samFile *os.File) map[string][]string {
+    reader := bufio.NewScanner(samFile)
     
-    sam_map := make(map[string][]string)
+    samMap := make(map[string][]string)
 
     for reader.Scan() {
         linha := reader.Text()
@@ -33,18 +48,8 @@ func main() {
         if !strings.HasPrefix(linha, "@"){
             splitted := strings.Split(linha, "\t")
             idx,_,cgr,_ := splitted[0], splitted[1:5], splitted[5], splitted[6:]
-            sam_map[idx] = append(sam_map[idx], cgr)
+            samMap[idx] = append(samMap[idx], cgr)
         }
     }
-
-    var resultado strings.Builder
-
-    for i, j := range sam_map {
-        resultado.WriteString(i)
-        resultado.WriteString("\t")
-        resultado.WriteString(strings.Join(j, "\t"))
-        resultado.WriteString("\n")
-    }
-
-    fmt.Println(resultado.String())
+    return samMap
 }
