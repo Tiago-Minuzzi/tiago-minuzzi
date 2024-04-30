@@ -23,4 +23,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
+    Plug 'numToStr/Comment.nvim'
 call plug#end()
+lua require('Comment').setup()

@@ -5,6 +5,7 @@ require("mason-lspconfig").setup()
 require("lspconfig")["pylsp"].setup{}
 require("lspconfig")["clangd"].setup{}
 require("lspconfig")["gopls"].setup{}
+require('Comment').setup()
 
 -- load nvim-cmp
 local cmp = require('cmp')
