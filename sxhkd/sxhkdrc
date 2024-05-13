@@ -49,6 +49,10 @@ super + shift + l
 super + shift + z
     zotero
 
+# Menu for .desktop files
+super + shift + m
+    j4-dmenu-desktop
+
 # Pavucontrol
 super + shift + a
     pavucontrol
