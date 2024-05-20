@@ -25,11 +25,20 @@ setopt histignorealldups sharehistory
 bindkey -v
 bindkey '^?' backward-delete-char
 bindkey "^R" history-incremental-search-backward
+# search history on the related term only
+bindkey "^p" history-search-backward
+bindkey "^n" history-search-forward
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
+HISTDUP=erase # remove duplicates
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 # Open tmux by default on shell
 #[ $TERM != "screen" ] && exec tmux
