@@ -82,6 +82,7 @@ compinit
 #zstyle ':completion:*' menu select=2
 #zstyle ':completion:*' menu select=long
 eval "$(dircolors -b)"
+eval "$(fzf --zsh)" # use fzf to search history with ^R
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' group-name ''
