@@ -67,4 +67,5 @@ vim.cmd('syntax on')
 vim.g.onedark_config = {
   style = 'darker',
 }
-vim.cmd('colorscheme catppuccin-macchiato')
+--vim.cmd('colorscheme catppuccin-macchiato')
+require('onedark').load()
