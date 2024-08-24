@@ -9,26 +9,28 @@ int main(int argc, char **argv){
     char linha[MAX_LINE_LENGTH];
 
     if (argc != 2) {
-        printf(">>> Error reading argument.\n");
-        printf("    Usage: %s <ARGUMENT>\n", argv[0]);
+        printf(">>> Error reading file.\n");
+        printf("    Usage: %s FILE\n", argv[0]);
         exit(1);
     } else {
         int indice = 0;
-        int total_linhas = 0;
         int total_bases = 0;
+        int total_linhas = 0;
 
-        f = fopen(argv[1], "r");
+        char *nome = argv[1];
+
+        f = fopen(nome, "r");
 
         while (fgets(linha, MAX_LINE_LENGTH, f)){
             indice++;
             if ((indice % 4) == 2) {
                 // printf("%s", linha);
                 // printf("%d\n", strlen(linha));
-                total_linhas++;
                 total_bases += strlen(linha);
+                total_linhas++;
             }
         }
-        printf("%d\t%d\n", total_linhas, total_bases);
+        printf("%s\t%d\t%d\n", nome, total_linhas, total_bases);
     }
 
     fclose(f);
