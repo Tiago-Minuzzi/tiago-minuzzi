@@ -17,20 +17,21 @@ int main(int argc, char **argv){
         int total_bases = 0;
         int total_linhas = 0;
 
-        char *nome = argv[1];
+        size_t read_len = 0;
 
-        f = fopen(nome, "r");
+        f = fopen(argv[1], "r");
 
         while (fgets(linha, MAX_LINE_LENGTH, f)){
             indice++;
             if ((indice % 4) == 2) {
                 // printf("%s", linha);
                 // printf("%d\n", strlen(linha));
-                total_bases += strlen(linha);
+                read_len = strlen(linha);
+                total_bases += read_len;
                 total_linhas++;
             }
         }
-        printf("%s\t%d\t%d\n", nome, total_linhas, total_bases);
+        printf("%s\t%d\t%d\n", argv[1], total_linhas, total_bases);
     }
 
     fclose(f);
