@@ -1,3 +1,7 @@
+import = [
+    "~/.config/alacritty-theme/themes/one_dark.toml"
+]
+
 [[colors.indexed_colors]]
 color = "#F5A97F"
 index = 16
