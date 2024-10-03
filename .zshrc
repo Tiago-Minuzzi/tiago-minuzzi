@@ -194,3 +194,6 @@ fi
 if which rndFetch &> /dev/null;then
     rndFetch 2> /dev/null
 fi
+
+# Set terminfo if terminal is kitty to avoid issues when sshing
+[[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
