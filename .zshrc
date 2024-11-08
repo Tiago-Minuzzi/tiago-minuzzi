@@ -13,6 +13,11 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
   hook_com[unstaged]+='%F{red}?%F{green}'
 fi
 }
+
+psgp() {
+    ps axf | grep "$1" | grep -v grep
+}
+
 # Set up the prompt
 setopt prompt_subst
 PROMPT="%B%F{blue}%n%f%F{cyan}@%f%F{magenta}%m%f %F{cyan}%~%f%b\${vcs_info_msg_0_}$ "$'\n'"%F{blue}%f "
@@ -167,6 +172,7 @@ alias xsq="xset q"
 export PATH="/home/tiago/.local/bin:$PATH"
 export PATH="/home/tiago/sftw/ncbi-blast-2.12.0+/bin:$PATH"
 export PATH="/home/tiago/sftw/sratoolkit/bin:$PATH"
+export MANPAGER="nvim +Man!"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/tiago/sftw/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
