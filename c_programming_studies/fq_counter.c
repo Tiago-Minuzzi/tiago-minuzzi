@@ -33,7 +33,11 @@ int main(int argc, char **argv){
             total_linhas++;
         }
     }
-    printf("%s\t%d\t%d\n", argv[1], total_linhas, total_bases);
+    if (argv[1] == NULL) {
+      printf("%d\t%d\n", total_linhas, total_bases);
+    } else {
+      printf("%s\t%d\t%d\n", argv[1], total_linhas, total_bases);
+    }
 
     if (argc == 2) {
         fclose(f);
