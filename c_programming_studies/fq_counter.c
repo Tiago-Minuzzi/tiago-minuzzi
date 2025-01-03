@@ -12,7 +12,6 @@ int main(int argc, char **argv) {
   int indice = 0;
   size_t total_bases = 0;
   size_t total_linhas = 0;
-  size_t read_len = 0;
 
   entrada = argv[1];
 
@@ -31,15 +30,14 @@ int main(int argc, char **argv) {
   while (fgets(linha, MAX_LINE_LENGTH, f)) {
     indice++;
     if ((indice % 4) == 2) {
-      read_len = strlen(linha) - 1;
-      total_bases += read_len;
+      total_bases += strlen(linha) - 1;
       total_linhas++;
     }
   }
   if (argc < 2) {
-    printf("%d\t%lld\n", total_linhas, total_bases);
+    printf("%ld\t%ld\n", total_linhas, total_bases);
   } else {
-    printf("%s\t%d\t%lld\n", entrada, total_linhas, total_bases);
+    printf("%s\t%ld\t%ld\n", entrada, total_linhas, total_bases);
   }
 
   if (argc == 2) {
