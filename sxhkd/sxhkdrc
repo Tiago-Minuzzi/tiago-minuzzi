@@ -4,10 +4,10 @@ super + ctrl + x
 
 # Open firefox
 super + b
-    firefox
+    flatpak run app.zen_browser.zen
 
 super + shift + b
-    firefox --private-window
+    flatpak run app.zen_browser.zen --private-window
 
 # Open ranger
 super + n
@@ -50,7 +50,7 @@ super + shift + z
     zotero
 
 # Menu for .desktop files
-super + shift + m
+super + m
     j4-dmenu-desktop
 
 # Pavucontrol
