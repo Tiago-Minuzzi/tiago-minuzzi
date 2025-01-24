@@ -27,7 +27,7 @@ RPROMPT="%T"
 
 setopt histignorealldups sharehistory
 # Use emacs keybindings even if our EDITOR is set to vi
-bindkey -v
+bindkey -e
 bindkey '^?' backward-delete-char
 bindkey "^R" history-incremental-search-backward
 # search history on the related term only
