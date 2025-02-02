@@ -79,13 +79,13 @@ unfocused_hollow = false
 
 [cursor.style]
 blinking = "On"
-shape = "Underline"
+shape = "Block"
 
 [env]
 TERM = "xterm-256color"
 
 [font]
-size = 10.0
+size = 11.0
 
 [font.normal]
 family = "JetBrains Mono Medium"
