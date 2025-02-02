@@ -78,7 +78,7 @@ general.import = [
 unfocused_hollow = false
 
 [cursor.style]
-blinking = "On"
+blinking = "Always"
 shape = "Block"
 
 [env]
@@ -105,4 +105,4 @@ lines = 24
 
 [window.padding]
 x = 5
-y = 5
+y = 6
