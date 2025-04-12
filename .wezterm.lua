@@ -9,7 +9,7 @@ local mux = wezterm.mux
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "Dracula"
+config.color_scheme = "OneDark (base16)"
 
 config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = true
