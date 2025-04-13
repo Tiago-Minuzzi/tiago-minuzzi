@@ -1,0 +1,7 @@
+ipython
+jupyterlab
+jupyterlab-vim
+matplotlib
+numpy
+pandas
+UpSetPlot
