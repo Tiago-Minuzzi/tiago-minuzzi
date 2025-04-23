@@ -1,9 +1,12 @@
 sudo pacman -S --needed \
        i3 \
-       rofi \
-       xorg-server \
        alacritty \
        blueberry \
        feh \
+       flameshot \
        network-manager-applet \
-       unclutter
+       pavucontrol \
+       rofi \
+       unclutter \
+       xorg-server \
+       xorg-xev
