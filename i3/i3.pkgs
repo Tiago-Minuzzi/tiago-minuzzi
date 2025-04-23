@@ -1,0 +1,9 @@
+sudo pacman -S --needed \
+       i3 \
+       rofi \
+       xorg-server \
+       alacritty \
+       blueberry \
+       feh \
+       network-manager-applet \
+       unclutter

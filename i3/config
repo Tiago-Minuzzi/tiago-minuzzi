@@ -17,31 +17,40 @@ font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:JetBrains Mono Medium 9
+font pango:DejaVu Sans Mono 8
+
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+tiling_drag modifier titlebar
+
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty || kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+m exec --no-startup-id rofi -modi drun -show drun -show-icons -display-drun '' -disable-history
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -101,8 +110,8 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
-set $ws2 "2" 
-set $ws3 "3" 
+set $ws2 "2"
+set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -121,7 +130,6 @@ set $ws18 "18"
 set $ws19 "19"
 set $ws20 "20"
 
-# Set monitor vars
 set $EXTERNO HDMI-A-0
 set $IMBUTIDO eDP
 # Assign default monitor to workspace
@@ -191,7 +199,7 @@ bindsym $mod+Shift+Ctrl+9 move container to workspace number $ws19
 bindsym $mod+Shift+Ctrl+0 move container to workspace number $ws20
 
 # reload the configuration file
-#bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -205,16 +213,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -224,172 +232,16 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# i3 colors
-# class                 border  bground text    indicator
-client.focused          #4C7899 #4877b1 #FFFFFF #2E9EF4
-client.focused_inactive #333333 #5F676A #FFFFFF #484E50
-client.unfocused        #333333 #222222 #888888 #292D2E
-client.urgent           #2F343A #900000 #FFFFFF #900000
-client.placeholder      #000000 #0C0C0C #FFFFFF #000000
-client.background       #FFFFFF
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status-rs /home/tiago/.config/i3status-rs/config.toml
-        font pango:Noto Sans Mono Black,Font Awesome 6 Free Solid 10
-        modifier none # dont show bar when pressing mod key and in hidden state
-        separator_symbol "|"
-        #strip_workspace_numbers yes
-        #i3bar_command i3bar --transparency
-        position bottom
+        status_command i3status
         tray_output primary
-        colors {
-                background #171a1f
-                statusline #a0a8b7
-                separator  #666666
-
-                focused_workspace  #4C7899 #4877b1 #FFFFFF
-                active_workspace   #333333 #222222 #FFFFFF
-                inactive_workspace #333333 #222222 #888888
-                urgent_workspace   #2F343A #900000 #FFFFFF
-                binding_mode       #2F343A #900000 #FFFFFF
-               }
-    }
-
-# Apps
-exec --no-startup-id caffeine
-exec --no-startup-id dunst
-exec --no-startup-id greenclip daemon
-exec --no-startup-id lxsession
-exec --no-startup-id redshift
-exec --no-startup-id unclutter
-exec --no-startup-id ~/.fehbg
-exec --no-startup-id bash ~/.local/bin/killLauncher
-exec_always --no-startup-id setxkbmap -layout us -variant intl
-exec_always $HOME/.local/bin/displayConnect
-#exec_always --no-startup-id picom --config /home/tiago/.config/picom/picom.conf
-
-# Windows
-for_window [class=".*"] border pixel 2
-focus_follows_mouse no
-smart_borders on
-smart_gaps on
-gaps inner 6
-gaps outer 1
-#smart_gaps on
-## Floating windows
-for_window [class="Anki"] floating enable
-for_window [class="Blanket"] floating enable
-for_window [class="Caffeine"] floating enable # caffeine preferences
-for_window [class="Gpick"] floating enable
-for_window [class="Lxappearance"] floating enable
-for_window [class="Mate-calculator"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="Ristretto"] floating enable
-for_window [class="SimpleScreenRecorder"] floating enable
-for_window [class="TelegramDesktop"] floating enable
-for_window [class="Tor Browser"] floating enable
-for_window [class="Xarchiver"] floating enable
-for_window [class="calendario"] floating enable
-for_window [class="gwenview"] floating enable
-for_window [class="kdeconnect.app"] floating enable
-for_window [class="org.gnome.DejaDup"] floating enable
-for_window [class="warp"] floating enable
-for_window [title="htop"] floating enable
-## Windows to workspaces
-for_window [class="Atom"] move to workspace $ws2
-for_window [class="Mousepad"] move to workspace $ws2
-for_window [class="Subl"] move to workspace $ws2
-for_window [class="Nemo"] move to workspace $ws3
-for_window [class="Nautilus"] move to workspace $ws3
-for_window [class="Thunar"] move to workspace $ws3
-for_window [title="ranger"] move to workspace $ws3
-for_window [class="Virt-manager"] move to workspace $ws4
-for_window [class="Spotify"] move to workspace $ws5
-for_window [class="Rhythmbox"] move to workspace $ws5
-for_window [class="smplayer"] move to workspace $ws5
-for_window [class="Gimp-2.10"] move to workspace $ws6
-for_window [class="Com.github.johnfactotum.Foliate"] move to workspace $ws7
-for_window [class="Mendeley Desktop"] move to workspace $ws7
-for_window [class="Xreader"] move to workspace $ws7
-for_window [class="Zathura"] move to workspace $ws7
-for_window [class="okular"] move to workspace $ws7
-for_window [class="aliview-AliView"] move to workspace $ws8
-for_window [class="libreoffice-calc"] move to workspace $ws8
-for_window [class="libreoffice-writer"] move to workspace $ws9
-for_window [class="firefox"] move to workspace $ws10
-for_window [class="Transmission-gtk"] move to workspace $ws12
-for_window [class="qutebrowser"] move to workspace $ws20
-
-# Keybindgs
-bindsym $mod+t exec --no-startup-id org.telegram.desktop
-bindsym $mod+p exec --no-startup-id flameshot gui
-bindsym $mod+n exec --no-startup-id alacritty --class ranger -t ranger -e ranger
-bindsym $mod+b exec --no-startup-id firefox
-bindsym $mod+Ctrl+b exec --no-startup-id qutebrowser
-#bindsym $mod+Shift+z exec --no-startup-id i3lock -c 000000 && xset dpms force off
-bindsym $mod+Shift+z exec --no-startup-id xfce4-screensaver-command -l && xset dpms force off
-bindsym $mod+Shift+p exec --no-startup-id flameshot full -p $HOME
-bindsym $mod+Shift+n exec --no-startup-id thunar || nemo || nautilus
-bindsym $mod+Shift+d exec --no-startup-id bash $HOME/.local/bin/copyToClip
-bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
-bindsym $mod+Shift+a exec --no-startup-id pavucontrol
-bindsym $mod+Mod1+e exec --no-startup-id bash emoji-select
-bindsym $mod+Ctrl+h exec --no-startup-id alacritty --class htop -t htop -e htop
-bindsym $mod+Ctrl+d exec --no-startup-id bash $HOME/.local/bin/dwmDisplay
-bindsym $mod+Ctrl+Shift+z exec --no-startup-id bash /home/tiago/.local/bin/susLocker.sh
-
-## brightness control keybindings
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
-
-## Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-### play-pause-stop
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-
-## Multi-monitor bindings
-### focus monitor
-bindsym $mod+greater focus output left
-bindsym $mod+less focus output right
-### move to monitor
-bindsym $mod+Shift+greater move container to output left
-bindsym $mod+Shift+less move container to output right
-## Workspace prev/next
-bindsym $mod+Shift+Tab workspace prev
-bindsym $mod+Tab workspace next
-## Scratchpad
-bindsym $mod+Ctrl+Up move scratchpad
-bindsym $mod+Ctrl+Down scratchpad show
-## Hide/unhide bar
-bindsym $mod+Control+space bar mode toggle
-## Alternate windows in full screen
-bindsym $mod+Shift+f fullscreen disable, focus right, fullscreen enable
-## Sticky (floating) window
-bindsym $mod+Shift+s sticky toggle
-
-# Lock, logout etc
-#set $Locker i3lock --color 000000 && xset dpms force off
-set $Locker xfce4-screensaver-command -l && xset dpms force off
-set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, \
-(Shift+s) shutdown
-mode "$mode_system" {                                               
-    bindsym l exec --no-startup-id $Locker, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && sync && systemctl suspend, \
-    mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
 }
-bindsym $mod+Ctrl+e mode "$mode_system"
 
+# include files
+include ~/.config/i3/config.d/exec.conf
+include ~/.config/i3/config.d/kbds.conf
+
+# Window rules
+for_window [class=".*"] border pixel 2
