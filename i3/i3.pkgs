@@ -7,6 +7,8 @@ sudo pacman -S --needed \
        network-manager-applet \
        pavucontrol \
        rofi \
+       ueberzugpp \
        unclutter \
        xorg-server \
-       xorg-xev
+       xorg-xev \
+       yazi
