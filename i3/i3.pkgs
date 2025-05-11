@@ -4,6 +4,7 @@ sudo pacman -S --needed \
        blueberry \
        feh \
        flameshot \
+       lxsession-gtk3 \
        network-manager-applet \
        pavucontrol \
        rofi \
