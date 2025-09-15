@@ -87,6 +87,16 @@
         ALTER TABLE cidade DROP <CAMPO>;
     ```
     
+
+- Ordernar tabela por um campo
+
+  ```sql
+    SELECT * FROM <TABELA> ORDER BY <CAMPO>;
+    SELECT * FROM <TABELA> ORDER BY <CAMPO> desc; --"desc" é em ordem descendente
+  ```
+```
+  ```
+
 ## Rodar conteiner MySQL
 
 `docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=my-secret-pw mysql:latest`
