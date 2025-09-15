@@ -25,11 +25,45 @@
 
     ~~~sql
         CREATE TABLE exemplo (
-            id int,
+            id int, --usar "auto_increment" para automatizar o campo
             nome varchar(100)
             );
         SHOW TABLES;
     ~~~
+    
+- Criar tabela com restrições
+
+    ```sql
+        --"primary key" estabelece a chave primária; "unique" não permite repetições.
+        create table cidade (
+            id int primary key,
+            nome varchar(100),
+            sigla char(03) unique
+        );
+    ```
+    
+- Tabela com chave estrangeira
+
+    ```sql
+        create table cliente (
+            id int primary key,
+            nome varchar(100),
+            idcidade int,
+            constraint fkclienteCidade foreign key (idcidade) references cidade(id)
+        );
+    ```
+    
+- Tabela com restrições e valores default
+    
+    ```sql
+        create table aluno (
+            id int primary key,
+            nome varchar(130) not null, --chave não pode ser nula
+            genero char(01), --chave com apenas um caracter
+            estadoCivil char(01) check (estadoCivil in ('S', 'C', 'V')), --precisa ser um dos 3 valores
+            renda decimal(10,2) default 0
+        );
+    ```
     
 - Inserir dados na tabela
 
@@ -41,7 +75,16 @@
 - Selecionar valores únicos de uma coluna
 
     ```sql
-        SELECT DISTINCT <COLUNA> FROM <TABELA>
+        SELECT DISTINCT <COLUNA> FROM <TABELA>;
+    ```
+    
+- Alterações em uma tabela (_add_, _modify_, _change_, _drop_)
+
+    ```sql
+        alter table cidade add dddd char(05);
+        alter table cidade change dddd ddd char(05);
+        alter table cidade modify ddd char(03);
+        alter table cidade drop <CAMPO>;
     ```
     
 ## Rodar conteiner MySQL
