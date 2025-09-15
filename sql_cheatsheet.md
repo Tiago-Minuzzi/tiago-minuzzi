@@ -35,7 +35,7 @@
 
     ```sql
         --"primary key" estabelece a chave primária; "unique" não permite repetições.
-        create table cidade (
+        CREATE TABLE cidade (
             id int primary key,
             nome varchar(100),
             sigla char(03) unique
@@ -45,7 +45,7 @@
 - Tabela com chave estrangeira
 
     ```sql
-        create table cliente (
+        CREATE TABLE cliente (
             id int primary key,
             nome varchar(100),
             idcidade int,
@@ -56,7 +56,7 @@
 - Tabela com restrições e valores default
     
     ```sql
-        create table aluno (
+        CREATE TABLE aluno (
             id int primary key,
             nome varchar(130) not null, --chave não pode ser nula
             genero char(01), --chave com apenas um caracter
@@ -81,10 +81,10 @@
 - Alterações em uma tabela (_add_, _modify_, _change_, _drop_)
 
     ```sql
-        alter table cidade add dddd char(05);
-        alter table cidade change dddd ddd char(05);
-        alter table cidade modify ddd char(03);
-        alter table cidade drop <CAMPO>;
+        ALTER TABLE cidade ADD dddd char(05);
+        ALTER TABLE cidade CHANGE dddd ddd char(05);
+        ALTER TABLE cidade MODIFY ddd char(03);
+        ALTER TABLE cidade DROP <CAMPO>;
     ```
     
 ## Rodar conteiner MySQL
