@@ -1,0 +1,87 @@
+---
+title: "Regressão logística em R"
+creator: Tiago Minuzzi
+
+---
+
+## Carregar os dados
+
+Vamos usar os dados reais disponíveis referentes a um dataset de espécies de plantas.
+
+```{r, echo = F}
+download.file("https://upload.wikimedia.org/wikipedia/commons/c/cb/Flores_de_%C3%8Dris.png",
+              "iris.png", mode = "wb")
+```
+
+![](iris.png)
+
+```{r, message=FALSE, warning=FALSE}
+library(caret)
+library(dplyr)
+library(ggplot2)
+
+data(iris)
+head(iris)
+```
+
+## Separar os dados
+
+Para a regressão logística com a função `glm`, usamos um modelo binomial. Sendo assim, temos que ter apenas duas categorias, por isto, vamos tirar uma delas do dataset.
+
+```{r}
+bin_data <- iris %>% filter(Species != "setosa")
+summary(bin_data)
+```
+
+## Transformar os _labels_ (categorias) em 0 e 1
+
+```{r}
+bin_data$Species <- ifelse(bin_data$Species == 'versicolor', 0, 1)
+bin_data$Species <- as.factor(bin_data$Species)
+unique(bin_data$Species)
+```
+
+## Rodar o modelo
+
+Agora queremos obter o modelo (ou a "explicação") de `Species` em função das outras variáveis. Usa-se o `.` aqui para indicar que são todos os outros dados da tabela com exceção de `Species`. Caso se quisesse fazer em função de algum campo específico poderia se usar na forma:
+  
+  `glm(Species ~ Sepal.width, ...)` ou, para duas, `glm(Species ~ Sepal.Width + Sepal.Length, ...)`.
+
+Por padrão, o modelo `glm`, que será usado a seguir, usa o primeiro nível (`0` no caso) como referência, buscando ajeitar a função para estar na categoria `1` então. Ou seja, tenta retornar o que precisa ter em `1` para se diferenciar da categoria referência.
+
+```{r}
+modelo <- glm(Species ~ ., data = bin_data, family = 'binomial')
+summary(modelo)
+```
+
+Nos valores acima podemos ver que o mais significativo na separação é `Petal.Length`. Podemos talvez considerar `Petal.Width` como bom para separar. `Sepal.Length` tem um p-valor alto, porém, considerando-se o estimador, o valor baixo indica categoria `não-1`, enquanto os anteriores indicam ser categoria `1`.
+
+Outra forma de verificar as variáveis de importância é com a função `varImp` do pacote `caret`.
+
+```{r}
+varImp(modelo)
+```
+
+## Plotar os estimadores
+
+Antes do plot, vamos transformar os dados dos estimadores em um data frama.
+
+```{r}
+coefs <- modelo$coefficients
+coefs <- as.data.frame(coefs)
+coefs <- tail(coefs, n = 4)
+coefs <- cbind(features = rownames(coefs), coefs)
+rownames(coefs) <- NULL
+```
+
+Agora o gráfico de barras horizontal
+
+```{r}
+ggplot(coefs,aes(x = reorder(features, coefs), y = coefs)) +
+  geom_col(fill = 'steelblue') +
+  coord_flip() +
+  labs(x = "Features", y = "Coeficientes",
+       title = "Estimadores da regressão logística") +
+  theme_minimal()
+```
+
