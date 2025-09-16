@@ -3,24 +3,24 @@
 ## Comandos básicos SQL
 
 - Mostrar as databases existentes
-    
+
     ```sql
         SHOW databases;
     ```
-    
+
 - Criar banco de dados e usá-lo
 
     ```sql
         CREATE DATABASE aula;
         USE aula;
     ```
-    
+
 - Verificar em qual banco de dados se está conectado
 
     ```sql
         SELECT database();
     ```
-    
+
 - Criar tabela na base de dados e mostrar tabela
 
     ~~~sql
@@ -30,7 +30,7 @@
             );
         SHOW TABLES;
     ~~~
-    
+
 - Criar tabela com restrições
 
     ```sql
@@ -41,7 +41,7 @@
             sigla char(03) unique
         );
     ```
-    
+
 - Tabela com chave estrangeira
 
     ```sql
@@ -52,9 +52,9 @@
             constraint fkclienteCidade foreign key (idcidade) references cidade(id)
         );
     ```
-    
+
 - Tabela com restrições e valores default
-    
+
     ```sql
         CREATE TABLE aluno (
             id int primary key,
@@ -64,20 +64,40 @@
             renda decimal(10,2) default 0
         );
     ```
-    
+
 - Inserir dados na tabela
 
     ```sql
-        INSERT INTO exemplo (id, nome) values (1, 'Ana');
+        --Sintaxe completa
+        INSERT INTO exemplo (id, nome, cidade) VALUES (1, 'Ana', 'Curitiba');
+        --Sintaxe reduzida
+        INSERT INTO exemplo VALUES (2, 'Vanessa', 'São Gabriel');
+        --Sintaxe de algumas colunas
+        INSERT INTO exemplo VALUES ('Tiago', 'Santa Maria'); --Não funciona se houver campos com restrições
+        --Inserir multiplos valores de uma vez
+        INSERT INTO exemplo VALUES ('Rosane', 'Santiago'), ('Mateus', 'Itajaí');
+
         SELECT * FROM exemplo;
     ```
-    
+
+- Modificar dados existentes
+
+    ```sql
+        UPDATE exemplo SET cidade = 'Foz do Iguaçu' WHERE nome = 'Tiago';
+    ```
+
+- Deletar instância da tabela
+
+    ```sql
+        DELETE FROM exemplo WHERE nome = 'Ana';
+    ```
+
 - Selecionar valores únicos de uma coluna
 
     ```sql
         SELECT DISTINCT <COLUNA> FROM <TABELA>;
     ```
-    
+
 - Alterações em uma tabela (_add_, _modify_, _change_, _drop_)
 
     ```sql
@@ -86,7 +106,6 @@
         ALTER TABLE cidade MODIFY ddd char(03);
         ALTER TABLE cidade DROP <CAMPO>;
     ```
-    
 
 - Ordernar tabela por um campo
 
