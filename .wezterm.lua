@@ -20,6 +20,8 @@ config.window_frame = {
 	active_titlebar_bg = "#282c34",
 }
 
+config.font_size = 14
+
 config.keys = {
 	{
 		key = "s",
