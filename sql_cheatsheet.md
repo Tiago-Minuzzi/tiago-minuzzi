@@ -110,12 +110,24 @@
 - Ordernar tabela por um campo
 
   ```sql
-    SELECT * FROM <TABELA> ORDER BY <CAMPO>;
-    SELECT * FROM <TABELA> ORDER BY <CAMPO> desc; --"desc" é em ordem descendente
-  ```
-```
+        SELECT * FROM <TABELA> ORDER BY <CAMPO>;
+        SELECT * FROM <TABELA> ORDER BY <CAMPO> desc; --"desc" é em ordem descendente
   ```
 
+- Selecionar baseado em conter padrão parcial
+
+    ```sql
+        SELECT * FROM cidade WHERE nome LIKE '%Silva%'; --mesmo que *Silva*
+        SELECT * FROM cidade WHERE nome LIKE 'Silva%'; --mesmo que Silva$
+        SELECT * FROM cidade WHERE nome LIKE '%Silva'; --mesmo que ^Silva
+    ```
+    
+- Selecionar apenas `n` linhas da tabela
+
+    ```sql
+        SELECT * FROM <TABELA> LIMIT 3; --retorna apenas 3 linhas
+    ```
+    
 ## Rodar conteiner MySQL
 
 `docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=my-secret-pw mysql:latest`
