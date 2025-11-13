@@ -5,7 +5,7 @@ No emacs 'C-<tecla>' significa 'control+<tecla>' e 'M-<tecla>', 'alt+<tecla>'.
 
 - C-n: movimentação para baixo linha a linha.
 
-- C-b: movimentação para cima linha a linha.
+- C-p: movimentação para cima linha a linha.
 
 - C-f: movimentação para a direita letra a letra.
 
@@ -52,7 +52,5 @@ No emacs 'C-<tecla>' significa 'control+<tecla>' e 'M-<tecla>', 'alt+<tecla>'.
 - M-d: corta/apaga palavra sob o cursor.
 
 - M-t: faz swap da palavra com a palavra anterior. O cursor deve estar no início da palavra.
-
-- C-y: cola o que foi cortado.
 
 - C-/ ou C-x, u: desfaz alteração.
