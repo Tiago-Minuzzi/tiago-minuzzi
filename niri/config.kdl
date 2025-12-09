@@ -253,7 +253,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // === Application Launchers ===
-    Mod+T hotkey-overlay-title="Open Terminal" { spawn "alacritty"; }
+    Mod+Return hotkey-overlay-title="Open Terminal" { spawn "alacritty"; }
     Mod+Space hotkey-overlay-title="Application Launcher" {
         spawn "dms" "ipc" "call" "spotlight" "toggle";
     }
@@ -304,7 +304,7 @@ binds {
     }
 
     // === Window Management ===
-    Mod+Q repeat=false { close-window; }
+    Mod+Shift+Q repeat=false { close-window; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
     Mod+Shift+T { toggle-window-floating; }
@@ -440,7 +440,13 @@ binds {
     // === System Controls ===
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+P { power-off-monitors; }
+    
+    // === My keybindings ===
+    Mod+B { spawn "app.zen_browser.zen"; }
+    Mod+Ctrl+B { spawn "firefox"; }
+    Mod+E { spawn "nautilus"; }
 }
 debug {
     honor-xdg-activation-with-invalid-serial
 }
+
