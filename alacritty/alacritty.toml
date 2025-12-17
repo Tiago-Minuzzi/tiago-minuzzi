@@ -18,7 +18,7 @@ size = 13
 family = "FiraCode Nerd Font Mono"
 
 [cursor]
-style = { shape = "Block", blinking = "On" }
+style = { shape = "Block", blinking = "always" }
 blink_interval = 500
 unfocused_hollow = true
 
