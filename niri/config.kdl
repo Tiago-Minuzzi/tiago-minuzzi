@@ -121,6 +121,7 @@ layout {
         width 2
         active-color   "#808080"      // Medium gray
         inactive-color "#505050"      // Dark gray
+        active-gradient from="#00ff99" to="#33ccff" angle=45
     }
     shadow {
         softness 30
