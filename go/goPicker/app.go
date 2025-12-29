@@ -64,7 +64,7 @@ func main(){
 
   borda := canvas.NewRectangle(color.Transparent)
   borda.StrokeColor = color.White
-  borda.StrokeWidth = 2
+  borda.StrokeWidth = 1
   borda.SetMinSize(fyne.NewSize(0,80))
 
   areaResultado := container.NewStack(borda, container.NewPadded(meuApp.resultado))
