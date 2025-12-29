@@ -41,10 +41,17 @@ func (s *SorteadorApp) sortear() {
   s.resultado.Refresh()
 }
 
+func (s *SorteadorApp) limpar() {
+  s.entrada.SetText("")
+  s.resultado.Text = "Esperando sorteio"
+  s.resultado.Color = color.White
+  s.resultado.Refresh()
+}
+
 func main(){
   a := app.New()
   w := a.NewWindow("Sorteador")
-  w.Resize(fyne.NewSize(800,100))
+  w.Resize(fyne.NewSize(400, 400))
 
   meuApp := &SorteadorApp{
     entrada: widget.NewMultiLineEntry(),
@@ -58,8 +65,11 @@ func main(){
   meuApp.entrada.SetPlaceHolder("Digite aqui as atividades.")
 
   botaoSortear := widget.NewButton("Sortear", meuApp.sortear)
+  botaoLimpar := widget.NewButton("Limpar tudo", meuApp.limpar)
 
-  controles := container.NewVBox(meuApp.resultado, botaoSortear)
+  botaoSortear.Importance = widget.HighImportance
+
+  controles := container.NewVBox(meuApp.resultado, botaoSortear, botaoLimpar)
   layoutFinal := container.NewBorder(nil, controles, nil, nil, meuApp.entrada)
 
   w.SetContent(layoutFinal)
