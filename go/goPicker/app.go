@@ -62,6 +62,13 @@ func main(){
   meuApp.resultado.Alignment = fyne.TextAlignCenter
   meuApp.resultado.TextStyle = fyne.TextStyle{Bold: true}
 
+  borda := canvas.NewRectangle(color.Transparent)
+  borda.StrokeColor = color.White
+  borda.StrokeWidth = 2
+  borda.SetMinSize(fyne.NewSize(0,80))
+
+  areaResultado := container.NewStack(borda, container.NewPadded(meuApp.resultado))
+
   meuApp.entrada.SetPlaceHolder("Digite aqui as atividades.")
 
   botaoSortear := widget.NewButton("Sortear", meuApp.sortear)
@@ -69,7 +76,7 @@ func main(){
 
   botaoSortear.Importance = widget.HighImportance
 
-  controles := container.NewVBox(meuApp.resultado, botaoSortear, botaoLimpar)
+  controles := container.NewVBox(areaResultado, botaoSortear, botaoLimpar)
   layoutFinal := container.NewBorder(nil, controles, nil, nil, meuApp.entrada)
 
   w.SetContent(layoutFinal)
