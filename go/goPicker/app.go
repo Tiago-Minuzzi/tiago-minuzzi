@@ -13,50 +13,54 @@ import (
   "fyne.io/fyne/v2/widget"
 )
 
+type SorteadorApp struct {
+  entrada *widget.Entry
+  resultado *canvas.Text
+}
+
+func (s *SorteadorApp) sortear() {
+  linhas := strings.Split(s.entrada.Text, "\n")
+  var palavras []string
+
+  for _, l := range linhas {
+    if strings.TrimSpace(l) != "" {
+      palavras = append(palavras, strings.TrimSpace(l))
+    }
+  }
+
+  if len(palavras) > 0 {
+    rand.Seed(time.Now().UnixNano())
+    escolha := palavras[rand.Intn(len(palavras))]
+
+    s.resultado.Text = escolha
+    s.resultado.Color = color.NRGBA{R: 100, G: 255, B: 100, A: 255}
+
+  } else {
+    s.resultado.Text = "Digite algo!"
+  }
+  s.resultado.Refresh()
+}
+
 func main(){
   a := app.New()
-  w := a.NewWindow("Janela")
+  w := a.NewWindow("Sorteador")
   w.Resize(fyne.NewSize(800,100))
 
-  entrada := widget.NewMultiLineEntry()
-  entrada.SetPlaceHolder("Digite aqui.")
+  meuApp := &SorteadorApp{
+    entrada: widget.NewMultiLineEntry(),
+    resultado: canvas.NewText("Esperando sorteio", color.White),
+  }
 
-  // resultado := widget.NewLabel("")
-  // resultado.Alignment = fyne.TextAlignCenter
-  
-  resultado := canvas.NewText("Pronto para sortear", color.White)
-  resultado.TextSize = 26
-  resultado.Alignment = fyne.TextAlignCenter
-  resultado.TextStyle = fyne.TextStyle{Bold: true}
+  meuApp.resultado.TextSize = 26
+  meuApp.resultado.Alignment = fyne.TextAlignCenter
+  meuApp.resultado.TextStyle = fyne.TextStyle{Bold: true}
 
-  botaoSortear := widget.NewButton("Sortear", func() {
-    linhas := strings.Split(entrada.Text, "\n")
-    var palavras []string
-    // palavras := splitLines(linhas)
+  meuApp.entrada.SetPlaceHolder("Digite aqui as atividades.")
 
-    for _, l := range linhas {
-      if strings.TrimSpace(l) != "" {
-        palavras = append(palavras, strings.TrimSpace(l))
-      }
-    }
+  botaoSortear := widget.NewButton("Sortear", meuApp.sortear)
 
-    if len(palavras) > 0 {
-      rand.Seed(time.Now().UnixNano())
-      escolha := palavras[rand.Intn(len(palavras))]
-
-      resultado.Text = escolha
-      resultado.Color = color.NRGBA{R: 100, G: 255, B: 100, A: 255}
-      resultado.Refresh()
-      // resultado.SetText("Resultado: " + palavras[randomIndex])
-    } else {
-      resultado.Text = "Digite algo!"
-      resultado.Refresh()
-      // resultado.SetText("Digite algumas palavras!")
-    }
-  })
-
-  controles := container.NewVBox(resultado, botaoSortear)
-  layoutFinal := container.NewBorder(nil, controles, nil, nil, entrada)
+  controles := container.NewVBox(meuApp.resultado, botaoSortear)
+  layoutFinal := container.NewBorder(nil, controles, nil, nil, meuApp.entrada)
 
   w.SetContent(layoutFinal)
 
