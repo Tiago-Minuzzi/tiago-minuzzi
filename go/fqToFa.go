@@ -101,14 +101,14 @@ func main() {
   var currentRecord *Record
 
   for scanner.Scan() {
-    
     mod := idx % 4
+
     switch mod {
     case 1:
       currentRecord = recordPool.Get().(*Record)
       currentRecord.ID = append(currentRecord.ID, scanner.Bytes()...)
     case 2:
-      currentRecord.Seq = append(currentRecord.Seq, scanner.Bytes()...)
+      currentRecord.Seq = append(currentRecord.Seq, scanner.Bytes()...) // os `...` servem para desempacotar o slice
       jobs <- currentRecord
     }
     idx++
