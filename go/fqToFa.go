@@ -4,6 +4,7 @@ import (
   "os"
   "fmt"
   "log"
+  "flag"
   "sync"
   "bufio"
   "runtime"
@@ -18,13 +19,30 @@ type Record struct {
 
 func main() {
 
-  if len(os.Args) != 2 {
-    fmt.Println(">>> Uso:")
-    fmt.Printf("\t%s <ARQUIVO_FASTA>\n", os.Args[0])
+  inputPtr  := flag.String("input", "", "Caminho para o arquivo FASTQ de entrada. (Obrigatório)")
+  cpusPtr   := flag.Int("threads", runtime.NumCPU(), "Número de threads para processamento.")
+
+  flag.Parse()
+
+  if *inputPtr == "" {
+    fmt.Println(">>> Atenção! A flag '-input' é obrigatória.\n")
+    flag.Usage()
+    fmt.Println("\n>>> Exemplo:")
+    fmt.Printf("\t%s -input <ARQUIVO_FASTA>\n", os.Args[0])
+    os.Exit(42)
+  }
+
+  runtime.GOMAXPROCS(*cpusPtr)
+  numWorkers := *cpusPtr
+
+  if len(os.Args) > 5 {
+    flag.Usage()
+    fmt.Println("\n>>> Exemplo:")
+    fmt.Printf("\t%s -input <ARQUIVO_FASTA>\n", os.Args[0])
     os.Exit(1)
   }
 
-  arquivo       := os.Args[1]
+  arquivo       := *inputPtr
   entrada, err  := os.Open(arquivo)
 
   if err != nil {
@@ -61,7 +79,6 @@ func main() {
     },
   }
 
-  numWorkers := runtime.NumCPU()
   jobs    := make(chan *Record, numWorkers * 2)
   results := make(chan *Record, numWorkers * 2)
   var wg sync.WaitGroup
