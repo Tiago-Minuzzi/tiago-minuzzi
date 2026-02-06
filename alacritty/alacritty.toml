@@ -5,6 +5,7 @@ import = [
 
 [window]
 decorations = "None"
+startup_mode = "Maximized"
 padding = { x = 12, y = 12 }
 opacity = 1.0
 
