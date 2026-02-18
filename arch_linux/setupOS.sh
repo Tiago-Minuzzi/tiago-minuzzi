@@ -84,7 +84,8 @@ sudo pacman -S --needed --noconfirm ${ARCH_PKGS[*]} &&
     git clone https://aur.archlinux.org/yay/  &&
     cd yay &&
     makepkg -si &&
-    cd ..
+    cd ../ &&
+    rm -rf yay
   fi
   flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo &&
   flatpak install -y ${FLATPAKS[*]} &&
