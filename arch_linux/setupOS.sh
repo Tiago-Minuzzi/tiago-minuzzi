@@ -19,6 +19,7 @@ function yes_or_no {
 
 ARCH_PKGS=(
   alacritty
+  eza
   flatpak
   gimp
   git
@@ -28,6 +29,7 @@ ARCH_PKGS=(
   libreoffice-fresh-pt-br
   mpv
   neovim
+  ripgrep
   timeshift
   tmux
   ttf-dejavu
@@ -36,6 +38,7 @@ ARCH_PKGS=(
   virtualbox
   virtualbox-guest-iso
   virtualbox-host-modules-arch
+  zoxide
   zsh
 )
 
