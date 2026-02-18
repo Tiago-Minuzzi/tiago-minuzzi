@@ -59,6 +59,6 @@ FTPS_OPT=(
 )
 
 sudo pacman -S --needed --noconfirm ${ARCH_PKGS[*]} &&
-  flatpak remote-add --if-not-exists flathub https://flatpak.org/repo/flathub.flatpakrepo &&
+  flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo &&
   flatpak install -y ${FLATPAKS[*]} &&
   yes_or_no "Instalar flatpaks opcionais?" && flatpak install -y ${FTPS_OPT[*]}
