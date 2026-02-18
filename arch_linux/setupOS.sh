@@ -17,6 +17,8 @@ function yes_or_no {
   done
 }
 
+YAY_EXISTS=$(command -v yay)
+
 ARCH_PKGS=(
   alacritty
   base-devel
@@ -80,13 +82,13 @@ FTPS_OPT=(
 sudo pacman -S --needed --noconfirm ${ARCH_PKGS[*]} &&
   sudo systemctl enable --now ufw.service &&
   sudo systemctl enable --now docker.service &&
-  if [[ ! command -v yay ]]; then
-    git clone https://aur.archlinux.org/yay/  &&
-    cd yay &&
-    makepkg -si &&
-    cd ../ &&
-    rm -rf yay
+  if [[ ! ${YAY_EXISTS} ]]; then
+    git clone https://aur.archlinux.org/yay/ &&
+      cd yay &&
+      makepkg -si &&
+      cd ../ &&
+      rm -rf yay
   fi
-  flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo &&
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo &&
   flatpak install -y ${FLATPAKS[*]} &&
   yes_or_no "Instalar flatpaks opcionais?" && flatpak install -y ${FTPS_OPT[*]}
