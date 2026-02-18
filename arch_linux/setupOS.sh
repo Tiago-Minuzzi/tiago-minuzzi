@@ -30,6 +30,9 @@ ARCH_PKGS=(
   neovim
   timeshift
   tmux
+  ttf-dejavu
+  ttf-firacode-nerd
+  ttf-jetbrains-mono-nerd
   virtualbox
   virtualbox-guest-iso
   virtualbox-host-modules-arch
