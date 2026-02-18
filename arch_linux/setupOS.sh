@@ -48,6 +48,7 @@ ARCH_PKGS=(
   ttf-dejavu
   ttf-firacode-nerd
   ttf-jetbrains-mono-nerd
+  ufw
   virtualbox
   virtualbox-guest-iso
   virtualbox-host-modules-arch
