@@ -19,16 +19,27 @@ function yes_or_no {
 
 ARCH_PKGS=(
   alacritty
+  base-devel
+  distrobox
+  docker
+  docker-buildx
   eza
   flatpak
+  fzf
   gimp
   git
+  go
   htop
   inkscape
+  keepassxc
   libreoffice-fresh
   libreoffice-fresh-pt-br
+  man-pages
+  man-pages-pt_br
   mpv
   neovim
+  pass
+  power-profiles-daemon
   ripgrep
   timeshift
   tmux
@@ -38,8 +49,13 @@ ARCH_PKGS=(
   virtualbox
   virtualbox-guest-iso
   virtualbox-host-modules-arch
+  wget
+  zed
   zoxide
   zsh
+  zsh-autocomplete
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 FLATPAKS=(
@@ -62,6 +78,14 @@ FTPS_OPT=(
 )
 
 sudo pacman -S --needed --noconfirm ${ARCH_PKGS[*]} &&
+  sudo systemctl enable --now ufw.service &&
+  sudo systemctl enable --now docker.service &&
+  if [[ ! command -v yay ]]; then
+    git clone https://aur.archlinux.org/yay/  &&
+    cd yay &&
+    makepkg -si &&
+    cd ..
+  fi
   flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo &&
   flatpak install -y ${FLATPAKS[*]} &&
   yes_or_no "Instalar flatpaks opcionais?" && flatpak install -y ${FTPS_OPT[*]}
