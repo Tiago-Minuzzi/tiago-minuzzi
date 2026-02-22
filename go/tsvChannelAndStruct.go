@@ -1,5 +1,21 @@
 package main
 
+// Exemple input data is a TSV file:
+//		 ENSP00000493376 1       -
+//		 ENSP00000493376 50      -
+//		 ENSP00000493376 100     -
+//		 ENSP00000409316 200     !
+//		 ENSP00000409316 250     !
+//		 ENSP00000409316 300     !
+//
+// Output is like:
+//		 Campo 1: ENSP00000493376, Campo 2: 1, Campo 3: -
+//		 Campo 1: ENSP00000493376, Campo 2: 50, Campo 3: -
+//		 Campo 1: ENSP00000493376, Campo 2: 100, Campo 3: -
+//		 Campo 1: ENSP00000409316, Campo 2: 200, Campo 3: !
+//		 Campo 1: ENSP00000409316, Campo 2: 250, Campo 3: !
+//		 Campo 1: ENSP00000409316, Campo 2: 300, Campo 3: !
+
 import (
 	"io"
 	"fmt"
