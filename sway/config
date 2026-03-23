@@ -14,18 +14,51 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term wezterm
 # Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-set $menu dmenu_path | i3-dmenu-desktop | xargs swaymsg exec --
+set $menu rofi -show drun -show-icons -display-drun "" -disable-history
 
-# titlebar font
-font pango:Noto Sans Mono Black 8
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output * bg /home/tiago/Imagens/Mk2ASzwH.png fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
 
-# Exec at startup
-#exec_always nm-applet --indicator
-exec_always wl-paste -t text --watch clipman store
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input type:touchpad {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+#   input type:keyboard {
+#       xkb_layout "eu"
+#   }
+#
+# You can also configure each device individually.
+# Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
 #
@@ -33,20 +66,25 @@ exec_always wl-paste -t text --watch clipman store
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+
     # Kill focused window
     bindsym $mod+Shift+q kill
+
     # Start your launcher
     bindsym $mod+d exec $menu
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
     floating_modifier $mod normal
+
     # Reload the configuration file
     bindsym $mod+Shift+c reload
+
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -85,17 +123,6 @@ exec_always wl-paste -t text --watch clipman store
     bindsym $mod+8 workspace number 8
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
-    bindsym $mod+Ctrl+1 workspace number 11
-    bindsym $mod+Ctrl+2 workspace number 12
-    bindsym $mod+Ctrl+3 workspace number 13
-    bindsym $mod+Ctrl+4 workspace number 14
-    bindsym $mod+Ctrl+5 workspace number 15
-    bindsym $mod+Ctrl+6 workspace number 16
-    bindsym $mod+Ctrl+7 workspace number 17
-    bindsym $mod+Ctrl+8 workspace number 18
-    bindsym $mod+Ctrl+9 workspace number 19
-    bindsym $mod+Ctrl+0 workspace number 20
-
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
@@ -107,45 +134,9 @@ exec_always wl-paste -t text --watch clipman store
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
-    bindsym $mod+Ctrl+Shift+1 move container to workspace number 11
-    bindsym $mod+Ctrl+Shift+2 move container to workspace number 12
-    bindsym $mod+Ctrl+Shift+3 move container to workspace number 13
-    bindsym $mod+Ctrl+Shift+4 move container to workspace number 14
-    bindsym $mod+Ctrl+Shift+5 move container to workspace number 15
-    bindsym $mod+Ctrl+Shift+6 move container to workspace number 16
-    bindsym $mod+Ctrl+Shift+7 move container to workspace number 17
-    bindsym $mod+Ctrl+Shift+8 move container to workspace number 18
-    bindsym $mod+Ctrl+Shift+9 move container to workspace number 19
-    bindsym $mod+Ctrl+Shift+0 move container to workspace number 20
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-# Set monitor vars
-    set $EXTERNO HDMI-A-1
-    set $IMBUTIDO eDP-1
-    output $EXTERNO resolution 1920x1080 position 1366,0 
-    output $IMBUTIDO resolution 1366x768 position 0,0
-    # Assign default monitor to workspace
-    workspace 1 output $EXTERNO
-    workspace 2 output $EXTERNO
-    workspace 3 output $EXTERNO
-    workspace 4 output $EXTERNO
-    workspace 5 output $EXTERNO
-    workspace 6 output $EXTERNO
-    workspace 7 output $EXTERNO
-    workspace 8 output $EXTERNO
-    workspace 9 output $EXTERNO
-    workspace 10 output $EXTERNO
-    workspace 11 output $IMBUTIDO
-    workspace 12 output $IMBUTIDO
-    workspace 13 output $IMBUTIDO
-    workspace 14 output $IMBUTIDO
-    workspace 15 output $IMBUTIDO
-    workspace 16 output $IMBUTIDO
-    workspace 17 output $IMBUTIDO
-    workspace 18 output $IMBUTIDO
-    workspace 19 output $IMBUTIDO
-    workspace 20 output $IMBUTIDO
-
+#
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
@@ -206,104 +197,45 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+#
+# Utilities:
+#
+    # Special keys to adjust volume via PulseAudio
+    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+    # Special keys to adjust brightness via brightnessctl
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    # Special key to take a screenshot with grim
+    bindsym Print exec grim
 
 #
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    status_command i3status-rs /home/tiago/.config/i3status-rs/config.toml
-    #status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
     position bottom
-    font pango:Noto Sans Mono Black,Font Awesome 6 Free Solid 10
-    tray_output $EXTERNO
+    modifier none
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command while ~/.config/sway/scripts/status_bar; do sleep 1; done
 
     colors {
-            background #171a1f
-            statusline #a0a8b7
-            separator  #666666
+        statusline #ffffff
+        background #171a1f
+        separator #666666
 
-            focused_workspace  #4C7899 #285577 #FFFFFF
-            active_workspace   #333333 #222222 #FFFFFF
-            inactive_workspace #333333 #222222 #888888
-            urgent_workspace   #2F343A #900000 #FFFFFF
-            binding_mode       #2F343A #900000 #FFFFFF
-           }
-}
-#include .config/waybar/config
-include /etc/sway/config.d/*
-# By Tiago Minuzzi
-# class                 border  bground text    indicator
-client.focused          #4C7899 #285577 #FFFFFF #2E9EF4
-client.focused_inactive #333333 #5F676A #FFFFFF #484E50
-client.unfocused        #333333 #222222 #888888 #292D2E
-client.urgent           #2F343A #900000 #FFFFFF #900000
-client.placeholder      #000000 #0C0C0C #FFFFFF #000000
-client.background       #FFFFFF
+        
+        focused_workspace  #4C7899 #285577 #FFFFFF
+        active_workspace   #333333 #222222 #FFFFFF
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2F343A #900000 #FFFFFF
+        binding_mode       #2F343A #900000 #FFFFFF
 
-# Keyboard
-input * {
-	xkb_layout "us"
-	xkb_variant "intl"
+    }
 }
-# Display
-#output LVDS-1 disable
-# Wallpaper
-output * bg /home/tiago/Pictures/arch-rainbow-1920x1080.png fill
-# Gaps etc
-gaps inner 6
-gaps outer 1
-smart_gaps on
-smart_borders on
-focus_follows_mouse no
-seat * hide_cursor 3000
-# Services
-## exec
-exec flatpak run org.telegram.desktop
-exec mako
-exec nm-applet
-## exec_always
-exec_always wlsunset
-exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# Windows
-for_window [title=".*"] border pixel 2
-for_window [app_id="gnome-terminal-server"] floating enable
-for_window [app_id="org.gnome.Calculator"] floating enable, border pixel 0
-for_window [app_id="org.gnome.DejaDup"] floating enable
-for_window [app_id="org.telegram.desktop"] floating enable
-for_window [app_id="pavucontrol"] floating enable
-for_window [app_id="ristretto"] floating enable
-# Assign apps to workspaces
-assign [app_id="org.gnome.Nautilus"] 3
-assign [app_id="evince"] 6
-assign [app_id="libreoffice-calc"] 7
-assign [app_id="libreoffice-writer"] 8
-assign [class="VSCodium"] 2
-assign [class="smplayer"] 5
-assign [class="firefox"] 10
-for_window [app_id="transmission-gtk"] move window to workspace 5
-for_window [class="Spotify"] move window to workspace 5
-for_window [title="Mozilla Firefox Private Browsing"] move to workspace 9
-# Keybindings
-bindsym $mod+n exec nautilus
-bindsym $mod+b exec firefox
-bindsym $mod+Shift+b exec firefox --private-window
-bindsym $mod+m exec rofi -modi drun -show drun -show-icons -display-drun '' -disable-history
-bindsym $mod+Shift+d exec clipman pick --tool=rofi
-bindsym $mod+Ctrl+d exec $HOME/.local/bin/swayMon
-bindsym $mod+Shift+Ctrl+z exec $HOME/.local/bin/locksway
-bindsym $mod+Shift+p exec $HOME/.local/bin/grimshot save area
-bindsym $mod+Ctrl+Shift+p exec $HOME/.local/bin/grimshot copy area
-## Workspace prev/next
-bindsym $mod+Shift+Tab workspace prev
-bindsym $mod+Tab workspace next
-# Multimedia
-bindsym --locked XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym --locked XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym --locked XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-bindsym --locked XF86AudioPlay exec playerctl play-pause
-bindsym --locked XF86AudioNext exec playerctl next
-bindsym --locked XF86AudioPrev exec playerctl previous
-# Backlight
-bindsym XF86MonBrightnessUp exec brightnessctl set +5%
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+include ~/.config/sway/config.d/*

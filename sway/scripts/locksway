@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+swaylock -f -c "#111111" && sync && systemctl suspend -i
