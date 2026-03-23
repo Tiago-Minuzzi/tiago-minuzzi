@@ -14,6 +14,7 @@ PKGS=(
   wezterm
   wl-clipboard
   wmenu
+  xdg-desktop-portal-wlr
   yazi
 )
 
