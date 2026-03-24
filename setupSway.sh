@@ -8,6 +8,7 @@ PKGS=(
   mako
   mate-polkit
   polkit
+  rofi
   slurp
   sway
   swaybg
