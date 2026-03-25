@@ -1,4 +1,10 @@
 DATA_CUST=$(date +"%a, %d/%m | %H:%M")
 BAT_INFO=$(cat /sys/class/power_supply/BAT0/capacity)
+VOL=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '\d+%' | head -n1)
+MUTE=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
 
-echo "Battery: $BAT_INFO%" '|' "$DATA_CUST"
+if [ "$MUTE" = "yes" ]; then
+  VOL="Mutado"
+fi
+
+echo $VOL '|' "Bateria: $BAT_INFO%" '|' "$DATA_CUST"
