@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PKGS=(
+  bluetui
   brightnessctl
   cliphist
   flameshot
