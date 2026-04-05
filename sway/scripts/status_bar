@@ -7,4 +7,4 @@ if [ "$MUTE" = "yes" ]; then
   VOL="Mutado"
 fi
 
-echo $VOL '|' "Bateria: $BAT_INFO%" '|' "$DATA_CUST"
+echo "Volume: $VOL" '|' "Bateria: $BAT_INFO%" '|' "$DATA_CUST"
