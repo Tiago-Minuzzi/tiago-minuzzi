@@ -21,7 +21,7 @@ set $menu rofi -show drun -show-icons -display-drun "" -disable-history
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/tiago/Imagens/Mk2ASzwH.png fill
+output * bg /home/tiago/Imagens/10989850.png fill
 #
 # Example configuration:
 #
