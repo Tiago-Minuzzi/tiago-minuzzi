@@ -7,3 +7,13 @@ pdff = [
 rules = [
   {mime = "application/pdf", use = [ "pdff", "reveal" ] },
 ]
+
+[[opener.set-wallpaper]]
+run  = "killall swaybg; swaybg -m fill -i %s1"
+for  = "linux"
+desc = "Set as wallpaper"
+orphan = true
+
+[[open.prepend_rules]]
+mime = "image/*"
+use  = [ "set-wallpaper", "open" ]
