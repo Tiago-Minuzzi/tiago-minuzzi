@@ -14,6 +14,16 @@ for  = "linux"
 desc = "Set as wallpaper"
 orphan = true
 
+[[opener.open]]
+run  = "feh --scale-down --auto-zoom %s1"
+desc = "Open image with feh"
+for  = "linux"
+
+[[opener.loupe]]
+run  = "loupe %*"
+desc = "Open with Loupe"
+
 [[open.prepend_rules]]
 mime = "image/*"
-use  = [ "set-wallpaper", "open" ]
+use  = [ "open", "loupe", "set-wallpaper" ]
+
