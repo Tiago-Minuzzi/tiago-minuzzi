@@ -4,10 +4,11 @@ PKGS=(
   bluetui
   brightnessctl
   cliphist
-  flameshot
+  feh
   grim
   mako
   mate-polkit
+  pavucontrol
   polkit
   rofi
   slurp
