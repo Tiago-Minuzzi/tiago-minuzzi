@@ -16,6 +16,10 @@ int main(int argc, char **argv)
     }
 
     f = fopen(argv[1],  "r");
+    if(!f){
+        printf(">>> File not found!\n");
+        exit(1);
+    }
 
     char buff[MAX_LINE_LEN];
     int phredCounter[MAX_LINE_LEN][PHRED_MAX] = {0}; // inicializa para não deixar lixo na memória. A matriz vai conter zeros.
