@@ -10,7 +10,7 @@ int main(int argc, char **argv)
     FILE *f;
 
     if (argc != 2) {
-        printf(">>> Invalid number of arguments!");
+        printf(">>> Invalid number of arguments!\n");
         printf("Usage:\n\t%s <FASTQ>\n", argv[0]);
         exit(1);
     }
