@@ -30,7 +30,7 @@ int main(int argc, char **argv)
         if(counter == lineIndex){
             while(buff[i] != '\0' && buff[i] != '\n'){
                 int phred = buff[i] - PHRED_OFFSET;
-                if (phred > 0 && phred < PHRED_MAX) {
+                if (phred >= 0 && phred < PHRED_MAX) {
                     phredCounter[i][phred]++;
                 }
                 i++;
