@@ -1,21 +1,11 @@
-[opener]
-pdff = [
-	{ run = 'zathura "$@"', desc = "zathura", block = true, for = "unix" },
-	]
-
-[open]
-rules = [
-  {mime = "application/pdf", use = [ "pdff", "reveal" ] },
-]
-
 [[opener.set-wallpaper]]
 run  = "killall swaybg; swaybg -m fill -i %s1"
 for  = "linux"
 desc = "Set as wallpaper"
 orphan = true
 
-[[opener.open]]
-run  = "feh --scale-down --auto-zoom %s1"
+[[opener.image]]
+run  = "feh --scale-down --auto-zoom %*"
 desc = "Open image with feh"
 for  = "linux"
 
@@ -25,5 +15,4 @@ desc = "Open with Loupe"
 
 [[open.prepend_rules]]
 mime = "image/*"
-use  = [ "open", "loupe", "set-wallpaper" ]
-
+use  = [ "image", "loupe", "set-wallpaper" ]
