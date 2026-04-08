@@ -16,3 +16,17 @@ desc = "Open with Loupe"
 [[open.prepend_rules]]
 mime = "image/*"
 use  = [ "image", "loupe", "set-wallpaper" ]
+
+[[opener.text]]
+run  = "nvim %*"
+desc = "Edit text with Neovim"
+for  = "linux"
+block = true
+
+[[open.prepend_rules]]
+mime = "text/*"
+use  = [ "text" ]
+
+[[open.prepend_rules]]
+mime = "text/csv"
+use  = [ "text" ]
