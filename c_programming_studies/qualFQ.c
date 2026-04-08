@@ -24,8 +24,8 @@ int main(int argc, char **argv)
     char buff[MAX_LINE_LEN];
     int phredCounter[MAX_LINE_LEN][PHRED_MAX] = {0}; // inicializa para não deixar lixo na memória. A matriz vai conter zeros.
 
-    int counter = 1;
-    int lineIndex = 0;
+    int counter = 0;
+    int lineIndex = 3;
     int andBit = 3;
 
     while (fgets(buff, MAX_LINE_LEN, f)) {
