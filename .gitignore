@@ -4,3 +4,5 @@ README.md.backup
 R/curso_r_rna-seq/*.pdf
 python/__pycache__
 python/__pycache__/*
+sway/outputs
+sway/workspaces
