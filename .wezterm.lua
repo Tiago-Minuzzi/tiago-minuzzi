@@ -12,4 +12,8 @@ config.font_size = 14
 
 config.window_decorations = "NONE"
 
+config.default_cursor_style = "BlinkingBlock"
+
+config.cursor_blink_rate = 500
+
 return config
