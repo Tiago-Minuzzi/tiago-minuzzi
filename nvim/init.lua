@@ -2,6 +2,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.signcolumn = 'yes:1'
 vim.o.confirm = true
+vim.opt.clipboard = 'unnamedplus'
 
 vim.pack.add {
 	'https://github.com/neovim/nvim-lspconfig',
