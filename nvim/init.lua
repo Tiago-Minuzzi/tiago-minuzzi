@@ -1,9 +1,16 @@
+-- Options
+vim.o.clipboard = 'unnamedplus'
+vim.o.confirm = true
+vim.o.cursorline = true
+vim.o.errorbells = false
+vim.o.incsearch = true
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.signcolumn = 'yes:1'
-vim.o.confirm = true
-vim.opt.clipboard = 'unnamedplus'
+vim.o.splitbelow = true
+vim.o.tabstop = 4
 
+-- Packages
 vim.cmd.packadd('nvim.undotree')
 vim.cmd.packadd('nvim.difftool')
 
@@ -13,9 +20,10 @@ vim.pack.add {
 	'https://github.com/catppuccin/nvim',
 }
 
+-- Keymaps
+vim.keymap.set("n", "-", "<cmd>Oil<CR>")
+vim.keymap.set("n", "<M-h>", "<cmd>hor te<CR>")
+
+-- Callings and sets
 require("oil").setup()
 vim.cmd.colorscheme("catppuccin")
-
-vim.opt.tabstop = 4
-
-vim.keymap.set("n", "-", "<cmd>Oil<CR>")
