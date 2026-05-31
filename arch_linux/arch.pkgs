@@ -8,6 +8,7 @@ man-db
 man-pages
 man-pages-pt_br
 openfortivpn
+power-profiles-daemon
 python-virtualenv
 timeshift
 tmux
@@ -18,6 +19,7 @@ zathura-pdf-mupdf
 zed
 zoxide
 zram-generator
+zsh
 zsh-autocomplete
 zsh-autosuggestions
 zsh-syntax-highlighting
