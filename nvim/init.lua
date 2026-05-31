@@ -4,6 +4,9 @@ vim.o.signcolumn = 'yes:1'
 vim.o.confirm = true
 vim.opt.clipboard = 'unnamedplus'
 
+vim.cmd.packadd('nvim.undotree')
+vim.cmd.packadd('nvim.difftool')
+
 vim.pack.add {
 	'https://github.com/neovim/nvim-lspconfig',
 	'https://github.com/stevearc/oil.nvim',
@@ -12,3 +15,5 @@ vim.pack.add {
 
 require("oil").setup()
 vim.cmd.colorscheme("catppuccin")
+
+vim.opt.tabstop = 4
