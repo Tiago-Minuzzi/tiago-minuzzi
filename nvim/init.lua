@@ -17,3 +17,5 @@ require("oil").setup()
 vim.cmd.colorscheme("catppuccin")
 
 vim.opt.tabstop = 4
+
+vim.keymap.set("n", "-", "<cmd>Oil<CR>")
