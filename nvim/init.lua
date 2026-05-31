@@ -18,6 +18,7 @@ vim.pack.add {
 	'https://github.com/neovim/nvim-lspconfig',
 	'https://github.com/stevearc/oil.nvim',
 	'https://github.com/catppuccin/nvim',
+	'https://github.com/ellisonleao/gruvbox.nvim',
 }
 
 -- Keymaps
@@ -26,4 +27,5 @@ vim.keymap.set("n", "<M-h>", "<cmd>hor te<CR>")
 
 -- Callings and sets
 require("oil").setup()
-vim.cmd.colorscheme("catppuccin")
+require("gruvbox").setup()
+vim.cmd.colorscheme("gruvbox")
