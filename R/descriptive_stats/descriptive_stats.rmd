@@ -1,0 +1,105 @@
+---
+title: "Estatística descritiva no R"
+author: "Tiago Minuzzi"
+abstract: Baseado no vídeo de estatística descritiva com R do canal Fernanda Peres
+  (https://www.youtube.com/@FernandaPeres)
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Carregar os pacotes e instalar caso não estejam instalados.
+
+```{r, results='hide', message=FALSE}
+if(!require(dplyr))
+    install.packages("dplyr")
+if(!require(psych))
+    install.packages("psych", dependencies = T) # depende de mnormt que precisa do pacote do sistema gcc-fortran (Arch Linux).
+
+suppressPackageStartupMessages({
+    library(dplyr)
+    library(psych)
+})
+```
+
+Carregar o banco de dados.
+```{r}
+dados <- read.csv2("banco_de_dados2.csv", stringsAsFactors = T, fileEncoding = 'latin1') # separador padrão é o ';'.
+glimpse(dados)
+```
+## Variáveis categóricas
+### Frequências absolutas
+```{r, error=FALSE}
+table(dados$Genero)
+table(dados$Grau_de_Instruçao)
+```
+#### Tabela cruzada com frequências absolutas
+```{r}
+table(dados$Genero, dados$Grau_de_Instruçao)
+```
+
+### Frequências relativas
+```{r}
+prop.table(table(dados$Genero))
+prop.table(table(dados$Grau_de_Instruçao))
+prop.table(table(dados$Genero, dados$Grau_de_Instruçao))
+```
+
+## Variáveis quantitativas
+### Variáveis discretas (números inteiros)
+```{r}
+table(dados$N_Filhos)
+prop.table(table(dados$N_Filhos))
+```
+### Variáveis contínuas
+1. Analisar amplitude
+```{r}
+range(dados$Salario)
+```
+2. Avaliar quantidade de categorias adequadas (método de Sturges)
+```{r}
+nclass.Sturges(dados$Salario)
+```
+3. Criação de tabela com as faixas de valores
+```{r}
+table(cut(dados$Salario, seq(0, 6, l = 7)))
+```
+
+## Descrições básicas
+Usando a função do R base `summary` para retornar a média, mediana, quartis e valores mínimmo e máximo.
+
+```{r}
+summary(dados$N_Filhos)
+summary(dados$Salario)
+```
+
+Como o pacote `psych`, podemos obter mais descrições que possam ser de interesse.
+
+- Para a variável salário.
+```{r}
+describe(dados$Salario)
+```
+
+- Para a variável salário, separando por gênero.
+```{r}
+describeBy(dados$Salario, group = dados$Genero)
+```
+- Agora separando por gênero e grau de instrução.
+```{r}
+describeBy(dados$Salario, group = dados$Genero:dados$Grau_de_Instruçao)
+```
+
+- Usando o `group_by` do pacote `dplyr`.
+```{r, message=FALSE}
+tabela <- dados %>% group_by(Genero, Grau_de_Instruçao) %>%
+    summarise(média = mean(Salario),
+              DP = sd(Salario),
+              mediana = median(Salario))
+tabela
+```
+
