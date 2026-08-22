@@ -1,3 +1,4 @@
 include catppuccin-mocha
 set guioptions none
 set recolor true
+set selection-clipboard clipboard
