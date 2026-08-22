@@ -176,6 +176,7 @@ alias xsq="xset q"
 export PATH="/home/tiago/.local/bin:$PATH"
 export PATH="/home/tiago/sftw/ncbi-blast-2.12.0+/bin:$PATH"
 export PATH="/home/tiago/sftw/sratoolkit/bin:$PATH"
+export PATH="/opt/rstudio/:$PATH"
 export MANPAGER="nvim +Man!"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
