@@ -179,6 +179,8 @@ export PATH="/home/tiago/sftw/ncbi-blast-2.12.0+/bin:$PATH"
 export PATH="/home/tiago/sftw/sratoolkit/bin:$PATH"
 export PATH="/opt/rstudio/:$PATH"
 export MANPAGER="nvim +Man!"
+export EDITOR="nvim"
+export VISUAL="nvim"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/tiago/sftw/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
