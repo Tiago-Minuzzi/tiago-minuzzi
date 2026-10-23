@@ -1,32 +1,49 @@
 [[opener.set-wallpaper]]
-run  = "killall swaybg; swaybg -m fill -i %s1"
-for  = "linux"
-desc = "Set as wallpaper"
+run    = 'killall swaybg; swaybg -m fill -i %s1'
+desc   = "Set as wallpaper"
+for    = "linux"
 orphan = true
 
 [[opener.image]]
-run  = "feh --scale-down --auto-zoom %*"
-desc = "Open image with feh"
-for  = "linux"
+run    = 'feh --scale-down --auto-zoom %s'
+desc   = "Open image with feh"
+for    = "linux"
+orphan = true
 
-[[opener.loupe]]
-run  = "loupe %*"
-desc = "Open with Loupe"
+[[opener.gwenview]]
+run    = 'gwenview %s'
+desc   = "Open with Gwenview"
+for    = "linux"
+orphan = true
 
-[[open.prepend_rules]]
-mime = "image/*"
-use  = [ "image", "loupe", "set-wallpaper" ]
+[[opener.kate]]
+run    = 'kate %s'
+desc   = "Open with Kate"
+for    = "linux"
+orphan = true
 
-[[opener.text]]
-run  = "nvim %*"
-desc = "Edit text with Neovim"
-for  = "linux"
+[[opener.nvim]]
+run   = 'nvim %s'
+desc  = "Edit with Neovim"
+for   = "linux"
 block = true
 
 [[open.prepend_rules]]
-mime = "text/*"
-use  = [ "text" ]
+mime = "image/*"
+use  = [ "image", "gwenview", "set-wallpaper" ]
 
 [[open.prepend_rules]]
-mime = "text/csv"
-use  = [ "text" ]
+mime = "text/*"
+use  = [ "nvim", "kate" ]
+
+[[open.prepend_rules]]
+mime = "application/json"
+use  = [ "nvim", "kate" ]
+
+[[open.prepend_rules]]
+mime = "application/x-shellscript"
+use  = [ "nvim", "kate" ]
+
+[[open.prepend_rules]]
+mime = "inode/x-empty"
+use  = [ "nvim", "kate" ]
